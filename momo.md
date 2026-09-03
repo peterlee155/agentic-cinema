@@ -1,12 +1,12 @@
-# 🎬 MASTER CINEMATIC PRODUCTION BIBLE: UNTITLED FILM
-> **Project ID:** undefined | **Genre:** Supernatural Dark Fantasy | **Format:** 115 Minutes Feature
-> **Status:** PRODUCTION_READY | **Updated:** 2026-09-03T21:59:46.818256
+# 🎬 MASTER CINEMATIC PRODUCTION BIBLE: THE VOCAL RESONANCE
+> **Project ID:** proj_20260903_220956 | **Genre:** Post-Apocalyptic Supernatural Thriller | **Format:** 115 Minutes Feature
+> **Status:** PRODUCTION_READY | **Updated:** 2026-09-03T22:10:48.832391
 
 ---
 ## 📌 1. EXECUTIVE PRODUCTION BRIEF
-* **Logline:** In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.
+* **Logline:** In a subterranean neon metropolis where human speech is outlawed, a renegade frequency technician uncovers an ancient vocal resonance capable of destabilizing the central sound barrier.
 * **Tone & Atmosphere:** Gritty, claustrophobic, visceral, psychologically tense
-* **Visual Style:** 35mm anamorphic widescreen with amber bioluminescent runes and desaturated cold rain
+* **Visual Style:** 35mm Anamorphic, High-Contrast Neon Haze
 * **Language:** English
 
 ---

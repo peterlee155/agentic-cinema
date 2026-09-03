@@ -1,0 +1,32 @@
+# ==============================================================================
+# AGENTIC CINEMA STUDIO — TESTING & PIPELINE VERIFICATION CONTAINER
+# Executes Master 10-Agent Swarm from USER IDEA to DANCE AGENT
+# ==============================================================================
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PORT=9099 \
+    PROJECT_INSTANCE_NAME="TestingStudio" \
+    GCS_BUCKET_NAME="agentic-cinema-projects" \
+    GOOGLE_CLOUD_PROJECT="seismic-relic-447818-r2"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+RUN mkdir -p /app/data/projects /app/static/generated
+
+EXPOSE 9099
+
+# By default, runs the 10-Agent Swarm Pipeline Verification
+CMD ["python", "run_swarm_testing.py"]

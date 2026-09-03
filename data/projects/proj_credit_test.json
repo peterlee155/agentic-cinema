@@ -1,17 +1,17 @@
 {
   "project": {
-    "id": "proj_20260903_220956",
-    "title": "THE VOCAL RESONANCE",
-    "logline": "In a subterranean neon metropolis where human speech is outlawed, a renegade frequency technician uncovers an ancient vocal resonance capable of destabilizing the central sound barrier.",
-    "genre": "Post-Apocalyptic Supernatural Thriller",
+    "id": "proj_credit_test",
+    "title": "THE LAST SPELL",
+    "logline": "A futuristic cybernetic archaeologist searches for the lost city of Atlantis using orbital laser scanners",
+    "genre": "Hard Sci-Fi Space Thriller",
     "tone": "Gritty, claustrophobic, visceral, psychologically tense",
-    "visualStyle": "35mm Anamorphic, High-Contrast Neon Haze",
+    "visualStyle": "35mm anamorphic widescreen with amber bioluminescent runes and desaturated cold rain",
     "targetDuration": "115 Minutes",
     "language": "English",
     "stage": "PRODUCTION_READY",
-    "credits_used": 18,
+    "credits_used": 60,
     "credits_total": 250,
-    "plan": "CREATOR",
+    "plan": "PRO",
     "coreHook": "The enemy is physically indistinguishable from normal survivors; survival protection operates on an unyielding countdown clock.",
     "threeActStructure": {
       "act1_setup": "The Keystone fractures. Sister Mara carves Kaelen's final 4-hour countdown spell. Kaelen steps outside into the Limbo Bazaar.",
@@ -698,12 +698,11 @@
   ],
   "continuityLog": [
     {
-      "timestamp": "2026-09-03T22:10:48.829855",
+      "timestamp": "2026-09-01T14:12:17.566388",
       "type": "CONTINUITY_AUDIT_RUN",
-      "status": "PASS",
-      "conflicts": 0
+      "status": "CONFLICTS_DETECTED",
+      "conflicts": 1
     }
   ],
-  "cast": [],
-  "updated_at": "2026-09-03T22:10:48.832391"
+  "updated_at": "2026-09-01T14:12:17.566388"
 }
