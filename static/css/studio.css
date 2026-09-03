@@ -1,0 +1,132 @@
+/* Agentic Cinema Studio - Premium Cinematic Dark Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --bg-dark: #070913;
+  --bg-card: #0d1220;
+  --bg-card-hover: #12192c;
+  --border-line: #1c263c;
+  --border-active: #6366f1;
+  --accent-primary: #6366f1;
+  --accent-secondary: #06b6d4;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --glow-indigo: 0 0 25px rgba(99, 102, 241, 0.2);
+  --glow-cyan: 0 0 25px rgba(6, 182, 212, 0.2);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(7, 9, 19, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: #25334d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Glassmorphism subtle */
+.cinema-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cinema-card:hover {
+  border-color: #2a3a5a;
+}
+.cinema-card.active {
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-indigo);
+}
+
+/* Screenplay Courier font */
+.font-courier {
+  font-family: 'Courier Prime', Courier, monospace;
+}
+
+/* Mono code */
+.font-mono {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+}
+
+/* Navigation items */
+.nav-tab-btn {
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+.nav-tab-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.03);
+}
+.nav-tab-btn.active {
+  color: #ffffff;
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: inset 0 0 12px rgba(99, 102, 241, 0.15);
+}
+
+/* Pulse animation for active agents */
+@keyframes agent-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+.animate-agent-pulse {
+  animation: agent-pulse 1.8s infinite ease-in-out;
+}
+
+/* Glow utility */
+.glow-accent {
+  box-shadow: var(--glow-indigo);
+}
+.glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+
+/* Hammer Building Construction Animation */
+@keyframes hammerSwing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-40deg); }
+  55% { transform: rotate(25deg); }
+  70% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-hammer-swing {
+  display: inline-block;
+  transform-origin: bottom right;
+  animation: hammerSwing 0.75s ease-in-out infinite;
+}
+
+@keyframes sparkFlash {
+  0%, 100% { opacity: 0; transform: scale(0.6) translate(0, 0); }
+  50% { opacity: 1; transform: scale(1.5) translate(-4px, -4px); }
+}
+
+.animate-sparks {
+  animation: sparkFlash 0.75s ease-in-out infinite;
+}
+
+@keyframes beamGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; filter: drop-shadow(0 0 8px #f59e0b); }
+}
+
+.animate-beam-glow {
+  animation: beamGlow 1.2s ease-in-out infinite;
+}

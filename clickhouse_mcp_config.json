@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "clickhouse-cinema-mcp": {
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp.clickhouse_mcp_bridge"
+      ],
+      "env": {
+        "CLICKHOUSE_HOST": "localhost",
+        "CLICKHOUSE_PORT": "8123",
+        "CLICKHOUSE_DB": "cinema",
+        "MCP_PROTOCOL_VERSION": "2024-11-05"
+      },
+      "description": "Official ClickHouse Partner Model Context Protocol (MCP) Server for Agentic Cinema Studio."
+    }
+  }
+}

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  project_a:
+    build:
+      context: .
+      dockerfile: Dockerfile.projectA
+    container_name: agentic_cinema_project_a
+    ports:
+      - "9001:9001"
+    environment:
+      - PORT=9001
+      - PROJECT_INSTANCE_NAME=ProjectA
+      - GCS_BUCKET_NAME=agentic-cinema-projects-a
+      - USE_VERTEX_AI=false
+    volumes:
+      - project_a_data:/app/data/projects_a
+    restart: unless-stopped
+
+  project_b:
+    build:
+      context: .
+      dockerfile: Dockerfile.projectB
+    container_name: agentic_cinema_project_b
+    ports:
+      - "9002:9002"
+    environment:
+      - PORT=9002
+      - PROJECT_INSTANCE_NAME=ProjectB
+      - GCS_BUCKET_NAME=agentic-cinema-projects-b
+      - USE_VERTEX_AI=false
+    volumes:
+      - project_b_data:/app/data/projects_b
+    restart: unless-stopped
+
+volumes:
+  project_a_data:
+  project_b_data:

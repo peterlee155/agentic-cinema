@@ -1,0 +1,664 @@
+{
+  "project": {
+    "id": "proj_20260901_120826",
+    "title": "Mung Mung",
+    "logline": "To start a new life in jungle of a big forest, with a young sister and surviving everyday",
+    "genre": "Hard Sci-Fi Space Thriller",
+    "tone": "Gritty, claustrophobic, visceral, psychologically tense",
+    "visualStyle": "35mm Anamorphic Widescreen",
+    "targetDuration": "112 Minutes",
+    "language": "English",
+    "stage": "PRODUCTION_READY",
+    "credits_used": 18,
+    "credits_total": 250,
+    "plan": "CREATOR",
+    "coreHook": "The enemy is physically indistinguishable from normal survivors; survival protection operates on an unyielding countdown clock.",
+    "threeActStructure": {
+      "act1_setup": "The Keystone fractures. Sister Mara carves Kaelen's final 4-hour countdown spell. Kaelen steps outside into the Limbo Bazaar.",
+      "act2_confrontation": "Kaelen navigates past deceptively polite mimics into the submerged metro vaults, securing the crystals while the timer reaches critical 10-minute redline.",
+      "act3_resolution": "A desperate sprint back to the cathedral gates with seconds remaining; unmasking Elias and recharging the barrier as the countdown hits zero."
+    }
+  },
+  "characters": [
+    {
+      "name": "Kaelen Vance",
+      "age": 34,
+      "role": "Expedition Scout Leader (Protagonist)",
+      "appearance": "Athletic, weather-beaten, scar across left eyebrow, dark brooding gaze.",
+      "hair": "Short cropped raven hair dusted with soot.",
+      "clothing": "Reinforced charcoal canvas duster coat, tactical holster, worn leather combat gloves.",
+      "props": "Carved runic wrist chronometer, suppressed 9mm sidearm, analog Geiger-frequency meter.",
+      "colorPalette": "#111827 (Charcoal), #FF9900 (Amber Glow), #4B5563 (Slate)",
+      "visualEvolution": "Starts confident with bright wrist runes; by Act 3, coat is shredded, runes flicker red, eyes hollow with exhaustion."
+    },
+    {
+      "name": "Sister Mara",
+      "age": 58,
+      "role": "Rune Weaver & Sanctuary Elder",
+      "appearance": "Regal yet frail, etched runic silver tattoos across fingertips, piercing silver eyes.",
+      "hair": "Long silver braid wrapped with thin copper wire.",
+      "clothing": "Heavy emerald-green wool vestments lined with runic gold thread.",
+      "props": "Bone etching stylus, mercury ampoules, sanctuary Keystone resonance bell.",
+      "colorPalette": "#064E3B (Emerald), #D97706 (Amber), #F3F4F6 (Silver)",
+      "visualEvolution": "Weakens as the Keystone stone fractures, hands trembling as she carves Kaelen's final spell."
+    },
+    {
+      "name": "Elias (The Mimic)",
+      "age": 38,
+      "role": "Outer Ward Infiltrator (Antagonist)",
+      "appearance": "Impeccably neat, unnaturally calm smile, pale translucent skin with faint blue veins.",
+      "hair": "Neatly combed ash-blonde hair.",
+      "clothing": "Pre-collapse gray tweed blazer over a wool turtleneck, clean polished leather boots.",
+      "props": "Silver pocket watch that doesn't tick, antique tea tin with dried seeds.",
+      "colorPalette": "#374151 (Cold Gray), #93C5FD (Vein Blue), #1F2937 (Shadow)",
+      "visualEvolution": "Appears warm and friendly at the Limbo Bazaar; reveals black dilated pupils and predatory calm as Kaelen's timer ticks down."
+    },
+    {
+      "name": "Nia",
+      "age": 11,
+      "role": "Scavenger Apprentice & Look-out",
+      "appearance": "Quick, wiry, observant eyes, smudge of grease on right cheek.",
+      "hair": "Disheveled messy dark curls tied with yellow cable wire.",
+      "clothing": "Oversized faded navy flight jacket with rolled cuffs, combat boots two sizes too big.",
+      "props": "Brass binoculars, wind-up music box that calms jittery infected.",
+      "colorPalette": "#1E3A8A (Navy), #FBBF24 (Safety Yellow), #78350F (Earth)",
+      "visualEvolution": "Transitions from fearful child behind sanctuary gates to crucial partner timing Kaelen's extraction."
+    }
+  ],
+  "locations": [
+    {
+      "name": "St. Jude's Inner Sanctuary",
+      "architecture": "Gothic Revival stone cathedral retrofitted with heavy steel pressure doors and pulsing copper rune conduits.",
+      "geography": "Perched on the highest granite hill overlooking the flooded downtown grid.",
+      "weather": "Cold mountain draft, perpetual fog pressing against glowing gold barrier dome.",
+      "materials": "Centuries-old granite, polished brass conduits, beeswax candles, iron barricades.",
+      "objects": "The Keystone Wardstone (fracturing on altar), etching benches, sleeping cots.",
+      "lighting": "Warm candle amber and deep violet barrier luminescence.",
+      "colorPalette": "#1E1B4B (Deep Violet), #D97706 (Amber), #1F2937 (Granite Gray)"
+    },
+    {
+      "name": "The Limbo Bazaar (Outer Barrier)",
+      "architecture": "Multi-tier shantytown built inside rusted intermodal shipping containers under the secondary translucent shield.",
+      "geography": "The old railway freight station between the sanctuary gates and the wasteland.",
+      "weather": "Constant industrial smog, sulfurous drizzle dripping from corrugated sheet roofs.",
+      "materials": "Corrugated iron, rusted shipping containers, blue polyethylene tarps, barrel braziers.",
+      "objects": "Makeshift market stalls selling dried lichen, battery cells, unverified relics.",
+      "lighting": "Flickering sodium vapor lamps, glowing braziers, murky yellow rain.",
+      "colorPalette": "#78350F (Rust), #F59E0B (Sodium Gold), #064E3B (Tarp Green)"
+    },
+    {
+      "name": "The Dead Metro Vaults",
+      "architecture": "Subterranean concrete transit concourse choked by black calcified mold and derelict subway trains.",
+      "geography": "Four levels beneath downtown financial district, entirely outside protection.",
+      "weather": "Sub-zero underground chill, stagnant black water pools, leaking steam pipes.",
+      "materials": "Shattered ceramic white tiles, exposed rebar, rusted subway cars.",
+      "objects": "Sub-vault security safe holding acoustic crystal canisters, emergency rail lanterns.",
+      "lighting": "Pitch black pierced only by Kaelen's weapon light and fading wrist glyph.",
+      "colorPalette": "#030712 (Abyssal Black), #06B6D4 (Cyan Flash), #DC2626 (Critical Red)"
+    }
+  ],
+  "worldRules": [],
+  "timeline": [],
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "slugline": "EXT. ST. JUDE'S INNER SANCTUARY - DUSK",
+      "intExt": "EXT",
+      "location": "St. Jude's Inner Sanctuary Perimeter",
+      "time": "DUSK",
+      "characters": [
+        "Kaelen Vance",
+        "Sister Mara"
+      ],
+      "objective": "Kaelen must receive the expedition protection spell despite Sister Mara's warning of its rapid decay.",
+      "conflict": "The Keystone Wardstone is cracking; Sister Mara can only guarantee four hours instead of twelve.",
+      "action": "Rain lashes against the shimmering violet dome. Sister Mara presses a burning bone stylus into Kaelen's left forearm. Runic smoke hisses in the chill air. A glowing amber countdown glyph illuminates beneath his skin: 04:00:00. Through the barrier glass, normal-looking citizens in trench coats stand silently in the mist, staring unblinkingly at the gates.",
+      "dialogue": "MARA\nFour hours, Kaelen. Not a second more. The Keystone is bleeding light. If the glyph fades before you reach the vaults, you won't smell like a living man anymore.\n\nKAELEN\nI don't need twelve hours. Just enough to pull the crystals and make it back.\n\nMARA\nRemember: they don't growl. They don't limp. They sit next to you, and they ask about your family.",
+      "emotionalBeat": "Dread tempered by quiet resolve. The ticking clock begins.",
+      "transition": "SMASH CUT TO:"
+    },
+    {
+      "sceneNumber": 2,
+      "slugline": "EXT. THE LIMBO BAZAAR - NIGHT",
+      "intExt": "EXT",
+      "location": "The Limbo Bazaar (Outer Barrier)",
+      "time": "NIGHT",
+      "characters": [
+        "Kaelen Vance",
+        "Elias (The Mimic)",
+        "Nia"
+      ],
+      "objective": "Kaelen navigates the outer market to locate the maintenance map for the underground rail tunnel.",
+      "conflict": "An apparently gentle gentleman (Elias) blocks his passage with unsettling small talk while Kaelen's wrist timer visibly decrements.",
+      "action": "Kaelen pushes through the crowded shipping container corridor. Stalls sell synthetic broth. A young girl, Nia, signals from a rooftop catwalk. Suddenly, Elias steps out from under a striped awning, wearing a dry tweed jacket and holding an umbrella. Kaelen's hand instinctively drops to his holster.",
+      "dialogue": "ELIAS\nTerrible evening for a walk toward the sector line, Vance. The broth at Stall 4 is hot, if you care to rest.\n\nKAELEN\nI have business at the transformer station, Elias. Move aside.\n\nELIAS\n(Smiles warmly)\nBusiness. We all have business. But tell me... does your arm burn as hot as it did last winter? It looks... dim.",
+      "emotionalBeat": "Skin-crawling psychological tension. The antagonist senses vulnerability without breaking disguise.",
+      "transition": "DISSOLVE TO:"
+    },
+    {
+      "sceneNumber": 3,
+      "slugline": "INT. SUBTERRANEAN METRO CONCOURSE - NIGHT",
+      "intExt": "INT",
+      "location": "The Dead Metro Vaults",
+      "time": "NIGHT",
+      "characters": [
+        "Kaelen Vance",
+        "Nia"
+      ],
+      "objective": "Extract the copper-alloy acoustic crystals from the sealed transit command vault before the timer drops below thirty minutes.",
+      "conflict": "The security door is rusted shut and mechanical noise threatens to draw the mimics hunting in the dark.",
+      "action": "Kaelen's wrist glyph reads: 00:38:14. Amber light pulses faintly against wet black subway tiles. Nia holds her brass wind-up music box, listening to echoes down the empty rail tunnel. Kaelen wedges a crowbar into the hydraulic vault hatch. Metal groans. From three hundred yards down the tracks, polite human whistling begins.",
+      "dialogue": "NIA\n(Whispering)\nThey're whistling the national anthem. Just like last week.\n\nKAELEN\nKeep the music box wound. When the hatch pops, grab the cylinder case and don't look back.",
+      "emotionalBeat": "High-stakes stealth and clock-ticking claustrophobia.",
+      "transition": "CUT TO:"
+    },
+    {
+      "sceneNumber": 4,
+      "slugline": "EXT. FLOODED TRANSIT YARD - DAWN",
+      "intExt": "EXT",
+      "location": "The Dead Expanse Outside Barrier",
+      "time": "DAWN",
+      "characters": [
+        "Kaelen Vance",
+        "Elias (The Mimic)",
+        "Nia"
+      ],
+      "objective": "Escape back to the outer perimeter with the crystal canister while the spell enters its final sixty seconds.",
+      "conflict": "Elias and three 'citizens' surround the railway bridge, their smiles frozen as the rain washes away their pretense.",
+      "action": "Kaelen runs through knee-deep black water, clutching the heavy steel canister. Nia is ahead, scrambling up the perimeter ladder. Kaelen's wrist glyph flashes violently: 00:01:12... 00:00:58. Elias stands on the bridge footing. His voice is perfectly modulated, but his jaw dislocates slightly as he speaks.",
+      "dialogue": "ELIAS\nThirty seconds, Kaelen. Then you smell like home to all of us.\n\nKAELEN\n(Raising weapon)\nThen take your shot while I'm still human.",
+      "emotionalBeat": "Adrenaline-fueled climax. Humanity measured in heartbeats.",
+      "transition": "MATCH CUT TO:"
+    },
+    {
+      "sceneNumber": 5,
+      "slugline": "INT. ST. JUDE'S CATHEDRAL NAVE - DAWN",
+      "intExt": "INT",
+      "location": "St. Jude's Inner Sanctuary",
+      "time": "DAWN",
+      "characters": [
+        "Kaelen Vance",
+        "Sister Mara",
+        "Nia"
+      ],
+      "objective": "Lock the crystal into the Keystone altar to renew the barrier before the outer perimeter falls.",
+      "conflict": "The wrist glyph expires at 00:00:00 as Kaelen slams through the inner airlock, proving he brought no infection inside.",
+      "action": "Kaelen slides across the marble floor as the cathedral airlock slams shut. Outside the reinforced blast glass, dozens of calm, rain-soaked figures stare through the pane. Kaelen drops the acoustic crystal into the altar well. A resonant gold shockwave explodes outward, recharging the shimmering dome. On his wrist, the glyph burns out into a dead gray ash line.",
+      "dialogue": "MARA\n(Tears in eyes)\nIt holds. The city lives.\n\nKAELEN\nFor now. But Elias was standing outside the glass, Mara. And he wasn't looking at the barrier. He was looking at Nia.",
+      "emotionalBeat": "Victorious relief undercut by chilling revelation of the next war.",
+      "transition": "FADE OUT."
+    }
+  ],
+  "screenplay": [
+    {
+      "sceneNumber": 1,
+      "slugline": "EXT. ST. JUDE'S INNER SANCTUARY - DUSK",
+      "intExt": "EXT",
+      "location": "St. Jude's Inner Sanctuary Perimeter",
+      "time": "DUSK",
+      "characters": [
+        "Kaelen Vance",
+        "Sister Mara"
+      ],
+      "objective": "Kaelen must receive the expedition protection spell despite Sister Mara's warning of its rapid decay.",
+      "conflict": "The Keystone Wardstone is cracking; Sister Mara can only guarantee four hours instead of twelve.",
+      "action": "Rain lashes against the shimmering violet dome. Sister Mara presses a burning bone stylus into Kaelen's left forearm. Runic smoke hisses in the chill air. A glowing amber countdown glyph illuminates beneath his skin: 04:00:00. Through the barrier glass, normal-looking citizens in trench coats stand silently in the mist, staring unblinkingly at the gates.",
+      "dialogue": "MARA\nFour hours, Kaelen. Not a second more. The Keystone is bleeding light. If the glyph fades before you reach the vaults, you won't smell like a living man anymore.\n\nKAELEN\nI don't need twelve hours. Just enough to pull the crystals and make it back.\n\nMARA\nRemember: they don't growl. They don't limp. They sit next to you, and they ask about your family.",
+      "emotionalBeat": "Dread tempered by quiet resolve. The ticking clock begins.",
+      "transition": "SMASH CUT TO:"
+    },
+    {
+      "sceneNumber": 2,
+      "slugline": "EXT. THE LIMBO BAZAAR - NIGHT",
+      "intExt": "EXT",
+      "location": "The Limbo Bazaar (Outer Barrier)",
+      "time": "NIGHT",
+      "characters": [
+        "Kaelen Vance",
+        "Elias (The Mimic)",
+        "Nia"
+      ],
+      "objective": "Kaelen navigates the outer market to locate the maintenance map for the underground rail tunnel.",
+      "conflict": "An apparently gentle gentleman (Elias) blocks his passage with unsettling small talk while Kaelen's wrist timer visibly decrements.",
+      "action": "Kaelen pushes through the crowded shipping container corridor. Stalls sell synthetic broth. A young girl, Nia, signals from a rooftop catwalk. Suddenly, Elias steps out from under a striped awning, wearing a dry tweed jacket and holding an umbrella. Kaelen's hand instinctively drops to his holster.",
+      "dialogue": "ELIAS\nTerrible evening for a walk toward the sector line, Vance. The broth at Stall 4 is hot, if you care to rest.\n\nKAELEN\nI have business at the transformer station, Elias. Move aside.\n\nELIAS\n(Smiles warmly)\nBusiness. We all have business. But tell me... does your arm burn as hot as it did last winter? It looks... dim.",
+      "emotionalBeat": "Skin-crawling psychological tension. The antagonist senses vulnerability without breaking disguise.",
+      "transition": "DISSOLVE TO:"
+    },
+    {
+      "sceneNumber": 3,
+      "slugline": "INT. SUBTERRANEAN METRO CONCOURSE - NIGHT",
+      "intExt": "INT",
+      "location": "The Dead Metro Vaults",
+      "time": "NIGHT",
+      "characters": [
+        "Kaelen Vance",
+        "Nia"
+      ],
+      "objective": "Extract the copper-alloy acoustic crystals from the sealed transit command vault before the timer drops below thirty minutes.",
+      "conflict": "The security door is rusted shut and mechanical noise threatens to draw the mimics hunting in the dark.",
+      "action": "Kaelen's wrist glyph reads: 00:38:14. Amber light pulses faintly against wet black subway tiles. Nia holds her brass wind-up music box, listening to echoes down the empty rail tunnel. Kaelen wedges a crowbar into the hydraulic vault hatch. Metal groans. From three hundred yards down the tracks, polite human whistling begins.",
+      "dialogue": "NIA\n(Whispering)\nThey're whistling the national anthem. Just like last week.\n\nKAELEN\nKeep the music box wound. When the hatch pops, grab the cylinder case and don't look back.",
+      "emotionalBeat": "High-stakes stealth and clock-ticking claustrophobia.",
+      "transition": "CUT TO:"
+    },
+    {
+      "sceneNumber": 4,
+      "slugline": "EXT. FLOODED TRANSIT YARD - DAWN",
+      "intExt": "EXT",
+      "location": "The Dead Expanse Outside Barrier",
+      "time": "DAWN",
+      "characters": [
+        "Kaelen Vance",
+        "Elias (The Mimic)",
+        "Nia"
+      ],
+      "objective": "Escape back to the outer perimeter with the crystal canister while the spell enters its final sixty seconds.",
+      "conflict": "Elias and three 'citizens' surround the railway bridge, their smiles frozen as the rain washes away their pretense.",
+      "action": "Kaelen runs through knee-deep black water, clutching the heavy steel canister. Nia is ahead, scrambling up the perimeter ladder. Kaelen's wrist glyph flashes violently: 00:01:12... 00:00:58. Elias stands on the bridge footing. His voice is perfectly modulated, but his jaw dislocates slightly as he speaks.",
+      "dialogue": "ELIAS\nThirty seconds, Kaelen. Then you smell like home to all of us.\n\nKAELEN\n(Raising weapon)\nThen take your shot while I'm still human.",
+      "emotionalBeat": "Adrenaline-fueled climax. Humanity measured in heartbeats.",
+      "transition": "MATCH CUT TO:"
+    },
+    {
+      "sceneNumber": 5,
+      "slugline": "INT. ST. JUDE'S CATHEDRAL NAVE - DAWN",
+      "intExt": "INT",
+      "location": "St. Jude's Inner Sanctuary",
+      "time": "DAWN",
+      "characters": [
+        "Kaelen Vance",
+        "Sister Mara",
+        "Nia"
+      ],
+      "objective": "Lock the crystal into the Keystone altar to renew the barrier before the outer perimeter falls.",
+      "conflict": "The wrist glyph expires at 00:00:00 as Kaelen slams through the inner airlock, proving he brought no infection inside.",
+      "action": "Kaelen slides across the marble floor as the cathedral airlock slams shut. Outside the reinforced blast glass, dozens of calm, rain-soaked figures stare through the pane. Kaelen drops the acoustic crystal into the altar well. A resonant gold shockwave explodes outward, recharging the shimmering dome. On his wrist, the glyph burns out into a dead gray ash line.",
+      "dialogue": "MARA\n(Tears in eyes)\nIt holds. The city lives.\n\nKAELEN\nFor now. But Elias was standing outside the glass, Mara. And he wasn't looking at the barrier. He was looking at Nia.",
+      "emotionalBeat": "Victorious relief undercut by chilling revelation of the next war.",
+      "transition": "FADE OUT."
+    }
+  ],
+  "storyboard": [
+    {
+      "scene": 1,
+      "frame": 1,
+      "shot": "Wide Exterior Sanctuary",
+      "description": "Gothic cathedral glowing behind a translucent violet forcefield under pouring rain.",
+      "characterPosition": "Sister Mara in green robes at center steps, Kaelen approaching.",
+      "camera": "Low angle 24mm anamorphic looking up at the spire.",
+      "lighting": "Bioluminescent violet shield glow with flickering candle torches.",
+      "emotion": "Solemn awe and creeping dread.",
+      "action": "Kaelen stops before the elder; thunder rumbles in distance.",
+      "duration": "4 seconds",
+      "imagePrompt": "Cinematic 8k movie still, wide angle 24mm anamorphic, gothic cathedral encased in a shimmering translucent violet protective forcefield dome, heavy dark rainstorm, stone steps, two cloaked figures standing in torchlight, hyperrealistic, volumetric lighting, photorealistic film grain"
+    },
+    {
+      "scene": 1,
+      "frame": 2,
+      "shot": "Extreme Close-Up Wrist Runic Inscription",
+      "description": "Burning bone stylus searing a glowing amber countdown chronometer into Kaelen's forearm skin.",
+      "characterPosition": "Kaelen's scarred muscular arm held rigid by Sister Mara's runic hands.",
+      "camera": "85mm macro lens focused on sizzling embers.",
+      "lighting": "Fiery amber light radiating from the freshly carved letters: 04:00:00.",
+      "emotion": "Endured agony, irreversible commitment.",
+      "action": "Smoke curls up as the numbers begin counting down: 03:59:59.",
+      "duration": "3.5 seconds",
+      "imagePrompt": "Cinematic macro shot, 85mm lens, a glowing magical amber runic countdown clock searing into human skin, glowing digits 04:00:00 with fiery embers and rising smoke, extreme detail, photorealistic textures, atmospheric dark background"
+    },
+    {
+      "scene": 2,
+      "frame": 1,
+      "shot": "Medium Two-Shot The Polite Mimic",
+      "description": "Elias standing under a rusted umbrella, smiling warmly at Kaelen in a crowded shantytown.",
+      "characterPosition": "Elias on the right in gray tweed; Kaelen on the left in wet charcoal coat.",
+      "camera": "Eye-level 35mm shallow focus.",
+      "lighting": "Grimy yellow sodium streetlights reflecting in black puddles.",
+      "emotion": "Uncanny valley, psychological chills.",
+      "action": "Elias smiles without blinking as Kaelen's wrist glows faintly beneath his sleeve.",
+      "duration": "5 seconds",
+      "imagePrompt": "Cinematic film still, 35mm anamorphic, two men confronting each other in a dystopian crowded shantytown market made of shipping containers, yellow streetlamps, wet asphalt, rain, one man in gray tweed blazer smiling unnaturally, one in weathered leather coat, tension, cinematic framing, high contrast"
+    },
+    {
+      "scene": 3,
+      "frame": 1,
+      "shot": "Low-Angle Vault Infiltration",
+      "description": "Kaelen and Nia prying open a rusted vault door while submerged in black sewer water.",
+      "characterPosition": "Kaelen straining against the crowbar; Nia perched on a pipe holding a brass music box.",
+      "camera": "18mm ultra-wide water-level angle.",
+      "lighting": "Harsh beam of tactical weapon light cutting through murky darkness.",
+      "emotion": "Heart-pounding stealth and claustrophobia.",
+      "action": "The vault seal breaks with a hiss of stagnant steam.",
+      "duration": "4 seconds",
+      "imagePrompt": "Cinematic film still, 18mm ultra wide angle, subterranean flooded subway station, black stagnant water, man in wet tactical gear prying open a massive steel vault safe, young girl holding antique brass music box in background, single beam of flashlight in dark, dark gritty sci-fi movie"
+    },
+    {
+      "scene": 4,
+      "frame": 1,
+      "shot": "Handheld Sprint at Bridge",
+      "description": "Kaelen sprinting across a shattered railway bridge as calm infected citizens block both exits.",
+      "characterPosition": "Kaelen in full sprint at center; Elias waiting calmly on bridge footing.",
+      "camera": "Dutch tilt 28mm dynamic handheld tracking.",
+      "lighting": "Cold blue dawn twilight with flashing emergency red wrist timer.",
+      "emotion": "Desperation, raw survival instinct.",
+      "action": "Kaelen leaps over a rusted barrier as his timer hits 00:00:15.",
+      "duration": "3 seconds",
+      "imagePrompt": "Cinematic action movie still, dynamic running shot, rugged man running across a broken steel train bridge over foggy river at dawn, clutch of calm sinister people in ordinary coats watching him, glowing red numbers on his wrist, mist, hyperrealistic motion blur, 8k resolution"
+    }
+  ],
+  "shots": [
+    {
+      "sceneNumber": 1,
+      "shotNumber": 1,
+      "shotType": "Extreme Wide Shot",
+      "cameraPosition": "High Angle Crane",
+      "cameraMovement": "Slow descent through rain toward cathedral gates",
+      "lens": "24mm Anamorphic",
+      "composition": "Cathedral spire dominates right third; glowing barrier arcs across upper quadrant",
+      "blocking": "Sister Mara stands centered before the heavy wooden doors; Kaelen kneels before her",
+      "lighting": "Chiaroscuro with glowing violet rim light from the shield",
+      "pacing": "Deliberate, ritualistic, reverent",
+      "visualEmphasis": "The frailty of human skin against the massive supernatural shield"
+    },
+    {
+      "sceneNumber": 1,
+      "shotNumber": 2,
+      "shotType": "Extreme Close-Up",
+      "cameraPosition": "Eye-level Macro",
+      "cameraMovement": "Locked off",
+      "lens": "85mm Prime Macro",
+      "composition": "Kaelen's forearm filling entire screen",
+      "blocking": "Stylus carves into flesh; runic embers flare",
+      "lighting": "Self-illuminating amber glyph burning at 04:00:00",
+      "pacing": "Intense, tactile, visceral",
+      "visualEmphasis": "The tangible, biological cost of survival magic"
+    },
+    {
+      "sceneNumber": 2,
+      "shotNumber": 1,
+      "shotType": "Medium Tracking Shot",
+      "cameraPosition": "Steadicam waist height",
+      "cameraMovement": "Continuous lateral track walking with Kaelen",
+      "lens": "35mm Prime",
+      "composition": "Kaelen framed tight in foreground; background bustling with questionable survivors",
+      "blocking": "Elias steps into frame from right side, matching Kaelen's walking pace seamlessly",
+      "lighting": "Murky yellow sodium vapor reflections in puddles",
+      "pacing": "Restless, paranoid, claustrophobic",
+      "visualEmphasis": "The terrifying normalcy of the infected mimics"
+    },
+    {
+      "sceneNumber": 3,
+      "shotNumber": 1,
+      "shotType": "Low-Angle Dutch Tilt",
+      "cameraPosition": "Floor level submerged track",
+      "cameraMovement": "Creeping push-in past submerged subway ties",
+      "lens": "18mm Ultra-Wide",
+      "composition": "Vault hatch towering ominously overhead; Nia crouched in shadow",
+      "blocking": "Kaelen leverages crowbar with back muscles straining against camera",
+      "lighting": "Faint amber glow from Kaelen's wrist battling deep pitch-black gloom",
+      "pacing": "Suffocating, quiet, razor-sharp tension",
+      "visualEmphasis": "The looming vulnerability of the acoustic resonance vault"
+    },
+    {
+      "sceneNumber": 4,
+      "shotNumber": 1,
+      "shotType": "Handheld Over-The-Shoulder Sprint",
+      "cameraPosition": "Shoulder mount behind Kaelen",
+      "cameraMovement": "Urgent kinetic handheld chase through floodwater",
+      "lens": "28mm Anamorphic",
+      "composition": "Shaking horizon line; countdown clock bouncing into focus every few strides",
+      "blocking": "Elias standing dead still while water churns around him",
+      "lighting": "Cold dawn light cutting through smoke; flashing red warning hue on wrist",
+      "pacing": "Frantic, breath-stealing adrenaline",
+      "visualEmphasis": "The final 30 seconds of human identity slipping away"
+    }
+  ],
+  "cinematography": [
+    {
+      "scene": "Cathedral & Sanctuary (Scenes 1 & 5)",
+      "lensChoice": "24mm & 40mm Master Anamorphic T1.9",
+      "cameraHeight": "Chest Level & Low Angle Hero",
+      "cameraMovement": "Slow deliberate crane and Steadicam gliding",
+      "composition": "Grand Gothic symmetry framed between pulsing copper conduits",
+      "depthOfField": "Deep focus on architectural stone, shallow on character portraits",
+      "colorTreatment": "Rich beeswax gold, warm candle amber, and deep indigo shadow rolloff",
+      "mood": "Sacred, reverent, highly endangered sanctuary"
+    },
+    {
+      "scene": "Limbo Bazaar (Scene 2)",
+      "lensChoice": "35mm & 50mm Anamorphic T2.0",
+      "cameraHeight": "Eye Level Steadicam",
+      "cameraMovement": "Continuous lateral track walking in lockstep with characters",
+      "composition": "Paranoid foreground occlusion; crowded shipping container corridors",
+      "depthOfField": "Shallow focus to compress paranoia in crowded corridors",
+      "colorTreatment": "Sodium vapor yellow, wet asphalt slate, dirty emerald green tarps",
+      "mood": "Corrosive distrust, deceptive safety, uncanny normalcy"
+    },
+    {
+      "scene": "Metro Vaults & Dead Ruins (Scenes 3 & 4)",
+      "lensChoice": "18mm Ultra-Wide & 85mm Macro T1.4",
+      "cameraHeight": "Floor Level Looking Up / Handheld Shoulder Mount",
+      "cameraMovement": "Creeping stealth push-in shifting to kinetic sprinting handheld",
+      "composition": "High-contrast geometric diagonals formed by subway rails and dripping pipes",
+      "depthOfField": "Razor-thin depth of field highlighting the wrist countdown",
+      "colorTreatment": "Monochromatic cold steel, pitch shadow, scorching emergency red",
+      "mood": "Suffocating dread, ticking clock urgency, visceral terror"
+    }
+  ],
+  "audio": [
+    {
+      "scene": "Scene 1 - Sanctuary Spell Inscription",
+      "dialogue": "Crisp, dry, close-mic vocal presence with subtle stone cathedral reverb.",
+      "ambience": "Heavy torrential rain pounding against the protective forcefield like ocean surf.",
+      "foley": "Sizzling skin, leather creak of holster, bone stylus grinding on stone.",
+      "soundEffects": "Deep sub-bass hum (40 Hz) pulsing continuously from the Keystone Wardstone.",
+      "music": "Sparse mournful solo cello over low drone synthesizers.",
+      "silence": "STRATEGIC SILENCE: 3 full seconds of total drop-out right before the stylus touches flesh.",
+      "emotionalCue": "The sudden quiet magnifies the agony and gravity of the sacrifice.",
+      "transition": "Sudden sharp metallic snap transitioning into the market noise."
+    },
+    {
+      "scene": "Scene 2 - Limbo Bazaar Encounter",
+      "dialogue": "Intimate, low-register dialogue. Elias's voice is unnervingly smooth and devoid of breath sounds.",
+      "ambience": "Distant vendor cries, sizzling griddles, dripping rainwater into corrugated tin barrels.",
+      "foley": "Wet combat boot sloshes, fabric friction of duster coat, umbrella fabric snapping in wind.",
+      "soundEffects": "Faint high-pitched metallic ping emitted by Kaelen's wrist chronometer every 60 seconds.",
+      "music": "NO MUSIC. Ambient market buzz only, heightening the raw psychological unease.",
+      "silence": "Sound dips into near-vacuum whenever Elias locks eyes directly with Kaelen.",
+      "emotionalCue": "Auditory representation of predatory focus.",
+      "transition": "L-Cut: Rain sounds continue into the subterranean tunnel."
+    },
+    {
+      "scene": "Scene 3 - Metro Vault Extraction",
+      "dialogue": "Whispered, tense, breathy sibilants bouncing off subterranean tile.",
+      "ambience": "Deep reverberant cavern drip, distant electrical hum from rotting transformers.",
+      "foley": "Crowbar grinding against rusted hydraulic steel hatch; splashing footfalls.",
+      "soundEffects": "High-pitched polite whistling echoing from 300 yards down the subway tracks.",
+      "music": "Low sub-harmonic pulse that slowly syncs with Nia's tin music box melody.",
+      "silence": "Music box suddenly stops ticking; 5 seconds of absolute silence before the hatch breaks.",
+      "emotionalCue": "Vulnerability of childhood innocence confronted with cold mimic calculation.",
+      "transition": "J-Cut: Heavy water rush heard before cutting to exterior transit yard."
+    },
+    {
+      "scene": "Scene 4 - Bridge Escape",
+      "dialogue": "Shouted through raging rain and panting breath.",
+      "ambience": "Gale-force crosswinds, creaking railway bridge cables, splashing floodwater.",
+      "foley": "Heavy combat boots hitting iron decking, spent brass shell casings hitting water.",
+      "soundEffects": "Furious rapid beeping from wrist timer entering single-digit seconds.",
+      "music": "Aggressive, relentless industrial percussion and distorted analog bass synthesizer.",
+      "silence": "No silence: maximum auditory chaos and sensory overload.",
+      "emotionalCue": "The unyielding terror of time running out.",
+      "transition": "Match Cut: Alarm pitch matches the hydraulic hiss of the cathedral airlock."
+    }
+  ],
+  "editPlan": {
+    "pacingStrategy": "Gradual acceleration: deliberate, ceremonial pacing in Act 1 builds to breathless real-time editing in Act 3 as the countdown drops below five minutes.",
+    "sceneOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sceneDurations": {
+      "scene_1": "14 minutes (Ritual Setup & Rule Revelation)",
+      "scene_2": "18 minutes (Paranoid Limbo Market Crawl)",
+      "scene_3": "22 minutes (Underground Vault Heist & Whistle Tension)",
+      "scene_4": "25 minutes (High-Octane Bridge Sprint Climax)",
+      "scene_5": "16 minutes (Cathedral Renewal & Cliffhanger Unmasking)"
+    },
+    "cutTiming": "Act 1 averages 6.5s per shot to absorb sacred atmosphere; Act 2 tightens to 3.8s to build paranoia; Act 3 cuts on kinetics at 1.2s intervals.",
+    "transitions": [
+      "Scene 1 to 2: Hard cut from rising smoke into muddy sodium rain",
+      "Scene 2 to 3: Dissolve through murky water puddle into flooded subway concourse",
+      "Scene 3 to 4: Accelerating cut rate from 6-second takes down to 1.2-second rhythmic cuts",
+      "Scene 4 to 5: Smash cut from running footsteps to heavy steel vault door slamming shut"
+    ],
+    "parallelEditing": "In Act 3, cross-cut between Kaelen sprinting across the floodwater with the dying timer and Sister Mara desperately burning incense at the fracturing altar.",
+    "matchCuts": [
+      "Match cut between the circular glowing countdown timer '00:00:01' and the circular Keystone altar well.",
+      "Match cut between Elias's static smile in the rain and the statue of St. Jude above the gate."
+    ],
+    "jCutsLCuts": [
+      "J-Cut into Scene 3: The eerie whistling down the tracks precedes the visual transition by 4 seconds.",
+      "L-Cut out of Scene 1: Sister Mara's voiceover warning 'they ask about your family' carries over Kaelen walking into the market."
+    ],
+    "finalShot": "A slow, creeping optical push into Elias's calm face through the cathedral glass as the rain runs down the pane like static, smiling unblinkingly at Nia.",
+    "trimmedMaterialNotes": "Cut initial 5-minute opening monologue about the history of the apocalypse; replaced with immediate physical action of the bone stylus searing into flesh."
+  },
+  "socialContent": {
+    "tiktok_reels_shorts": [
+      {
+        "platform": "TikTok / Instagram Reels",
+        "format": "9:16 Vertical Video (38s)",
+        "type": "Mystery Hook / World Rule Explanation",
+        "title": "The Countdown Spell Rule Explained",
+        "hook": "What if zombies didn't look like zombies... and your survival had a timer seared into your skin?",
+        "script": "Close-up on glowing amber forearm glyph counting down rapidly. Voiceover: 'Rule number one: they don't limp. They don't scream. They wear tweed blazers and ask how your morning was. Rule number two: you have four hours before your smell changes. When that clock hits zero... you are dinner.'",
+        "cta": "Would you survive outside the barrier? Drop your survival strategy below.",
+        "hashtags": [
+          "#TheLastSpell",
+          "#AgenticCinema",
+          "#SciFiHorror",
+          "#ZombieApocalypse",
+          "#MovieTrailer"
+        ]
+      },
+      {
+        "platform": "YouTube Shorts",
+        "format": "9:16 Vertical Video (45s)",
+        "type": "Behind-the-Scenes Director Breakdown",
+        "title": "How We Made the Mimic Look Terrifying Without CGI",
+        "hook": "Why smiling characters are scarier than rotting monsters.",
+        "script": "Split-screen comparison: Top shows the director's 35mm anamorphic blocking notes; Bottom shows actor Elias holding an unnerving, unblinking smile under the rain as water drips off his nose.",
+        "cta": "Explore the full production package built by our AI team at Agentic Cinema Studio.",
+        "hashtags": [
+          "#FilmmakersOfTikTok",
+          "#DirectingTips",
+          "#AIInFilm",
+          "#IndieCinema",
+          "#Cinematography"
+        ]
+      },
+      {
+        "platform": "TikTok / Instagram Reels",
+        "format": "9:16 Vertical Video (25s)",
+        "type": "POV Survival Video",
+        "title": "POV: Your Countdown Spell Has 10 Seconds Left",
+        "hook": "POV: You hear polite whistling down the dark subway tunnel and check your arm.",
+        "script": "First-person camera sprinting through shallow black water. Wrist chronometer flashes red: 00:00:09... 00:00:08. Shadows step out from behind concrete pillars. You slam against the cathedral blast doors.",
+        "cta": "Can you hold your breath until the airlock cycles?",
+        "hashtags": [
+          "#POVHorror",
+          "#SurvivalThriller",
+          "#TheLastSpell",
+          "#ShortFilm"
+        ]
+      }
+    ],
+    "meme_concepts": [
+      {
+        "concept": "Me checking my phone battery at 1% vs. Kaelen checking his forearm with 60 seconds left on his protection spell.",
+        "caption": "Same panic, different stakes. ⏳😭"
+      },
+      {
+        "concept": "Elias asking how my day was with a perfectly calm face while waiting for my spell to expire.",
+        "caption": "Customer service workers dealing with Monday morning emails."
+      }
+    ],
+    "audience_polls": [
+      {
+        "question": "If you had a 4-hour countdown spell to leave the sanctuary, would you:",
+        "options": [
+          "Scavenge food & medical supplies",
+          "Search for the missing Keystone crystals",
+          "Refuse to leave the Inner Cathedral"
+        ]
+      }
+    ]
+  },
+  "danceConcepts": [
+    {
+      "title": "The 4-Minute Countdown Shuffle",
+      "duration": "15 seconds",
+      "character": "Nia & The Scavengers",
+      "musicStyle": "Dark Phonk / Industrial Trap with ticking clock metronome",
+      "bpm": 135,
+      "mood": "Edgy, rhythmic, energetic, intense",
+      "concept": "Dancers sync sharp mechanical wrist isolations to a ticking countdown clock before breaking into fluid evasive street footwork.",
+      "beatStructure": {
+        "0_to_3s": "THE HOOK: Close-up check of wrist timer syncing with heavy 808 bass drop and 3 sharp neck-and-shoulder snap isolations.",
+        "3_to_7s": "MAIN MOVEMENT: Gliding step-slide combo miming ducking through crowded shantytown corridors past frozen bystanders.",
+        "7_to_11s": "SIGNATURE MOVEMENT: The 'Glyph Flick' - arms trace a circular glowing rune in the air followed by a synchronized double boot stomp.",
+        "11_to_15s": "FINAL POSE: Sudden dead freeze looking sharply over left shoulder with index finger on lips as the clock sound rings zero."
+      },
+      "choreography": "Hybrid tutting, liquid arms, and modern street footwork designed for achievable community recreation.",
+      "camera": "Dynamic handheld tracking moving backward with dancer",
+      "framing": "Low-angle 9:16 vertical framing starting waist-up and pulling back to full body on beat 7.",
+      "caption": "Can you hit the Glyph Flick before your timer hits zero? ⏳🔥 Duet this with your crew.",
+      "cta": "Tag your squad and show us your 00:00 freeze pose.",
+      "hashtags": [
+        "#TheLastSpellDance",
+        "#CountdownShuffle",
+        "#DanceTrend",
+        "#AgenticCinema",
+        "#MovementChoreography"
+      ]
+    },
+    {
+      "title": "The Mimic Smile Wave",
+      "duration": "15 seconds",
+      "character": "Elias (The Infiltrator)",
+      "musicStyle": "Eerie Lo-Fi Classical Drill with violin tremolo",
+      "bpm": 120,
+      "mood": "Uncanny valley, hypnotic, unsettling",
+      "concept": "A deceptive smooth waltz that suddenly breaks into robotic finger-tutting and a frozen unnatural smile.",
+      "beatStructure": {
+        "0_to_3s": "THE HOOK: Polite bow in formal clothing followed by an instantaneous wide, unblinking smile right into lens.",
+        "3_to_7s": "MAIN MOVEMENT: Smooth arm waves and umbrella spin imitating an ordinary gentleman taking a stroll.",
+        "7_to_11s": "SIGNATURE MOVEMENT: 'The Jaw Snap' - sharp hand mime under chin snapping shut on the snare rimshot.",
+        "11_to_15s": "FINAL POSE: Both hands clasped behind back, tilt head 45 degrees, tilt umbrella forward to shadow eyes."
+      },
+      "choreography": "Popping, waving, and mime illusion techniques with high theatricality.",
+      "camera": "Slow steady push-in towards dancer's eyes",
+      "framing": "Eye-level 9:16 portrait orientation.",
+      "caption": "When they don't know you're not one of them... ☂️👀",
+      "cta": "Duet if you can hold the smile for 15 seconds without blinking.",
+      "hashtags": [
+        "#MimicWave",
+        "#UncannyDance",
+        "#TheLastSpell",
+        "#ChoreographyTrend"
+      ]
+    }
+  ],
+  "continuityLog": [
+    {
+      "timestamp": "2026-09-01T12:08:40.795397",
+      "type": "CONTINUITY_AUDIT_RUN",
+      "status": "CONFLICTS_DETECTED",
+      "conflicts": 1
+    }
+  ],
+  "updated_at": "2026-09-01T12:08:40.795397"
+}

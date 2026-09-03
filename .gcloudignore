@@ -1,0 +1,13 @@
+.git
+.gitignore
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+__pycache__/
+*.pyc
+backup_current_state/
+backup_latest_state/
+tmp/
+.env
+gcp-key.json

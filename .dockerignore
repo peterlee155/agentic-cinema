@@ -1,0 +1,17 @@
+﻿__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+.git/
+.gitignore
+.dockerignore
+Dockerfile
+.system_generated/
+*.log
+backup/
+backup_current_state/
