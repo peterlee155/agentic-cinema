@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Plus, Film } from "lucide-react";
+import { X, Plus, Film, Sparkles, Sliders } from "lucide-react";
 
 interface NewMovieModalProps {
   isOpen: boolean;
@@ -49,99 +49,137 @@ export const NewMovieModal: React.FC<NewMovieModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-[#000] bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-      <div className="cinema-card bg-[#090d1a] border-[#1c263c] w-full max-w-lg p-6 space-y-6 shadow-2xl relative animate-in fade-in zoom-in duration-200 rounded-3xl">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-black/85 backdrop-blur-xl overflow-y-auto animate-in fade-in duration-200"
+      onClick={onClose}
+    >
+      <div
+        className="cinema-card bg-[#090d1c] border border-[#1e2a47] w-full max-w-xl mx-auto p-6 sm:p-8 space-y-6 shadow-2xl relative rounded-3xl z-10 animate-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Modal Header */}
         <div className="flex items-center justify-between border-b border-[#1c263c] pb-4">
-          <div className="flex items-center gap-2">
-            <Film className="w-5 h-5 text-indigo-400" />
-            <h3 className="font-extrabold text-white text-base tracking-wide">
-              Create New Film Project
-            </h3>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-xl text-indigo-400">
+              🎬
+            </div>
+            <div>
+              <h3 className="font-extrabold text-white text-base sm:text-lg tracking-wide flex items-center gap-2">
+                <span>Create New Film Project</span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono font-bold border border-indigo-500/40">
+                  STUDIO LOT
+                </span>
+              </h3>
+              <p className="text-xs text-slate-400">Initialize canonical universe rules and 3-act story bible</p>
+            </div>
           </div>
           <button
+            type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition cursor-pointer"
+            className="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800/80 transition cursor-pointer border border-transparent hover:border-slate-700"
+            title="Close"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
+        {/* Modal Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-              Movie Title
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
+              Movie Title <span className="text-rose-400">*</span>
             </label>
             <input
               type="text"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="e.g. THE LAST SPELL, NEXUS RISING"
-              className="w-full bg-[#050813] border border-[#162138] rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 font-bold"
+              placeholder="e.g. THE LAST SPELL, ECLIPSE HORIZON"
+              className="w-full bg-[#050813] border border-[#1e2a47] focus:border-indigo-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none font-bold transition shadow-inner"
             />
           </div>
 
-          <div>
-            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-              Genre & Sub-Genre
-            </label>
-            <input
-              type="text"
-              value={genre}
-              onChange={(e) => setGenre(e.target.value)}
-              placeholder="e.g. Sci-Fi Supernatural Thriller"
-              className="w-full bg-[#050813] border border-[#162138] rounded-xl px-4 py-2.5 text-xs text-slate-300 placeholder-slate-600 focus:outline-none focus:border-indigo-500"
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
+                Genre & Category
+              </label>
+              <input
+                type="text"
+                value={genre}
+                onChange={(e) => setGenre(e.target.value)}
+                placeholder="e.g. Sci-Fi Supernatural Thriller"
+                className="w-full bg-[#050813] border border-[#1e2a47] focus:border-indigo-500 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none transition"
+              />
+            </div>
+
+            <div>
+              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
+                Dramatic Tone
+              </label>
+              <input
+                type="text"
+                value={tone}
+                onChange={(e) => setTone(e.target.value)}
+                placeholder="e.g. Dark, Visceral, High-Stakes"
+                className="w-full bg-[#050813] border border-[#1e2a47] focus:border-indigo-500 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none transition"
+              />
+            </div>
           </div>
 
           <div>
-            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-              Logline / High Concept Premise
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
+              Logline / Core Narrative Premise <span className="text-rose-400">*</span>
             </label>
             <textarea
+              required
               value={logline}
               onChange={(e) => setLogline(e.target.value)}
               rows={3}
-              placeholder="A lone chronomancer must break an ancient spell before the realm fractures into eternal dark..."
-              className="w-full bg-[#050813] border border-[#162138] rounded-xl px-4 py-2.5 text-xs text-slate-300 placeholder-slate-600 focus:outline-none focus:border-indigo-500 leading-relaxed"
+              placeholder="A disgraced cybernetic archaeologist discovers an ancient orbital spell that can manipulate local gravity..."
+              className="w-full bg-[#050813] border border-[#1e2a47] focus:border-indigo-500 rounded-xl px-4 py-3 text-xs text-slate-200 placeholder-slate-500 focus:outline-none leading-relaxed transition shadow-inner"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                Visual Optics Style
+              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
+                Visual Optics & Style
               </label>
               <input
                 type="text"
                 value={visualStyle}
                 onChange={(e) => setVisualStyle(e.target.value)}
-                className="w-full bg-[#050813] border border-[#162138] rounded-xl px-3 py-2 text-[11px] text-slate-300"
+                placeholder="e.g. 35mm Anamorphic, Chiaroscuro"
+                className="w-full bg-[#050813] border border-[#1e2a47] focus:border-indigo-500 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none transition"
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
                 Estimated Runtime
               </label>
               <input
                 type="text"
                 value={duration}
                 onChange={(e) => setDuration(e.target.value)}
-                className="w-full bg-[#050813] border border-[#162138] rounded-xl px-3 py-2 text-[11px] text-slate-300"
+                placeholder="e.g. 115 Minutes"
+                className="w-full bg-[#050813] border border-[#1e2a47] focus:border-indigo-500 rounded-xl px-3.5 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none transition"
               />
             </div>
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#1c263c]">
+          {/* Form Actions */}
+          <div className="flex items-center justify-end gap-3 pt-5 border-t border-[#1c263c]">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-slate-800 transition cursor-pointer"
+              className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition cursor-pointer border border-transparent hover:border-slate-700"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition shadow-lg flex items-center gap-2 cursor-pointer"
+              className="bg-gradient-to-r from-emerald-600 via-indigo-600 to-purple-600 hover:from-emerald-500 hover:via-indigo-500 hover:to-purple-500 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition shadow-xl flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <Plus className="w-4 h-4" />
               <span>Initialize Project Bible</span>
