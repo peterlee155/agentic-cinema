@@ -26,3 +26,5 @@ __all__ = [
     "ContinuityCheckerAgent",
     "ContinuityAgent"
 ]
+
+from core.agents.bro_agent import BroAgent

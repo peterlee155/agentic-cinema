@@ -25,7 +25,8 @@ from core.agents import (
     EditorAgent,
     SocialAgent,
     DanceAgent,
-    ContinuityCheckerAgent
+    ContinuityCheckerAgent,
+    BroAgent
 )
 from core.project_bible import ProjectBible
 from core.gcs_storage import gcs_storage
@@ -44,7 +45,7 @@ class CentralProductionOrchestrator:
         self.storage_dir = storage_dir or os.path.join(self.root_dir, "data", "projects")
         os.makedirs(self.storage_dir, exist_ok=True)
 
-        # Initialize specialized agent swarm
+        # Initialize specialized agent swarm (User-facing)
         self.producer_agent = ProducerAgent()
         self.screenwriter_agent = ScreenwriterAgent()
         self.director_agent = DirectorAgent()
@@ -56,6 +57,10 @@ class CentralProductionOrchestrator:
         self.social_agent = SocialAgent()
         self.dance_agent = DanceAgent()
         self.continuity_agent = ContinuityCheckerAgent()
+
+        # Confidential Internal Agent (OUR SIDE ONLY — hidden from users)
+        self.bro_agent = BroAgent()
+        self.internal_agents = {"bro": self.bro_agent}
 
         # In-memory project cache
         self.projects: Dict[str, ProjectBible] = {}
@@ -308,6 +313,15 @@ class CentralProductionOrchestrator:
             "conflicts": audit_res.get("conflict_count", 0)
         })
         pipeline_log.append({"agent": "Continuity Auditor", "status": audit_res.get("status"), "summary": f"{audit_res.get('total_verified', 0)} Facts Verified"})
+
+        # 12. INTERNAL STUDIO SUPERVISOR (OUR SIDE ONLY — Bro Agent)
+        bro_notes = self.bro_agent.evaluate_production(project_id, bible.to_dict())
+        bible.continuityLog.append({
+            "timestamp": datetime.utcnow().isoformat(),
+            "type": "INTERNAL_BRO_SUPERVISOR_AUDIT",
+            "visibility": "INTERNAL_OUR_SIDE_ONLY",
+            "notes": bro_notes
+        })
 
         # Finalize project state and persist
         bible.project["stage"] = "PRODUCTION_READY"

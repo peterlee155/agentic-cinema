@@ -160,6 +160,18 @@ def get_system_health():
                     "Storyboard", "Sound & Music", "Editor", "Social & Viral", "Dance Agent"
                 ]
             },
+            "internal_agents": {
+                "visibility": "OUR_SIDE_ONLY",
+                "notice": "Strictly confidential - hidden from user side",
+                "agents": [
+                    {
+                        "name": "Bro Agent",
+                        "role": "Confidential Studio Supervisor & Internal Quality Guardian",
+                        "status": "ACTIVE",
+                        "visibility": "INTERNAL_OUR_SIDE_ONLY"
+                    }
+                ]
+            },
             "partner_mcp": {
                 "partner": "ClickHouse",
                 "server": clickhouse_mcp.server_info["name"],
@@ -177,6 +189,24 @@ def get_system_health():
                 "credits_available": revenuecat_backend.total_credits - revenuecat_backend.used_credits
             }
         }
+    }
+
+# Internal Studio Agent Route (OUR SIDE ONLY)
+@app.get("/api/internal/bro-agent/{project_id}")
+def get_internal_bro_audit(project_id: str):
+    """
+    Confidential Internal Endpoint (OUR SIDE ONLY).
+    Provides Bro Agent's behind-the-scenes evaluation, metrics, and quality audit.
+    Hidden from user-facing clients.
+    """
+    bible = orchestrator.get_project(project_id)
+    eval_res = orchestrator.bro_agent.evaluate_production(project_id, bible.to_dict())
+    return {
+        "success": True,
+        "visibility": "OUR_SIDE_ONLY",
+        "agent": "Bro Agent",
+        "project_id": project_id,
+        "evaluation": eval_res
     }
 
 # 3. Project Management Routes
