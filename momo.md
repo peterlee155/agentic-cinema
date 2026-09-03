@@ -1,18 +1,12 @@
-# 🎬 MASTER CINEMATIC PRODUCTION BIBLE: Lala
-> **Project ID:** proj_20260901_232432 | **Genre:** Post-Apocalyptic Supernatural Thriller | **Format:** 115 Minutes Feature
-> **Status:** PRODUCTION_READY | **Updated:** 2026-09-01T23:45:30.456185
+# 🎬 MASTER CINEMATIC PRODUCTION BIBLE: UNTITLED FILM
+> **Project ID:** undefined | **Genre:** Supernatural Dark Fantasy | **Format:** 115 Minutes Feature
+> **Status:** PRODUCTION_READY | **Updated:** 2026-09-03T21:59:46.818256
 
 ---
 ## 📌 1. EXECUTIVE PRODUCTION BRIEF
-* **Logline:** Write an emotionally captivating, slow-burn GL romance chapter (around 1,000 words) with subtle workplace tension.
-Characters:
-
-Character A: A sharp, perfectionist senior executive/art director who is untouchable, calm, and emotionally guarded.
-
-Character B: An earnest, highly observant junior designer with a warm personality who isn't intimidated by Character A's cold exterior.
-Plot: Late evening in a private corporate office after a high-stakes client presentation. Character B notices Character A's quiet exhaustion and brings her hot tea. As Character A lets her guard down for the first time, a simple accidental touch on the hand sparks an electric, lingering gaze filled with unspoken longing and mutual admiration
+* **Logline:** In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.
 * **Tone & Atmosphere:** Gritty, claustrophobic, visceral, psychologically tense
-* **Visual Style:** 35mm Anamorphic, Chiaroscuro Rim Lighting
+* **Visual Style:** 35mm anamorphic widescreen with amber bioluminescent runes and desaturated cold rain
 * **Language:** English
 
 ---
@@ -49,9 +43,7 @@ Plot: Late evening in a private corporate office after a high-stakes client pres
 
 ---
 ## 🎭 3.1 CANONICAL CAST DIRECTORY
-| Performer Name | Character Name | Role Type | Appearances | Dialogue Lines | Status |
-|---|---|---|---|---|---|
-| **Peter** | Kelvin | Lead Actor | 0 scenes | 0 lines | Confirmed |
+*No performers assigned yet. (Use chat or Cast Studio to assign actors).*
 
 ---
 ## 📍 4. LOCATION ATLAS & PRODUCTION DESIGN

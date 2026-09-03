@@ -25,6 +25,7 @@ export const ProjectLibraryPage: React.FC<ProjectLibraryPageProps> = ({
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProjects = projects.filter((p: any) => {
+    if (!p || !p.id || p.id === "undefined" || p.id === "null" || p.title === "UNTITLED FILM") return false;
     const title = (p.title || "").toLowerCase();
     const genre = (p.genre || "").toLowerCase();
     const q = searchQuery.toLowerCase();
@@ -181,7 +182,7 @@ export const ProjectLibraryPage: React.FC<ProjectLibraryPageProps> = ({
                 {/* Card Footer: Enter Studio Action */}
                 <div className="pt-3 border-t border-[#1c263c]">
                   <button
-                    onClick={() => onSelectProject(pr.id)}
+                    onClick={() => onSelectProject(pr.id || pr.project_id)}
                     className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition shadow-md flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>🎬 ENTER STUDIO</span>

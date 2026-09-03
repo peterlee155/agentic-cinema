@@ -1,25 +1,17 @@
 {
   "project": {
-    "id": "undefined",
-    "title": "UNTITLED FILM",
-    "logline": "In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.",
-    "genre": "Supernatural Dark Fantasy",
+    "id": "proj_20260903_215835",
+    "title": "Mona Liza",
+    "logline": "a girl very good a school but always wrong person chose and getting in trouble",
+    "genre": "Post-Apocalyptic Supernatural Thriller",
     "tone": "Gritty, claustrophobic, visceral, psychologically tense",
-    "visualStyle": "35mm anamorphic widescreen with amber bioluminescent runes and desaturated cold rain",
+    "visualStyle": "35mm Anamorphic, Chiaroscuro Rim Lighting",
     "targetDuration": "115 Minutes",
     "language": "English",
-    "format": "Theatrical Feature",
-    "platform": "Cinema",
-    "episodeCount": 1,
-    "episodeDuration": "115 Minutes",
-    "productionScale": "Hollywood Studio Tentpole",
-    "targetAudience": "Young Adults (18-25) & General (PG-13)",
-    "budget": "$12.5M",
-    "budgetType": "ESTIMATED",
     "stage": "PRODUCTION_READY",
-    "credits_used": 60,
+    "credits_used": 18,
     "credits_total": 250,
-    "plan": "PRO",
+    "plan": "CREATOR",
     "coreHook": "The enemy is physically indistinguishable from normal survivors; survival protection operates on an unyielding countdown clock.",
     "threeActStructure": {
       "act1_setup": "The Keystone fractures. Sister Mara carves Kaelen's final 4-hour countdown spell. Kaelen steps outside into the Limbo Bazaar.",
@@ -706,12 +698,12 @@
   ],
   "continuityLog": [
     {
-      "timestamp": "2026-09-03T21:59:46.815877",
+      "timestamp": "2026-09-03T21:59:31.138734",
       "type": "CONTINUITY_AUDIT_RUN",
       "status": "PASS",
       "conflicts": 0
     }
   ],
   "cast": [],
-  "updated_at": "2026-09-03T21:59:46.818256"
+  "updated_at": "2026-09-03T21:59:31.138734"
 }

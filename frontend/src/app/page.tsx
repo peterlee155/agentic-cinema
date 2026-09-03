@@ -62,6 +62,7 @@ function CinemaApp() {
   };
 
   const handleSelectProject = async (projectId: string) => {
+    if (!projectId || projectId === "undefined" || projectId === "null") return;
     setSelectedProjectId(projectId);
     await loadCurrentProject(projectId);
     setActiveTab("chat");
@@ -104,9 +105,16 @@ function CinemaApp() {
       });
       const data = await res.json();
       if (data.success && data.project_id) {
-        await loadProjects();
-        await handleSelectProject(data.project_id);
+        const newId = data.project_id;
+        setSelectedProjectId(newId);
+        if (data.data) {
+          setCurrentProject(data.data);
+        } else {
+          await loadCurrentProject(newId);
+        }
+        setActiveTab("chat");
         setIsNewMovieOpen(false);
+        await loadProjects();
       } else {
         alert("Failed to create project: " + (data.error || "Unknown error"));
       }

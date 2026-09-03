@@ -103,9 +103,13 @@ class CentralProductionOrchestrator:
     def list_projects(self) -> List[Dict[str, Any]]:
         """Returns high-level metadata for all active projects."""
         result = []
+        if "undefined" in self.projects:
+            del self.projects["undefined"]
         for pid, b in self.projects.items():
+            if pid in ("undefined", "null", "None") or not pid:
+                continue
             result.append({
-                "id": b.project.get("id"),
+                "id": b.project.get("id") or pid,
                 "title": b.project.get("title", "Untitled"),
                 "genre": b.project.get("genre"),
                 "logline": b.project.get("logline", "")[:120] + "...",
@@ -119,15 +123,23 @@ class CentralProductionOrchestrator:
 
     def get_project(self, project_id: Optional[str] = None) -> ProjectBible:
         pid = project_id or self.current_project_id
-        if pid == "current":
-            pid = self.current_project_id
+        if pid in ("current", "undefined", "null", "None", "") or not pid:
+            valid_keys = [k for k in self.projects.keys() if k not in ("undefined", "null", "None")]
+            if valid_keys:
+                pid = valid_keys[0]
+            else:
+                self._load_projects_from_storage()
+                valid_keys = [k for k in self.projects.keys() if k not in ("undefined", "null", "None")]
+                pid = valid_keys[0] if valid_keys else "proj_default"
+
         if pid not in self.projects:
-            # Try to load from disk
             fpath = os.path.join(self.storage_dir, f"{pid}.json")
             if os.path.exists(fpath):
                 self.projects[pid] = ProjectBible.load_from_file(fpath)
             else:
-                # Create fresh
+                if pid in ("undefined", "null", "None") or not pid:
+                    valid_keys = [k for k in self.projects.keys() if k not in ("undefined", "null", "None")]
+                    return self.projects[valid_keys[0]] if valid_keys else ProjectBible(project_id="proj_default")
                 self.projects[pid] = ProjectBible(project_id=pid)
         self.current_project_id = pid
         return self.projects[pid]

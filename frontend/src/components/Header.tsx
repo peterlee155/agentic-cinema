@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
   plan,
   onBackToLibrary,
 }) => {
-  const projectTitle = currentProject?.project?.title || "NO FILM SELECTED";
+  const projectTitle = currentProject?.project?.title || currentProject?.title || "NO FILM SELECTED";
 
   return (
     <header className="h-16 border-b border-[#1c263c] bg-[#090d1a]/95 backdrop-blur sticky top-0 z-40 px-4 md:px-6 flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
