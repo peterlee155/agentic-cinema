@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>THE VOCAL RESONANCE — Hollywood Master Screenplay & Production Package</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 18mm 15mm 18mm 15mm;
+      @bottom-right {
+        content: "Page " counter(page);
+        font-family: 'Courier Prime', Courier, monospace;
+        font-size: 9pt;
+        color: #64748b;
+      }
+      @top-right {
+        content: "THE VOCAL RESONANCE";
+        font-family: 'Courier Prime', Courier, monospace;
+        font-size: 8pt;
+        color: #94a3b8;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #0f172a;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+
+    .web-top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: #090d1a;
+      color: #ffffff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #3b82f6;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .web-top-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .print-button {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+      transition: background 0.2s;
+    }
+
+    .print-button:hover {
+      background: #1d4ed8;
+    }
+
+    .document-page {
+      max-width: 820px;
+      margin: 25px auto;
+      background: #ffffff;
+      padding: 48px 56px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .cover-page {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      page-break-after: always;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 40px;
+    }
+
+    .cover-eyebrow {
+      font-family: 'Courier Prime', Courier, monospace;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #64748b;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .cover-title {
+      font-family: 'Cinzel', serif;
+      font-size: 32pt;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: 1px;
+      line-height: 1.15;
+      margin: 0 0 16px 0;
+    }
+
+    .cover-genre {
+      font-family: 'Courier Prime', Courier, monospace;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .cover-logline {
+      font-size: 11.5pt;
+      font-style: italic;
+      color: #1e293b;
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      max-width: 640px;
+      margin: 0 auto 35px auto;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .cover-meta {
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 9pt;
+      text-align: left;
+    }
+
+    .cover-meta td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .cover-meta td:first-child {
+      color: #64748b;
+      font-weight: 700;
+      text-transform: uppercase;
+      width: 40%;
+      font-family: 'Courier Prime', monospace;
+    }
+
+    .cover-meta td:last-child {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 6px;
+      margin: 40px 0 20px 0;
+      text-transform: uppercase;
+      page-break-after: avoid;
+    }
+
+    .section-subtitle {
+      font-size: 9.5pt;
+      color: #64748b;
+      margin-top: -14px;
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+
+    .cast-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+      font-size: 9pt;
+    }
+
+    .cast-table th {
+      background: #f8fafc;
+      color: #475569;
+      font-family: 'Courier Prime', monospace;
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .cast-table td {
+      padding: 12px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+
+    .cast-num {
+      color: #94a3b8;
+      font-weight: 700;
+      width: 25px;
+    }
+
+    .cast-name strong {
+      font-size: 10pt;
+      color: #0f172a;
+    }
+
+    .cast-performer {
+      font-size: 8pt;
+      color: #2563eb;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+
+    .cast-role {
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .cast-wardrobe {
+      font-size: 8pt;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .cast-presence {
+      font-family: 'Courier Prime', monospace;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #059669;
+    }
+
+    .screenplay-scene {
+      margin-bottom: 36px;
+      page-break-inside: avoid;
+    }
+
+    .scene-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      font-family: 'Courier Prime', Courier, monospace;
+      font-weight: 700;
+      font-size: 11pt;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+    }
+
+    .scene-guys-badge {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 8.5pt;
+      color: #334155;
+      margin-bottom: 14px;
+    }
+
+    .scene-guys-badge strong {
+      color: #2563eb;
+      font-family: 'Courier Prime', monospace;
+    }
+
+    .scene-action {
+      font-family: 'Courier Prime', Courier, monospace;
+      font-size: 10pt;
+      line-height: 1.45;
+      color: #1e293b;
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .screenplay-dialogue-flow {
+      margin: 14px auto;
+      max-width: 580px;
+      font-family: 'Courier Prime', Courier, monospace;
+    }
+
+    .sc-char-cue {
+      text-align: center;
+      font-weight: 700;
+      font-size: 10pt;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+      margin-top: 14px;
+      margin-bottom: 2px;
+    }
+
+    .sc-parenthetical {
+      text-align: center;
+      font-style: italic;
+      font-size: 9pt;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+
+    .sc-dialogue-line {
+      margin: 0 auto;
+      max-width: 440px;
+      font-size: 10pt;
+      line-height: 1.35;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff !important;
+      }
+      .web-top-bar {
+        display: none !important;
+      }
+      .document-page {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      .cover-page {
+        padding-top: 80px;
+      }
+      .screenplay-scene {
+        page-break-inside: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="web-top-bar">
+    <div class="web-top-title">
+      <span>🎬 AGENTIC CINEMA STUDIO</span>
+      <span style="color:#64748b;">•</span>
+      <span style="color:#94a3b8;">THE VOCAL RESONANCE Master Production Package</span>
+    </div>
+    <button class="print-button" onclick="window.print()">
+      🖨️ PRINT / SAVE AS PDF (CTRL+P)
+    </button>
+  </div>
+
+  <div class="document-page">
+    <div class="cover-page">
+      <div class="cover-eyebrow">OFFICIAL HOLLYWOOD FEATURE MASTER BIBLE</div>
+      <h1 class="cover-title">THE VOCAL RESONANCE</h1>
+      <div class="cover-genre">Post-Apocalyptic Supernatural Thriller • 115 Minutes</div>
+      <div class="cover-logline">"In a subterranean neon metropolis where human speech is outlawed, a renegade frequency technician uncovers an ancient vocal resonance capable of destabilizing the central sound barrier."</div>
+
+      <table class="cover-meta">
+        <tr>
+          <td>Visual Style</td>
+          <td>35mm Anamorphic, High-Contrast Neon Haze</td>
+        </tr>
+        <tr>
+          <td>Dramatic Tone</td>
+          <td>Gritty, claustrophobic, visceral, psychologically tense</td>
+        </tr>
+        <tr>
+          <td>Total Cast Registered</td>
+          <td>0 Characters Included</td>
+        </tr>
+        <tr>
+          <td>Total Scenes Written</td>
+          <td>0 Screenplay Scenes</td>
+        </tr>
+        <tr>
+          <td>Screenplay Standard</td>
+          <td>WGA / Industry Standard Courier Prime 12pt</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section-title">ALL GUYS WHO ARE INCLUDED IN THIS MOVIE</div>
+    <div class="section-subtitle">Complete character roster, performer assignments, and scene involvement</div>
+    <table class="cast-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Character & Performer</th>
+          <th>Dramatic Role</th>
+          <th>Appearance & Wardrobe</th>
+          <th>Involvement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan='5'>No characters registered.</td></tr>
+      </tbody>
+    </table>
+
+    <div style="page-break-before: always;"></div>
+
+    <div class="section-title">COMPLETE SCREENPLAY IN DETAIL</div>
+    <div class="section-subtitle">Show-don't-tell action instructions and verbatim dialogue ledger</div>
+    
+    <div class="screenplay-body">
+      <div>No screenplay scenes generated.</div>
+    </div>
+  </div>
+</body>
+</html>

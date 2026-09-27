@@ -12,12 +12,23 @@ logger = logging.getLogger("RevenueCatService")
 class RevenueCatService:
     CREDIT_COSTS = {
         "Chat Copilot": 2,
+        "Chat": 2,
+        "chat": 2,
         "Script Scene": 2,
+        "Script": 2,
+        "script": 2,
         "Character Dossier": 3,
         "Director Shot List": 3,
         "8K Gemini Keyframe": 5,
+        "Image": 5,
+        "image": 5,
         "24fps Motion Video": 20,
+        "Video": 20,
+        "video": 20,
         "10-Agent Swarm Pipeline": 40,
+        "Pipeline": 40,
+        "pipeline": 40,
+        "Full Production Swarm": 40,
         "PDF Production Bible": 10
     }
 
@@ -146,6 +157,10 @@ class RevenueCatService:
             }
         return {"success": False, "error": f"Invalid plan {plan_id}"}
 
+    def demo_upgrade(self, plan_id: str) -> Dict[str, Any]:
+        """Convenience alias for demo/simulator endpoints."""
+        return self.upgrade_plan(plan_id)
+
     def refill_credits(self, pack_id: str) -> Dict[str, Any]:
         """Adds top-up credit pack to balance."""
         found = None
@@ -168,31 +183,32 @@ class RevenueCatService:
     def process_webhook(self, event_data: Dict[str, Any]) -> Dict[str, Any]:
         """Processes incoming RevenueCat Webhook events."""
         try:
-            event = event_data.get("event", {})
-            event_type = event.get("type")
+            event = event_data.get("event", event_data)
+            event_type = event.get("type", "")
             user_id = event.get("app_user_id", self.user_id)
-            product_id = event.get("product_id", "")
+            product_id = str(event.get("product_id", "")).lower()
+            entitlement_ids = [str(e).lower() for e in event.get("entitlement_ids", [])]
 
-            logger.info(f"Processing RevenueCat Webhook: {event_type} for user {user_id}")
+            logger.info(f"Processing RevenueCat Webhook: {event_type} for user {user_id}, product: {product_id}, entitlements: {entitlement_ids}")
 
             if event_type in ["INITIAL_PURCHASE", "RENEWAL"]:
-                if "enterprise" in product_id.lower():
+                if "enterprise" in product_id or any("enterprise" in e for e in entitlement_ids):
                     self.upgrade_plan("ENTERPRISE")
-                elif "studio" in product_id.lower():
+                elif "studio" in product_id or any("studio" in e for e in entitlement_ids):
                     self.upgrade_plan("STUDIO")
-                elif "pro" in product_id.lower():
+                elif "pro" in product_id or any("pro" in e for e in entitlement_ids):
                     self.upgrade_plan("PRO")
-                return {"success": True, "event": event_type, "user_id": user_id, "action": "CREDITED_SUBSCRIPTION"}
+                return {"success": True, "event": event_type, "user_id": user_id, "action": "CREDITED_SUBSCRIPTION", "plan": self.current_plan}
 
             elif event_type == "NON_RENEWING_PURCHASE":
                 # Credit top-up pack
-                if "500" in product_id:
-                    self.refill_credits("refill_500")
-                elif "2000" in product_id:
+                if "2000" in product_id:
                     self.refill_credits("refill_2000")
+                elif "500" in product_id:
+                    self.refill_credits("refill_500")
                 else:
                     self.refill_credits("refill_100")
-                return {"success": True, "event": event_type, "user_id": user_id, "action": "CREDITED_TOPUP"}
+                return {"success": True, "event": event_type, "user_id": user_id, "action": "CREDITED_TOPUP", "credits_available": self.total_credits - self.used_credits}
 
             elif event_type == "CANCELLATION":
                 self.current_plan = "STARTER"

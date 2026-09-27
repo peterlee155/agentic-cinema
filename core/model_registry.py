@@ -8,10 +8,10 @@ class ModelRegistry:
     def __init__(self):
         self._models: Dict[str, Dict[str, Any]] = {
             # --- Reasoning & Filmmaking Swarm Models (3.5+ Only, Latest Flagship) ---
-            "gemini-3.6-flash": {
-                "id": "gemini-3.6-flash",
+            "gemini-3.7-flash": {
+                "id": "gemini-3.7-flash",
                 "provider": "google_gemini_api",
-                "displayName": "Google Gemini 3.6 Flash (Ultra-Fast Studio Assistant)",
+                "displayName": "Google Gemini 3.7 Flash (Flagship Hybrid Reasoning)",
                 "task": "reasoning",
                 "modalities": ["text", "multimodal"],
                 "contextWindow": 1048576,
@@ -20,10 +20,10 @@ class ModelRegistry:
                 "isDefault": True,
                 "creditEligible": True
             },
-            "gemini-3.7-flash": {
-                "id": "gemini-3.7-flash",
-                "provider": "google_vertex_ai",
-                "displayName": "Google Gemini 3.7 Flash (Global Vertex AI)",
+            "gemini-3.8-flash": {
+                "id": "gemini-3.8-flash",
+                "provider": "google_gemini_api",
+                "displayName": "Google Gemini 3.8 Flash (Next-Gen Cinematic Intelligence)",
                 "task": "reasoning",
                 "modalities": ["text", "multimodal"],
                 "contextWindow": 1048576,
@@ -32,13 +32,13 @@ class ModelRegistry:
                 "isDefault": False,
                 "creditEligible": True
             },
-            "gemini-3.1-pro-preview": {
-                "id": "gemini-3.1-pro-preview",
+            "gemini-3.6-flash": {
+                "id": "gemini-3.6-flash",
                 "provider": "google_gemini_api",
-                "displayName": "Google Gemini 3.1 Pro (Deep Cinematic Reasoning)",
+                "displayName": "Google Gemini 3.6 Flash (Ultra-Fast Studio Assistant)",
                 "task": "reasoning",
                 "modalities": ["text", "multimodal"],
-                "contextWindow": 2097152,
+                "contextWindow": 1048576,
                 "maxOutputTokens": 8192,
                 "status": "ACTIVE_VERIFIED",
                 "isDefault": False,
@@ -51,6 +51,42 @@ class ModelRegistry:
                 "task": "reasoning",
                 "modalities": ["text", "multimodal"],
                 "contextWindow": 1048576,
+                "maxOutputTokens": 8192,
+                "status": "ACTIVE_VERIFIED",
+                "isDefault": False,
+                "creditEligible": True
+            },
+            "gemini-3.5-flash-lite": {
+                "id": "gemini-3.5-flash-lite",
+                "provider": "google_gemini_api",
+                "displayName": "Google Gemini 3.5 Flash Lite (High-Throughput Studio Engine)",
+                "task": "reasoning",
+                "modalities": ["text", "multimodal"],
+                "contextWindow": 1048576,
+                "maxOutputTokens": 8192,
+                "status": "ACTIVE_VERIFIED",
+                "isDefault": False,
+                "creditEligible": True
+            },
+            "gemini-3.5-pro": {
+                "id": "gemini-3.5-pro",
+                "provider": "google_gemini_api",
+                "displayName": "Google Gemini 3.5 Pro (Deep Cinematic Reasoning)",
+                "task": "reasoning",
+                "modalities": ["text", "multimodal"],
+                "contextWindow": 2097152,
+                "maxOutputTokens": 8192,
+                "status": "ACTIVE_VERIFIED",
+                "isDefault": False,
+                "creditEligible": True
+            },
+            "gemini-3.1-pro-preview": {
+                "id": "gemini-3.1-pro-preview",
+                "provider": "google_gemini_api",
+                "displayName": "Google Gemini 3.1 Pro (Legacy Alias)",
+                "task": "reasoning",
+                "modalities": ["text", "multimodal"],
+                "contextWindow": 2097152,
                 "maxOutputTokens": 8192,
                 "status": "ACTIVE_VERIFIED",
                 "isDefault": False,

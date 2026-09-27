@@ -3,8 +3,10 @@
 import React from "react";
 import { Film, Play, Users, ScrollText, Sparkles, Folder, ShieldCheck } from "lucide-react";
 
+import { ProjectBibleData } from "../types/project";
+
 interface ProjectOverviewProps {
-  project: any;
+  project: ProjectBibleData | null;
   onRunSwarm?: () => void;
   onSelectTab?: (tab: string) => void;
 }
@@ -15,7 +17,7 @@ export const ProjectOverview: React.FC<ProjectOverviewProps> = ({
   onSelectTab,
 }) => {
   const p = project?.project || {};
-  const title = p.title || "Untitled Film";
+  const title = project?.title || p.title || "Untitled Film";
   const genre = p.genre || "Drama / Cinematic";
   const logline = p.logline || "No logline specified.";
   const scenes = project?.scenes || [];
@@ -66,7 +68,7 @@ export const ProjectOverview: React.FC<ProjectOverviewProps> = ({
             SCREENPLAY SCENES
           </div>
           <div className="text-2xl font-black text-emerald-400">{scenes.length}</div>
-          <div className="text-[10px] text-slate-400 font-mono">Show Don't Tell Audited</div>
+          <div className="text-[10px] text-slate-400 font-mono">Show Don&apos;t Tell Audited</div>
         </div>
 
         <div className="cinema-card bg-[#090d1c] border-[#1c263c] p-5 rounded-2xl space-y-2">

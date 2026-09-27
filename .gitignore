@@ -40,6 +40,13 @@ Thumbs.db
 
 # Storage / Data artifacts
 *.log
+*.db
+*.sqlite
+*.sqlite3
+data/cinema.db
+data/sessions.json
+static/generated/*
+!static/generated/.gitkeep
 gcp-key*.json
 backup_*/
 *.bak

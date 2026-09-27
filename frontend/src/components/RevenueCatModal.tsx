@@ -1,14 +1,24 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, CheckCircle, CreditCard, Zap, Sparkles, RefreshCw } from "lucide-react";
+import { X } from "lucide-react";
+import { getAuthHeaders } from "../contexts/ProjectContext";
 
 interface RevenueCatModalProps {
   isOpen: boolean;
   onClose: () => void;
   credits: number;
   plan: string;
-  onUpgrade?: (newPlan: string) => void;
+  onUpgrade?: (newPlan: string, newCredits?: number) => void;
+}
+
+interface RevenueCatStatusData {
+  status?: string;
+  plan?: string;
+  current_plan?: string;
+  credits_available?: number;
+  credits_total?: number;
+  [key: string]: unknown;
 }
 
 export const RevenueCatModal: React.FC<RevenueCatModalProps> = ({
@@ -18,18 +28,14 @@ export const RevenueCatModal: React.FC<RevenueCatModalProps> = ({
   plan,
   onUpgrade,
 }) => {
-  const [rcStatus, setRcStatus] = useState<any>(null);
+  const [rcStatus, setRcStatus] = useState<RevenueCatStatusData | null>(null);
   const [loadingAction, setLoadingAction] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      fetchStatus();
-    }
-  }, [isOpen]);
 
   const fetchStatus = async () => {
     try {
-      const res = await fetch("/api/revenuecat/status");
+      const res = await fetch("/api/revenuecat/status", {
+        headers: getAuthHeaders(),
+      });
       const data = await res.json();
       setRcStatus(data);
     } catch (err) {
@@ -37,18 +43,28 @@ export const RevenueCatModal: React.FC<RevenueCatModalProps> = ({
     }
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => {
+        fetchStatus();
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
   const handleSubscribeTier = async (planId: string) => {
     setLoadingAction(true);
     try {
       const res = await fetch("/api/revenuecat/subscribe", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: getAuthHeaders(),
         body: JSON.stringify({ plan_id: planId }),
       });
       const data = await res.json();
       setLoadingAction(false);
       if (data.success) {
-        if (onUpgrade) onUpgrade(planId);
+        const updatedCredits = data.status?.credits_available;
+        if (onUpgrade) onUpgrade(planId, updatedCredits);
         fetchStatus();
         alert(`🎉 ${data.message || "Upgraded successfully!"}`);
       }
@@ -63,13 +79,14 @@ export const RevenueCatModal: React.FC<RevenueCatModalProps> = ({
     try {
       const res = await fetch("/api/revenuecat/refill", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: getAuthHeaders(),
         body: JSON.stringify({ pack_id: packId }),
       });
       const data = await res.json();
       setLoadingAction(false);
       if (data.success) {
-        if (onUpgrade) onUpgrade(plan);
+        const updatedCredits = data.new_total;
+        if (onUpgrade) onUpgrade(plan, updatedCredits);
         fetchStatus();
         alert(`⚡ ${data.message || "Credits added!"}`);
       }
@@ -81,9 +98,9 @@ export const RevenueCatModal: React.FC<RevenueCatModalProps> = ({
 
   if (!isOpen) return null;
 
-  const currentAvailable = rcStatus ? rcStatus.credits_available : credits;
-  const currentTotal = rcStatus ? rcStatus.credits_total : 250;
-  const currentPlan = rcStatus ? rcStatus.plan : plan;
+  const currentAvailable: number = (rcStatus?.credits_available ?? credits) ?? 0;
+  const currentTotal: number = (rcStatus?.credits_total as number) ?? 250;
+  const currentPlan: string = (rcStatus?.plan as string) || (rcStatus?.current_plan as string) || plan;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
@@ -122,7 +139,7 @@ export const RevenueCatModal: React.FC<RevenueCatModalProps> = ({
           <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
             <div
               className="bg-gradient-to-r from-emerald-400 via-amber-400 to-orange-500 h-2 rounded-full transition-all duration-500"
-              style={{ width: `${Math.min(100, (currentAvailable / currentTotal) * 100)}%` }}
+              style={{ width: `${Math.min(100, (currentAvailable / (currentTotal || 1)) * 100)}%` }}
             />
           </div>
         </div>

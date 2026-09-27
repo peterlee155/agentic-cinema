@@ -3,17 +3,49 @@
 import React, { useState, useEffect } from "react";
 import { UserCheck, Plus, Edit2, Trash2, FileText, Sparkles, MessageSquare, X, Check, Eye } from "lucide-react";
 
+import { ProjectBibleData, CastMember, CharacterItem } from "../types/project";
+
+interface CastSceneScript {
+  sceneNumber: number;
+  slugline?: string;
+  act?: string;
+  objective?: string;
+  conflict?: string;
+  subtext?: string;
+  dialogueCount?: number;
+  actionLines?: string[];
+  dialogueLines?: Array<{ speaker: string; text: string; parenthetical?: string }>;
+  emotionalState?: string;
+  previousContext?: string;
+  dialogue?: string;
+  performanceNotes?: string;
+  [key: string]: unknown;
+}
+
+interface ActiveScriptData {
+  performer?: string;
+  performerName?: string;
+  character?: string;
+  characterName?: string;
+  characterSummary?: string;
+  characterArc?: string;
+  totalScenes?: number;
+  totalLines?: number;
+  scenes?: CastSceneScript[];
+  [key: string]: unknown;
+}
+
 interface CastViewProps {
-  currentProject: any;
+  currentProject: ProjectBibleData | null;
   onOpenNewMovie?: () => void;
   onDirectInChat?: () => void;
 }
 
 export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMovie }) => {
-  const [castList, setCastList] = useState<any[]>([]);
+  const [castList, setCastList] = useState<CastMember[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScriptModalOpen, setIsScriptModalOpen] = useState(false);
-  const [activeScript, setActiveScript] = useState<any>(null);
+  const [activeScript, setActiveScript] = useState<ActiveScriptData | null>(null);
   const [loadingScript, setLoadingScript] = useState(false);
 
   const [formPerformer, setFormPerformer] = useState("");
@@ -21,26 +53,39 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
   const [formRole, setFormRole] = useState("Lead Actor");
   const [formNotes, setFormNotes] = useState("");
 
-  const project_id = currentProject?.project_id || currentProject?.project?.id;
-
-  useEffect(() => {
-    if (project_id) {
-      fetchCast();
-    }
-  }, [project_id, currentProject]);
+  const project_id = currentProject?.id || currentProject?.project_id || currentProject?.project?.id;
 
   const fetchCast = async () => {
     if (!project_id) return;
     try {
       const res = await fetch(`/api/projects/${project_id}/cast`);
       const data = await res.json();
-      if (data.success && data.cast) {
+      if (data.success && Array.isArray(data.cast) && data.cast.length > 0) {
         setCastList(data.cast);
+      } else if (Array.isArray(currentProject?.cast) && currentProject.cast.length > 0) {
+        setCastList(currentProject.cast);
       }
     } catch (err) {
       console.error("Error fetching cast:", err);
+      if (Array.isArray(currentProject?.cast) && currentProject.cast.length > 0) {
+        setCastList(currentProject.cast);
+      }
     }
   };
+
+  useEffect(() => {
+    if (project_id) {
+      const timer = setTimeout(() => {
+        fetchCast();
+      }, 0);
+      return () => clearTimeout(timer);
+    } else if (Array.isArray(currentProject?.cast) && currentProject.cast.length > 0) {
+      const timer = setTimeout(() => {
+        setCastList(currentProject.cast || []);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [project_id]);
 
   const handleSaveAssignment = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -123,17 +168,32 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
     );
   }
 
-  const existingCharacters = currentProject?.characters || [
-    { name: "Kaelen Vance", role: "Lead Protagonist" },
-    { name: "Lyra Vance", role: "Supporting Actress" },
-    { name: "Elias", role: "Antagonist" },
-  ];
+  const projectTitle = currentProject?.title || currentProject?.project?.title || "Film Project";
+  const isDemo = currentProject?.id === "proj_demo" || currentProject?.id === "demo";
+  const existingCharacters = (currentProject?.characters && currentProject.characters.length > 0)
+    ? currentProject.characters
+    : (isDemo
+      ? [
+          { name: "Kaelen Vance", role: "Lead Protagonist" },
+          { name: "Sister Mara", role: "Techno-Monastic Priestess" },
+          { name: "Elias (The Mimic)", role: "Antagonist / Information Broker" },
+          { name: "Nia", role: "Rebel Technician & Hacker" },
+          { name: "The Dragon Lord", role: "Cybernetic Cartel Boss" }
+        ]
+      : [
+          { name: `${projectTitle} Lead`, role: "Lead Protagonist" },
+          { name: `${projectTitle} Guide`, role: "Supporting Lead" },
+          { name: `${projectTitle} Rival`, role: "Primary Antagonist" }
+        ]);
 
   return (
     <div className="space-y-6">
       {/* Top Banner */}
       <div className="flex flex-wrap items-center justify-between bg-[#0d1322] border border-[#1c263c] rounded-2xl px-6 py-4 shadow-xl gap-4">
         <div className="space-y-1">
+          <div className="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider">
+            {projectTitle} • Cast Directory
+          </div>
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-extrabold text-white tracking-tight">Canonical Cast Directory & Actor Scripts</h2>
             <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono border border-indigo-500/40">
@@ -162,7 +222,7 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
           </div>
           <div>
             <strong className="text-white block">Natural Language Casting Active</strong>
-            You can cast performers directly in Studio Chat! Say: <code className="bg-black/50 px-2 py-0.5 rounded text-amber-300 font-mono">"My main actor is Peter"</code> or <code className="bg-black/50 px-2 py-0.5 rounded text-amber-300 font-mono">"Anna plays Lyra"</code>.
+            You can cast performers directly in Studio Chat! Say: <code className="bg-black/50 px-2 py-0.5 rounded text-amber-300 font-mono">&quot;My main actor is Peter&quot;</code> or <code className="bg-black/50 px-2 py-0.5 rounded text-amber-300 font-mono">&quot;Anna plays Sister Mara&quot;</code>.
           </div>
         </div>
       </div>
@@ -177,13 +237,13 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
             <div className="space-y-1">
               <h3 className="text-base font-extrabold text-white">No Cast Assignments Yet</h3>
               <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                Assign performers to fictional characters above or type in chat <code className="text-indigo-300 font-mono">"Peter plays Kaelen"</code>.
+                Assign performers to fictional characters above or type in chat <code className="text-indigo-300 font-mono">&quot;Peter plays lead character&quot;</code>.
               </p>
             </div>
           </div>
         )}
 
-        {castList.map((c: any, idx: number) => {
+        {castList.map((c: CastMember, idx: number) => {
           const sceneCount = (c.sceneNumbers || []).length;
           return (
             <div
@@ -226,7 +286,7 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
               {/* Actions */}
               <div className="pt-3 border-t border-[#1c263c] space-y-2">
                 <button
-                  onClick={() => handleViewActorScript(c.id)}
+                  onClick={() => handleViewActorScript(c.id || "")}
                   className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-1.5 cursor-pointer shadow-lg"
                 >
                   <FileText className="w-3.5 h-3.5" />
@@ -236,9 +296,9 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
                 <div className="flex gap-2">
                   <button
                     onClick={() => {
-                      setFormPerformer(c.performerName);
-                      setFormCharacter(c.characterName);
-                      setFormRole(c.roleType || "Lead Actor");
+                      setFormPerformer(c.performerName || c.performer_name || "");
+                      setFormCharacter(c.characterName || c.character_name || "");
+                      setFormRole(c.roleType || c.role_type || "Lead Actor");
                       setFormNotes(c.notes || "");
                       setIsModalOpen(true);
                     }}
@@ -248,7 +308,7 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
                     <span>Edit</span>
                   </button>
                   <button
-                    onClick={() => handleDeleteCast(c.id, c.performerName)}
+                    onClick={() => handleDeleteCast(c.id || "", c.performerName || c.performer_name || "Performer")}
                     className="p-2 rounded-xl bg-red-950/40 hover:bg-red-900/60 border border-red-800/40 text-red-300 text-xs transition cursor-pointer"
                     title="Remove Cast Assignment"
                   >
@@ -300,13 +360,13 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Kaelen Vance"
+                  placeholder="e.g. Lead Hero"
                   value={formCharacter}
                   onChange={(e) => setFormCharacter(e.target.value)}
                   className="w-full bg-[#11182c] border border-[#212f52] rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none mb-1"
                 />
                 <div className="flex flex-wrap gap-1 mt-1">
-                  {existingCharacters.map((ch: any, i: number) => (
+                  {existingCharacters.map((ch: CharacterItem, i: number) => (
                     <button
                       key={i}
                       type="button"
@@ -390,7 +450,7 @@ export const CastView: React.FC<CastViewProps> = ({ currentProject, onOpenNewMov
 
                 {/* Scene-by-Scene Actor Breakdown */}
                 <div className="space-y-6">
-                  {activeScript.scenes && activeScript.scenes.map((sc: any, idx: number) => (
+                  {activeScript.scenes && activeScript.scenes.map((sc: CastSceneScript, idx: number) => (
                     <div key={idx} className="p-5 rounded-2xl bg-[#0d1427] border border-amber-500/30 space-y-4 text-xs font-mono">
                       <div className="flex items-center justify-between border-b border-[#1c263c] pb-2 font-sans">
                         <span className="font-extrabold text-amber-300 text-sm">

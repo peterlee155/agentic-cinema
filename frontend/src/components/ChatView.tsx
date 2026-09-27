@@ -3,8 +3,31 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Send, Hammer, Sparkles, CreditCard, ScrollText, Play, CheckCircle2, ChevronDown } from "lucide-react";
 
+import { ProjectBibleData } from "../types/project";
+
+export interface ChatMessage {
+  role: "user" | "assistant" | "system";
+  content: string;
+  model?: string;
+  toolCall?: string;
+  toolResult?: unknown;
+  actionTaken?: string;
+  scriptUpdates?: unknown;
+  continuityReport?: unknown;
+  quickActions?: Array<{ label: string; action: string }>;
+  isSubQuery?: boolean;
+  subData?: {
+    plan?: string;
+    credits_available?: number;
+    credits_total?: number;
+    [key: string]: unknown;
+  };
+  matchedScene?: number;
+  [key: string]: unknown;
+}
+
 interface ChatViewProps {
-  currentProject: any;
+  currentProject: ProjectBibleData | null;
   activeModel: string;
   onRunSwarm: () => void;
   onOpenRevenueCat: () => void;
@@ -18,7 +41,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
   onOpenRevenueCat,
   onNavigateToScene,
 }) => {
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputText, setInputText] = useState("");
   const [isWorking, setIsWorking] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -35,7 +58,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
     const text = textToSend || inputText;
     if (!text.trim() || isWorking) return;
 
-    const userMsg = { role: "user", content: text };
+    const userMsg: ChatMessage = { role: "user", content: text };
     setMessages((prev) => [...prev, userMsg]);
     if (!textToSend) setInputText("");
     setIsWorking(true);
@@ -47,7 +70,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
         body: JSON.stringify({
           message: text,
           model: activeModel,
-          project_id: currentProject?.project_id || "",
+          project_id: currentProject?.id || currentProject?.project_id || currentProject?.project?.id || "",
         }),
       });
 
@@ -76,13 +99,14 @@ export const ChatView: React.FC<ChatViewProps> = ({
           },
         ]);
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       setIsWorking(false);
+      const errMsg = err instanceof Error ? err.message : String(err);
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: `⚠️ **Connection Alert:** ${err.message}. Verify local studio backend is running on port 8000.`,
+          content: `⚠️ **Connection Alert:** ${errMsg}. Verify local studio backend is running on port 9000.`,
           model: activeModel,
         },
       ]);
@@ -138,14 +162,14 @@ export const ChatView: React.FC<ChatViewProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left pt-2">
               <button
                 onClick={() =>
-                  handleSend("Write a tense dialogue between Kaelen and Elias in Scene 09 regarding Rule 03 (Cognitive Disguise).")
+                  handleSend("Write a tense dialogue between our lead protagonist and antagonist regarding their core philosophical conflict.")
                 }
                 className="p-4 rounded-2xl bg-[#0e1424] hover:bg-[#141d34] border border-[#1d2944] hover:border-indigo-500/50 text-xs text-slate-300 transition cursor-pointer shadow-lg group"
               >
                 <div className="font-bold text-white mb-1 group-hover:text-indigo-300 transition flex items-center gap-1.5 text-sm">
-                  <span>🎭 Scene 09 Confrontation</span>
+                  <span>🎭 Dramatic Confrontation</span>
                 </div>
-                <div className="text-[11px] text-slate-400">Write dialogue between Kaelen & Elias on Rule 03</div>
+                <div className="text-[11px] text-slate-400">Write high-stakes dialogue between protagonist & rival</div>
               </button>
 
               <button
@@ -276,7 +300,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
                 <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-[#1c2842]">
                   {m.matchedScene && (
                     <button
-                      onClick={() => onNavigateToScene(m.matchedScene)}
+                      onClick={() => onNavigateToScene(m.matchedScene || 1)}
                       className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 text-indigo-300 text-xs font-semibold transition cursor-pointer"
                     >
                       <ScrollText className="w-3.5 h-3.5" />

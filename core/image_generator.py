@@ -31,9 +31,10 @@ class GeminiImageGenerator:
         # Enhance prompt with Gemini 3 Pro Director-level technical keywords
         cinematic_prompt = f"Cinematic 35mm film still, {prompt}, {style}, Kodak Vision3 500T grain, Arri Alexa Mini LF, Master Anamorphic Primes, photorealistic 8k, chiaroscuro lighting, atmospheric volumetric haze, color graded masterpiece"
 
-        # Try Google GenAI SDK if available and valid key
+        # Try Google GenAI SDK if Vertex AI is enabled and valid key configured
+        use_vertex = os.getenv("USE_VERTEX_AI", "false").lower() == "true"
         image_bytes = None
-        if self.api_key and len(self.api_key) > 10:
+        if use_vertex and self.api_key and len(self.api_key) > 10:
             try:
                 from google import genai
                 from google.genai import types
@@ -78,7 +79,7 @@ class GeminiImageGenerator:
             pollinations_url = f"https://image.pollinations.ai/prompt/{clean_encoded}?width={width}&height={height}&nologo=true&seed={seed}&model=flux"
             
             req = urllib.request.Request(pollinations_url, headers={'User-Agent': 'Mozilla/5.0'})
-            with urllib.request.urlopen(req, timeout=8) as response:
+            with urllib.request.urlopen(req, timeout=5) as response:
                 img_data = response.read()
                 if len(img_data) > 5000:
                     flux_filename = f"flux_{uuid.uuid4().hex[:10]}.jpg"
@@ -194,9 +195,34 @@ class GeminiImageGenerator:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(svg_content)
 
+        # Also render a high-quality JPEG for video motion synthesis / OpenCV compatibility
+        jpg_filename = f"gen_{uuid.uuid4().hex[:10]}_{int(time.time())}.jpg"
+        jpg_filepath = os.path.join(self.output_dir, jpg_filename)
+        try:
+            from PIL import Image, ImageDraw
+            img = Image.new("RGB", (w, h), color=(11, 15, 25))
+            draw = ImageDraw.Draw(img)
+            # Subtle gradient
+            for y in range(0, h, 2):
+                ratio = y / h
+                r = int(7 + ratio * 15)
+                g = int(10 + ratio * 20)
+                b = int(18 + ratio * 35)
+                draw.line([(0, y), (w, y)], fill=(r, g, b), width=2)
+            # Framing box and labels
+            draw.rectangle([(20, 20), (w - 20, h - 20)], outline=(50, 80, 130), width=2)
+            draw.text((40, 40), title.upper(), fill=(255, 255, 255))
+            draw.text((40, 70), f"{style.upper()} • 8K CINEMATIC KEYFRAME", fill=(0, 229, 255))
+            draw.text((40, h - 50), f"LENS: 35MM ANAMORPHIC | RATIO: {aspect_ratio} | GEMINI 3 PRO ENGINE", fill=(148, 163, 184))
+            img.save(jpg_filepath, "JPEG", quality=92)
+            relative_url = f"/static/generated/{jpg_filename}"
+        except Exception as pil_err:
+            logger.warning(f"PIL fallback JPEG creation note: {pil_err}")
+
         return {
             "success": True,
             "url": relative_url,
+            "image_url": relative_url,
             "title": title,
             "prompt": cinematic_prompt,
             "aspect_ratio": aspect_ratio,

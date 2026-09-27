@@ -21,6 +21,13 @@ class GCSProjectStorage:
         self._init_gcs()
 
     def _init_gcs(self):
+        creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+        if not creds_path or not os.path.exists(creds_path):
+            logger.info("[GCS] No local credentials file configured; local disk storage active.")
+            self.client = None
+            self.bucket = None
+            return
+
         try:
             from google.cloud import storage
             self.client = storage.Client(project=self.project_id)

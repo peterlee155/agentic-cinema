@@ -1,27 +1,52 @@
 "use client";
 
 import React from "react";
-import { MessageSquare, ScrollText, Palette, Folder, Users, ShieldCheck, Settings } from "lucide-react";
 
 interface SidebarProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
+  onOpenNewMovie?: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange, onOpenNewMovie }) => {
   const items = [
-    { id: "chat", label: "Studio Chat (Copilot)", icon: "💬" },
-    { id: "script", label: "Screenplay Studio", icon: "📜" },
-    { id: "cast", label: "Cast & Actor Scripts", icon: "🎭" },
-    { id: "summary", label: "Project Summary", icon: "📋" },
-    { id: "agents", label: "10-Agent Swarm", icon: "🤖" },
-    { id: "assets", label: "Visual Bible", icon: "💎" },
-    { id: "settings", label: "Integrations & MCP", icon: "⚙️" },
+    { id: "storyForMe", label: "Story For Me", icon: "📖" },
+    { id: "script", label: "Script & Story", icon: "📜" },
+    { id: "storyboard", label: "Movie Pictures", icon: "🖼️" },
+    { id: "sound", label: "Music & Sounds", icon: "🎵" },
+    { id: "cast", label: "Actors & Voices", icon: "🎭" },
+    { id: "summary", label: "Project Summary & PDF", icon: "📋" },
+    { id: "agents", label: "Movie Team", icon: "🎬" },
+    { id: "assets", label: "Story Bible & Rules", icon: "💎" },
+    { id: "chat", label: "Studio Assistant", icon: "💬" },
+    { id: "settings", label: "Studio Controls", icon: "⚙️" },
   ];
 
   return (
     <aside className="w-16 md:w-64 border-r border-[#1c263c] bg-[#090d1a] p-3 flex flex-col justify-between shrink-0">
       <div className="space-y-1">
+        {/* Return to Project History */}
+        <button
+          onClick={() => onTabChange("history")}
+          className="w-full mb-2 bg-[#12182c] hover:bg-[#1b2542] border border-[#223154] hover:border-indigo-500/50 text-indigo-300 hover:text-white font-bold text-xs px-3 py-2.5 rounded-xl transition flex items-center gap-2.5 cursor-pointer shadow-sm transform hover:-translate-x-0.5"
+          title="Return to Project History / Library"
+        >
+          <span className="text-base shrink-0">📂</span>
+          <span className="hidden md:inline font-bold">← Project History</span>
+        </button>
+
+        {/* Prominent New Movie Button at top of Sidebar */}
+        {onOpenNewMovie && (
+          <button
+            onClick={onOpenNewMovie}
+            className="w-full mb-3 bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 hover:from-emerald-500 hover:via-teal-500 hover:to-indigo-500 text-white font-extrabold text-xs px-3 py-2.5 rounded-xl shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+            title="Create a New Movie"
+          >
+            <span className="text-sm">✨</span>
+            <span className="hidden md:inline font-black tracking-wide uppercase">+ NEW MOVIE</span>
+          </button>
+        )}
+
         <div className="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider px-3 mb-2 hidden md:block">
           Studio Workspaces
         </div>

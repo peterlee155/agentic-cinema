@@ -1,15 +1,21 @@
 "use client";
 
 import React from "react";
-import { Database, ShieldCheck, Cpu, CreditCard } from "lucide-react";
 
 interface SettingsViewProps {
   activeModel?: string;
   onModelChange?: (model: string) => void;
   onOpenRevenueCat?: () => void;
+  credits?: number;
+  plan?: string;
 }
 
-export const SettingsView: React.FC<SettingsViewProps> = ({ activeModel }) => {
+export const SettingsView: React.FC<SettingsViewProps> = ({
+  activeModel = "gemini-3.7-flash",
+  onOpenRevenueCat,
+  credits = 202,
+  plan = "PRO",
+}) => {
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between bg-[#0d1322] border border-[#1c263c] rounded-2xl px-6 py-4 shadow-xl">
@@ -61,22 +67,32 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ activeModel }) => {
         </div>
 
         {/* RevenueCat Card */}
-        <div className="cinema-card p-6 bg-[#090e1d] border-amber-500/40 space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-300 text-xl">
-              💳
+        <div className="cinema-card p-6 bg-[#090e1d] border-amber-500/40 space-y-4 flex flex-col justify-between">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-300 text-xl">
+                💳
+              </div>
+              <div>
+                <h3 className="font-extrabold text-white text-sm">RevenueCat Monetization</h3>
+                <p className="text-[10px] text-slate-400">Credit Balance & Subscription</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-extrabold text-white text-sm">RevenueCat Monetization</h3>
-              <p className="text-[10px] text-slate-400">Credit Balance & Subscription</p>
+            <div className="space-y-2 text-xs font-mono text-slate-300 bg-[#060a14] p-3 rounded-xl border border-[#141f36]">
+              <div>Tier: <span className="text-amber-300 font-bold">{plan} TIER ACTIVE</span></div>
+              <div>Balance: <span className="text-emerald-400 font-bold">{credits} CR</span></div>
+              <div>Entitlement: Active</div>
+              <div>Engine: RevenueCat v1 REST API</div>
             </div>
           </div>
-          <div className="space-y-2 text-xs font-mono text-slate-300 bg-[#060a14] p-3 rounded-xl border border-[#141f36]">
-            <div>Tier: <span className="text-amber-300 font-bold">PRO PLAN</span></div>
-            <div>Balance: <span className="text-emerald-400 font-bold">202 / 250 CR</span></div>
-            <div>Entitlement: Active</div>
-            <div>Mock Adapter: Online</div>
-          </div>
+          {onOpenRevenueCat && (
+            <button
+              onClick={onOpenRevenueCat}
+              className="w-full py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold transition cursor-pointer"
+            >
+              Manage Subscription & Credits →
+            </button>
+          )}
         </div>
       </div>
     </div>

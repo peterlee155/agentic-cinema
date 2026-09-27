@@ -112,7 +112,7 @@ JSON Schema:
                         if parsed.get("isCastingRequest") and parsed.get("performerName"):
                             char_name = parsed.get("characterName", "")
                             matched = CastingEngine._match_character(char_name, characters)
-                            final_char = matched.get("name") if matched else (char_name or "Kaelen Vance")
+                            final_char = matched.get("name") if matched else (char_name or "Lead Protagonist")
                             role = matched.get("role") if matched else (parsed.get("roleType") or "Lead Actor")
                             
                             return {

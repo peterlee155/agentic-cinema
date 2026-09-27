@@ -49,33 +49,37 @@ Ruthlessly identify and eliminate narrative deadweight."""
         if parsed and "pacingStrategy" in parsed and "finalShot" in parsed:
             return parsed
 
-        # Default Editorial Master Plan
+        # Dynamic Editorial Master Plan derived from project
+        brief = context.get("brief", {})
+        title = brief.get("title") or context.get("title") or "UNTITLED FEATURE"
+        genre = brief.get("genre", "Cinematic Feature")
+
         return {
-            "pacingStrategy": "Gradual acceleration: deliberate, ceremonial pacing in Act 1 builds to breathless real-time editing in Act 3 as the countdown drops below five minutes.",
+            "pacingStrategy": f"Gradual acceleration tailored for {title}: deliberate atmospheric worldbuilding in Act 1 builds to dynamic kinetic pacing in Act 3.",
             "sceneOrder": [1, 2, 3, 4, 5],
             "sceneDurations": {
-                "scene_1": "14 minutes (Ritual Setup & Rule Revelation)",
-                "scene_2": "18 minutes (Paranoid Limbo Market Crawl)",
-                "scene_3": "22 minutes (Underground Vault Heist & Whistle Tension)",
-                "scene_4": "25 minutes (High-Octane Bridge Sprint Climax)",
-                "scene_5": "16 minutes (Cathedral Renewal & Cliffhanger Unmasking)"
+                "scene_1": "12 minutes (Status Quo & Inciting Incident)",
+                "scene_2": "16 minutes (Entering Uncharted Territory)",
+                "scene_3": "20 minutes (Escalating Trials & Investigation)",
+                "scene_4": "24 minutes (Climactic Confrontation)",
+                "scene_5": "14 minutes (Resolution & Aftermath)"
             },
-            "cutTiming": "Act 1 averages 6.5s per shot to absorb sacred atmosphere; Act 2 tightens to 3.8s to build paranoia; Act 3 cuts on kinetics at 1.2s intervals.",
+            "cutTiming": "Act 1 averages 6.0s per take for immersive spatial establishment; Act 2 tightens to 3.5s; Act 3 operates at 1.5s for peak narrative velocity.",
             "transitions": [
-                "Scene 1 to 2: Hard cut from rising smoke into muddy sodium rain",
-                "Scene 2 to 3: Dissolve through murky water puddle into flooded subway concourse",
-                "Scene 3 to 4: Accelerating cut rate from 6-second takes down to 1.2-second rhythmic cuts",
-                "Scene 4 to 5: Smash cut from running footsteps to heavy steel vault door slamming shut"
+                "Scene 1 to 2: Cut on narrative movement into the unfamiliar realm",
+                "Scene 2 to 3: Sound bridge into subterranean environment",
+                "Scene 3 to 4: Accelerating cut rate from wide master to tight kinetic coverage",
+                "Scene 4 to 5: Smash cut on climactic beat to quiet ambient dawn"
             ],
-            "parallelEditing": "In Act 3, cross-cut between Kaelen sprinting across the floodwater with the dying timer and Sister Mara desperately burning incense at the fracturing altar.",
+            "parallelEditing": f"In the climax of {title}, cross-cut between the protagonist's physical challenge and supporting developments across secondary locations.",
             "matchCuts": [
-                "Match cut between the circular glowing countdown timer '00:00:01' and the circular Keystone altar well.",
-                "Match cut between Elias's static smile in the rain and the statue of St. Jude above the gate."
+                "Match cut between opening emblem and key environmental framing element.",
+                "Match cut between character eye-line and the horizon ahead."
             ],
             "jCutsLCuts": [
-                "J-Cut into Scene 3: The eerie whistling down the tracks precedes the visual transition by 4 seconds.",
-                "L-Cut out of Scene 1: Sister Mara's voiceover warning 'they ask about your family' carries over Kaelen walking into the market."
+                "J-Cut into Act 2: Ambient environmental audio precedes the visual scene transition by 3 seconds.",
+                "L-Cut out of Act 1: Dialogue resonance carries over the establishing shot of the next sequence."
             ],
-            "finalShot": "A slow, creeping optical push into Elias's calm face through the cathedral glass as the rain runs down the pane like static, smiling unblinkingly at Nia.",
-            "trimmedMaterialNotes": "Cut initial 5-minute opening monologue about the history of the apocalypse; replaced with immediate physical action of the bone stylus searing into flesh."
+            "finalShot": f"A slow, lingering optical pull-back from our lead characters into the transformed horizon of {title}.",
+            "trimmedMaterialNotes": "Trimmed extraneous exposition to plunge directly into the active cinematic dilemma."
         }

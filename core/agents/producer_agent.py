@@ -30,7 +30,7 @@ You build the exhaustive creative bedrock of the cinematic vision."""
         )
 
     def _process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> Dict[str, Any]:
-        idea = prompt or context.get("logline", "In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition scout ventures outside with a dying countdown spell while knowing the zombies look entirely human.")
+        idea = prompt or context.get("logline") or context.get("title") or "A cinematic story of discovery, conflict, and triumph."
         
         schema = """{
   "title": "string",
@@ -58,48 +58,49 @@ You build the exhaustive creative bedrock of the cinematic vision."""
             return parsed
 
         # Intelligent Heuristic Fallback
-        words = [w.capitalize() for w in idea.split() if len(w) > 3 and w.lower() not in ["with", "from", "that", "this", "into", "over", "about", "when"]]
-        title = "THE " + " ".join(words[:2]).upper() if len(words) >= 2 else "UNTITLED FILM"
-        
-        genre = "Post-Apocalyptic Supernatural Thriller"
+        words = [w for w in idea.split() if w.isalnum()]
+        clean_title = context.get("title") or (("THE " + " ".join(words[:2]).upper()) if len(words) >= 2 else "UNTITLED FILM")
+        main_subject = words[0].capitalize() if words else "Hero"
+        genre = context.get("genre") or "Cinematic Drama"
         if any(k in idea.lower() for k in ["space", "alien", "orbit", "star"]):
             genre = "Hard Sci-Fi Space Thriller"
-        elif any(k in idea.lower() for k in ["magic", "spell", "witch", "rune", "sorcerer"]):
-            genre = "Supernatural Dark Fantasy"
+        elif any(k in idea.lower() for k in ["magic", "spell", "witch", "rune", "sorcerer", "dragon"]):
+            genre = "Epic Fantasy Adventure"
+        elif any(k in idea.lower() for k in ["robot", "ai", "cyber", "android", "neon"]):
+            genre = "Cyberpunk Sci-Fi"
 
         return {
-            "title": context.get("title") or title,
+            "title": clean_title,
             "genre": genre,
-            "tone": "Gritty, claustrophobic, visceral, psychologically tense",
+            "tone": context.get("tone") or "Compelling, Dynamic, Cinematic",
             "logline": idea,
-            "coreHook": "The enemy is physically indistinguishable from normal survivors; survival protection operates on an unyielding countdown clock.",
-            "world": "A partitioned survival world where humanity clings to failing supernatural wardstones amidst deceptive mimics.",
+            "coreHook": f"A high-stakes cinematic journey centered around {idea[:120]}.",
+            "world": f"The unique story world of {clean_title}, characterized by rich {genre.lower()} atmosphere and distinct visual rules.",
             "protagonist": {
-                "name": "Kaelen Vance",
-                "role": "Expedition Scout Leader",
-                "flaw": "Guilt-ridden over prior squad casualties, refuses to ask for help.",
-                "goal": "Extract acoustic resonance crystals from the transit vault before the sanctuary Keystone shatters."
+                "name": f"{main_subject} Vanguard",
+                "role": "Lead Protagonist",
+                "flaw": "Struggles with self-doubt when isolated from the team.",
+                "goal": f"To overcome the primary challenge facing {clean_title}."
             },
             "antagonist": {
-                "name": "Elias (The Mimic)",
-                "role": "Outer Ward Infiltrator",
-                "motivation": "Guide the infected into the inner cathedral once human protections drop."
+                "name": "The Opposing Architect",
+                "role": "Primary Antagonist",
+                "motivation": "Enforce an opposing vision that directly challenges the protagonist."
             },
             "supportingCharacters": [
-                {"name": "Sister Mara", "role": "Elder Rune Weaver holding the fracturing Keystone"},
-                {"name": "Nia", "role": "11-year-old scout apprentice with an analog music box"}
+                {"name": "Trusted Navigator", "role": "Loyal confidant who keeps the mission on track"},
+                {"name": "Specialist Guide", "role": "Technical expert possessing crucial knowledge"}
             ],
-            "centralConflict": "Humanity's countdown to extinction vs. cognitive infected waiting for the barrier to fail.",
-            "stakes": "The extinction of the final 4,000 living humans inside St. Jude's Cathedral Sanctuary.",
-            "themes": ["The cost of survival", "Trust in an era of deceptive surfaces", "Humanity under time pressure"],
+            "centralConflict": f"The clash between the protagonist's mission and opposing forces in {clean_title}.",
+            "stakes": "The ultimate future and safety of the community.",
+            "themes": ["Courage under pressure", "Trust and teamwork", "Overcoming impossible odds"],
             "threeActStructure": {
-                "act1_setup": "The Keystone fractures. Sister Mara carves Kaelen's final 4-hour countdown spell. Kaelen steps outside into the Limbo Bazaar.",
-                "act2_confrontation": "Kaelen navigates past deceptively polite mimics into the submerged metro vaults, securing the crystals while the timer reaches critical 10-minute redline.",
-                "act3_resolution": "A desperate sprint back to the cathedral gates with seconds remaining; unmasking Elias and recharging the barrier as the countdown hits zero."
+                "act1_setup": f"The journey begins in {clean_title} when the status quo is disrupted by a major challenge.",
+                "act2_confrontation": "Our heroes navigate escalating complications, facing deep tests of loyalty and courage.",
+                "act3_resolution": "A climactic confrontation where resolve and teamwork achieve a hard-won victory."
             },
             "productionRisks": [
-                "Maintaining psychological tension without relying on cheap jump scares",
-                "Visual clarity of the wrist countdown chronometer across diverse lighting environments",
-                "Balancing the uncanny mimic performance without making actors look robotic"
+                "Maintaining pacing and clarity across key scene transitions",
+                "Grounding character motivation in emotionally relatable beats"
             ]
         }

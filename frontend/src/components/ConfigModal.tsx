@@ -3,11 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { X, Settings, Sliders } from "lucide-react";
 
+import { ProjectBibleData } from "../types/project";
+
 interface ConfigModalProps {
   isOpen: boolean;
   onClose: () => void;
-  currentProject: any;
-  onSaveConfig: (configData: any) => void;
+  currentProject: ProjectBibleData | null;
+  onSaveConfig: (configData: Record<string, unknown>) => void;
 }
 
 export const ConfigModal: React.FC<ConfigModalProps> = ({
@@ -23,14 +25,18 @@ export const ConfigModal: React.FC<ConfigModalProps> = ({
   const [audience, setAudience] = useState("PG-13 / YA");
 
   useEffect(() => {
-    if (currentProject?.project) {
-      setFormat(currentProject.project.format || "Theatrical Feature");
-      setPlatform(currentProject.project.platform || "Cinema & IMAX");
-      setScale(currentProject.project.productionScale || "Hollywood Studio Tentpole");
-      setEpisodes(currentProject.project.episodeCount || 1);
-      setAudience(currentProject.project.targetAudience || "PG-13 / YA");
+    if (currentProject?.project && isOpen) {
+      const p = currentProject.project;
+      const timer = setTimeout(() => {
+        setFormat(p.format || "Theatrical Feature");
+        setPlatform(p.platform || "Cinema & IMAX");
+        setScale(p.productionScale || "Hollywood Studio Tentpole");
+        setEpisodes(Number(p.episodeCount) || 1);
+        setAudience(p.targetAudience || "PG-13 / YA");
+      }, 0);
+      return () => clearTimeout(timer);
     }
-  }, [currentProject]);
+  }, [currentProject, isOpen]);
 
   if (!isOpen) return null;
 

@@ -25,30 +25,65 @@ class KeyframeAgent(BaseAgent):
 
     def _process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> List[Dict[str, Any]]:
         chars = context.get("characters", [])
-        p_name = chars[0]["name"] if len(chars) > 0 else "LEO THORNE"
         brief = context.get("brief", {})
-        title = brief.get("title", "THE SIGNAL")
-        
+        title = brief.get("title") or context.get("title") or "UNTITLED FILM"
+        p_name = chars[0]["name"] if (chars and isinstance(chars, list) and isinstance(chars[0], dict) and "name" in chars[0]) else (brief.get("protagonist", {}).get("name") if isinstance(brief.get("protagonist"), dict) else f"Hero of {title}")
+        scenes = context.get("scenes", []) or context.get("screenplay", [])
+
+        schema = """{
+  "keyframe_prompts": [
+    {
+      "scene_number": 1,
+      "title": "string",
+      "camera_angle": "string",
+      "lighting": "string",
+      "color_palette": "string",
+      "composition": "string",
+      "ai_image_prompt": "string"
+    }
+  ]
+}"""
+
+        gemini_prompt = f"Design cinematic visual concept keyframes for '{title}' featuring protagonist {p_name}.\nScenes: {str(scenes)[:1500]}"
+        raw = self.call_gemini(gemini_prompt, schema)
+        parsed = self.parse_gemini_json(raw)
+        if isinstance(parsed, dict):
+            for k in ["keyframe_prompts", "keyframes", "frames", "data"]:
+                if k in parsed and isinstance(parsed[k], list) and len(parsed[k]) > 0:
+                    return parsed[k]
+        elif isinstance(parsed, list) and len(parsed) > 0 and "camera_angle" in parsed[0]:
+            return parsed
+
+        if scenes and isinstance(scenes, list):
+            dynamic_kf = []
+            for idx, sc in enumerate(scenes[:4]):
+                s_num = sc.get("scene_number", idx + 1)
+                s_slug = sc.get("slug") or f"Scene {s_num}"
+                s_summary = sc.get("summary") or sc.get("visual_prompt") or f"{p_name} in {s_slug}"
+                dynamic_kf.append({
+                    "scene_number": s_num,
+                    "title": f"Scene {s_num} Keyframe: {s_slug}",
+                    "camera_angle": "Cinematic wide angle, 35mm anamorphic widescreen composition",
+                    "lighting": "Motivated atmospheric directional lighting with deep chiaroscuro contrast",
+                    "color_palette": "Deep obsidian slate, ambient cinematic teal (#0284C7), warm highlight amber (#F59E0B)",
+                    "composition": f"{p_name} in {s_slug} amid dramatic visual atmosphere",
+                    "ai_image_prompt": f"Cinematic 35mm film still of {p_name} in {s_slug}, {s_summary[:120]}, 8k resolution, photorealistic, anamorphic lens flare --ar 16:9"
+                })
+            return dynamic_kf
+
         return [
             {
                 "scene_number": 1,
-                "title": f"Scene 1 Keyframe: {p_name} at the Discovery Station",
-                "camera_angle": "Low-angle medium close-up, Dutch tilt (15 degrees)",
-                "lighting": "High-contrast chiaroscuro with warm amber terminal bounce on the jawline and cold cyan rim light",
-                "color_palette": "Deep obsidian charcoal, phosphor amber (#FFB020), neon cyan (#00E5FF)",
-                "composition": f"{p_name} hunched over an illuminated vintage tape deck with vibrating copper reels and rising steam",
-                "ai_image_prompt": f"Cinematic 35mm film still, low angle shot of {p_name} adjusting an illuminated analog console, amber dials glowing, cyan oscilloscopes, dark atmospheric industrial bunker, 8k resolution, photorealistic masterpiece --ar 16:9"
-            },
-            {
-                "scene_number": 3,
-                "title": "Scene 3 Keyframe: Orbital Gantry Climax",
-                "camera_angle": "Extreme wide establishing shot on 24mm anamorphic lens",
-                "lighting": "Vibrant Earth atmospheric blue rim lighting against harsh red orbital warning beacons",
-                "color_palette": "Deep sapphire blue, crimson red, starfield white",
-                "composition": "Two silhouetted figures clashing on a narrow carbon-fiber catwalk suspended over the curved blue horizon of planet Earth",
-                "ai_image_prompt": f"Cinematic 35mm film still, extreme wide shot of hero silhouetted on a space station gantry high above planet Earth, glowing cyan shockwave exploding into the vacuum of space, IMAX framing, photorealistic 8k --ar 16:9"
+                "title": f"Scene 1 Keyframe: {title} Opening Vista",
+                "camera_angle": "Low-angle medium close-up on 35mm prime lens",
+                "lighting": "High-contrast cinematic lighting with motivated dramatic backlight",
+                "color_palette": "Obsidian charcoal, ambient slate blue, warm rim highlight",
+                "composition": f"{p_name} contemplating the journey ahead in {title}",
+                "ai_image_prompt": f"Cinematic 35mm film still of {p_name} in {title}, atmospheric production design, authentic film grain, 8k resolution --ar 16:9"
             }
         ]
 
-# Alias
+# Aliases
 PhotoDescriberAgent = KeyframeAgent
+ConceptArtAgent = KeyframeAgent
+KeyframeIllustratorAgent = KeyframeAgent

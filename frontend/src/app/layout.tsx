@@ -5,16 +5,20 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
 });
 
 export const metadata: Metadata = {
-  title: "Agentic Cinema Studio — AI Film Swarm",
-  description: "Autonomous Multi-Agent Cinematic Operating System powered by Google Gemini 3.5+",
+  title: "Northstar — Crypto & Stock Trading",
+  description: "A clear view of your crypto and stock portfolio, markets, and simulated trades.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

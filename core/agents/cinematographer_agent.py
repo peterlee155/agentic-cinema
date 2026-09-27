@@ -38,27 +38,31 @@ For each scene, specify:
         scenes = context.get("scenes", []) or context.get("screenplay", [])
         visual_style = context.get("brief", {}).get("visualStyle", "35mm anamorphic")
 
-        schema = """[
-  {
-    "scene": "Scene or Environment Name",
-    "lensChoice": "e.g. 24mm & 40mm Master Anamorphic T1.9",
-    "cameraHeight": "Chest Level & Low Angle Hero",
-    "cameraMovement": "Steadicam lateral tracking",
-    "composition": "Asymmetric negative space with rule of thirds",
-    "depthOfField": "Shallow focus f/1.8 with amber oval bokeh",
-    "lighting": "Low-key Chiaroscuro with volumetric haze and practical sodium lantern",
-    "colorTreatment": "Warm candle amber against deep indigo shadows",
-    "mood": "Sacred, claustrophobic, endangered"
-  }
-]"""
+        schema = """{
+  "cinematography": [
+    {
+      "scene": "Scene or Environment Name",
+      "lensChoice": "e.g. 24mm & 40mm Master Anamorphic T1.9",
+      "cameraHeight": "Chest Level & Low Angle Hero",
+      "cameraMovement": "Steadicam lateral tracking",
+      "composition": "Asymmetric negative space with rule of thirds",
+      "depthOfField": "Shallow focus f/1.8 with amber oval bokeh",
+      "lighting": "Low-key Chiaroscuro with volumetric haze and practical sodium lantern",
+      "colorTreatment": "Warm candle amber against deep indigo shadows",
+      "mood": "Sacred, claustrophobic, endangered"
+    }
+  ]
+}"""
 
         gemini_prompt = f"Create cinematography plans for:\nVisual Style: {visual_style}\nScenes: {str(scenes)[:1500]}"
         raw = self.call_gemini(gemini_prompt, schema)
         parsed = self.parse_gemini_json(raw)
-        if isinstance(parsed, list) and len(parsed) > 0 and "lensChoice" in parsed[0]:
+        if isinstance(parsed, dict):
+            for k in ["cinematography", "plans", "cameraPlans", "data"]:
+                if k in parsed and isinstance(parsed[k], list) and len(parsed[k]) > 0:
+                    return parsed[k]
+        elif isinstance(parsed, list) and len(parsed) > 0 and "lensChoice" in parsed[0]:
             return parsed
-        elif isinstance(parsed, dict) and "cinematography" in parsed:
-            return parsed["cinematography"]
 
         # Default Cinematography Language
         return [

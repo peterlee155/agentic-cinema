@@ -65,3 +65,8 @@ class BroAgent(BaseAgent):
             "internal_director_notes": "All 10 user-facing agents executed cleanly. Visual keyframes and dialogue ledger aligned.",
             "secret_recommendation": "Approved for studio lot production and festival release."
         }
+
+    def _process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> Dict[str, Any]:
+        """Standard pipeline invocation hook routing to evaluate_production."""
+        bible_data = context.get("bible") or context
+        return self.evaluate_production(project_id, bible_data)

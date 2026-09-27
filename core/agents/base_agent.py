@@ -3,8 +3,25 @@ import json
 import logging
 import time
 from typing import Dict, Any, List, Optional
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logger = logging.getLogger("BaseAgent")
+
+# Global circuit-breaker for exhausted models across the agent swarm with 45s cooldown
+_EXHAUSTED_MODELS: Dict[str, float] = {}
+
+def is_model_exhausted(model: str) -> bool:
+    if model in _EXHAUSTED_MODELS:
+        if time.time() < _EXHAUSTED_MODELS[model]:
+            return True
+        else:
+            del _EXHAUSTED_MODELS[model]
+    return False
+
+def mark_model_exhausted(model: str, cooldown_seconds: float = 45.0):
+    _EXHAUSTED_MODELS[model] = time.time() + cooldown_seconds
 
 class BaseAgent:
     """
@@ -18,88 +35,108 @@ class BaseAgent:
         self.api_key = os.getenv("GEMINI_API_KEY", os.getenv("GOOGLE_API_KEY", ""))
         self.google_project = os.getenv("GOOGLE_CLOUD_PROJECT", os.getenv("GCP_PROJECT_ID", "seismic-relic-447818-r2"))
         self.use_vertex = os.getenv("USE_VERTEX_AI", "false").lower() == "true"
-        self.model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+        self.model_name = os.getenv("GEMINI_MODEL", "gemini-3.7-flash")
         self.client = None
         self._is_vertex_active = False
         self._init_gemini_client()
 
-    def _init_gemini_client(self):
-        """Initializes the official Google GenAI Client SDK."""
-        try:
-            from google import genai
-            if self.use_vertex and self.google_project:
-                self.client = genai.Client(vertexai=True, project=self.google_project, location="us-central1")
-                self._is_vertex_active = True
-                logger.info(f"[{self.name}] Initialized Google Cloud Vertex AI on project {self.google_project}")
-            elif self.api_key:
-                self.client = genai.Client(api_key=self.api_key)
-                self._is_vertex_active = False
-                logger.info(f"[{self.name}] Initialized google-genai SDK with model {self.model_name}")
-        except Exception as e1:
-            try:
-                if self.api_key:
-                    import google.generativeai as genai_legacy
-                    genai_legacy.configure(api_key=self.api_key)
-                    self.legacy_model = genai_legacy.GenerativeModel(
-                        model_name=self.model_name,
-                        system_instruction=self.system_prompt
-                    )
-                    logger.info(f"[{self.name}] Initialized legacy google.generativeai SDK with model {self.model_name}")
-            except Exception as e2:
-                logger.warning(f"[{self.name}] Could not initialize Google GenAI SDK: {e1} / {e2}")
+    def set_model_name(self, model_name: str):
+        self.model_name = model_name
+        logger.info(f"[{self.name}] Active model switched to: {model_name}")
 
-    def call_gemini(self, prompt: str, schema_instruction: str = "") -> Optional[str]:
-        """Invoke Google Gemini with resilient model cascade and automatic client switching."""
-        if not self.client and not getattr(self, 'legacy_model', None):
+    def _init_gemini_client(self):
+        """Initializes both Google Cloud Vertex AI and Gemini Developer API SDK clients."""
+        from google import genai
+        self.vertex_client = None
+        self.api_key_client = None
+        self._is_vertex_active = False
+
+        # 1. Initialize Vertex AI Client (Google Cloud Project)
+        if self.google_project:
+            try:
+                self.vertex_client = genai.Client(vertexai=True, project=self.google_project, location="us-central1")
+                self._is_vertex_active = True
+                logger.info(f"[{self.name}] Initialized Google Cloud Vertex AI Client (Project: {self.google_project})")
+            except Exception as e_v:
+                logger.warning(f"[{self.name}] Google Cloud Vertex AI client init notice: {e_v}")
+
+        # 2. Initialize Gemini API Key Client
+        if self.api_key:
+            try:
+                self.api_key_client = genai.Client(
+                    api_key=self.api_key,
+                    http_options={"headers": {"Referer": "http://localhost:3000"}}
+                )
+                logger.info(f"[{self.name}] Initialized Google Gemini API Key Client")
+            except Exception as e_k:
+                logger.warning(f"[{self.name}] Google Gemini API key client init notice: {e_k}")
+
+        # Default legacy reference
+        self.client = self.vertex_client if (self.use_vertex and self.vertex_client) else (self.api_key_client or self.vertex_client)
+
+    def call_gemini(self, prompt: str, schema_instruction: str = "", max_tokens: int = 2048) -> Optional[str]:
+        """Invoke Google Gemini with intelligent dual-engine cascade (Google Cloud Vertex AI + Gemini API Key)."""
+        if not hasattr(self, 'vertex_client') or (not self.vertex_client and not self.api_key_client):
             self._init_gemini_client()
 
         full_prompt = f"""{prompt}
 
-=== MAXIMUM LENGTH & DEPTH DIRECTIVE ===
-You are creating a comprehensive, full-length Hollywood cinematic production package.
-Produce the LONGEST, most exhaustive, and richly detailed outcome possible:
-1. Do NOT summarize, abbreviate, or compress your response.
-2. Write deep, multi-paragraph descriptions with visceral, tactile sensory detail.
-3. Provide extensive character dialogue with dramatic tension, realistic cadence, subtext, and pauses.
-4. Deliver thorough technical camera movements, lens packages, lighting diagrams, sound layers, and editing transitions.
-5. Fully utilize the maximum token output capacity.
+=== CINEMATIC PRODUCTION DIRECTIVE ===
+You are creating a comprehensive, professional Hollywood cinematic production asset.
+Provide a rich, precise, and high-fidelity output matching the required structure:
+1. Ground your descriptions in concrete visual, acoustic, and lighting textures.
+2. Maintain rigorous continuity with established world rules and character dossiers.
+3. Return ONLY valid JSON matching the specified structure without markdown commentary.
 
 STRICT SCHEMA REQUIREMENT:
 {schema_instruction}
-Return ONLY valid JSON matching the specified structure without markdown formatting or conversational commentary.
 """
 
-        # Ultra-resilient cascade of candidate models
-        candidate_models = ["gemini-2.5-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.7-flash", "gemini-1.5-flash"]
-        if self.model_name in candidate_models:
-            candidate_models.remove(self.model_name)
-        candidate_models.insert(0, self.model_name)
+        # Select target models starting with the active/configured model
+        selected_model = getattr(self, "model_name", None) or os.getenv("GEMINI_MODEL", "gemini-3.7-flash")
+        candidate_models = [selected_model]
+        for fm in ["gemini-3.7-flash", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite"]:
+            if fm not in candidate_models:
+                candidate_models.append(fm)
 
-        for attempt_idx, model_to_try in enumerate(candidate_models):
-            try:
-                if self.client:
-                    response = self.client.models.generate_content(
+        # Plan engine execution order - prioritize low-latency direct API, fall back to Vertex AI
+        engines = []
+        if self.api_key_client:
+            engines.append(("GeminiAPIKey", self.api_key_client, candidate_models))
+        if self.vertex_client:
+            engines.append(("VertexAI", self.vertex_client, candidate_models))
+
+        for engine_name, client_inst, models in engines:
+            for model_to_try in models:
+                if is_model_exhausted(model_to_try):
+                    continue
+
+                try:
+                    response = client_inst.models.generate_content(
                         model=model_to_try,
                         contents=full_prompt,
                         config={
                             "system_instruction": self.system_prompt,
-                            "max_output_tokens": 8192,
-                            "temperature": 0.75
+                            "max_output_tokens": max_tokens,
+                            "temperature": 0.7,
+                            "response_mime_type": "application/json"
                         }
                     )
                     if response and response.text:
-                        logger.info(f"[{self.name}] Successfully generated content using {model_to_try}")
+                        logger.info(f"[{self.name}] Generated content via {engine_name} using model {model_to_try}")
                         return self._clean_json(response.text)
 
-                elif hasattr(self, 'legacy_model') and self.legacy_model:
-                    response = self.legacy_model.generate_content(full_prompt)
-                    if response and response.text:
-                        return self._clean_json(response.text)
-
-            except Exception as e:
-                err_str = str(e)
-                logger.warning(f"[{self.name}] Model {model_to_try} attempt {attempt_idx+1}/{len(candidate_models)} failed: {err_str[:120]}. Trying next fallback model...")
-                time.sleep(1)
+                except Exception as e:
+                    err_str = str(e)
+                    if "RESOURCE_EXHAUSTED" in err_str or "429" in err_str:
+                        logger.warning(f"[{self.name}] Model {model_to_try} ({engine_name}) quota limit (429). Cooldown for 45s.")
+                        mark_model_exhausted(model_to_try, 45.0)
+                    elif "NOT_FOUND" in err_str or "404" in err_str:
+                        logger.warning(f"[{self.name}] Model {model_to_try} ({engine_name}) not found (404). Cooldown for 300s.")
+                        mark_model_exhausted(model_to_try, 300.0)
+                    else:
+                        logger.warning(f"[{self.name}] {engine_name} model {model_to_try} attempt notice: {err_str[:120]}")
+                    time.sleep(0.2)
 
         return None
 
@@ -116,20 +153,45 @@ Return ONLY valid JSON matching the specified structure without markdown formatt
             text = text[:-3]
         return text.strip()
 
-    def parse_gemini_json(self, json_str: Optional[str]) -> Optional[Dict[str, Any]]:
-        """Parses clean JSON string into Python dict or list."""
+    def parse_gemini_json(self, json_str: Optional[str]) -> Optional[Any]:
+        """Parses clean JSON string into Python dict or list with multi-format resilience."""
         if not json_str:
             return None
+        cleaned = self._clean_json(json_str)
+
+        # 1. Direct JSON parse
         try:
-            return json.loads(json_str)
+            return json.loads(cleaned)
         except Exception:
+            pass
+
+        # 2. Resilient delimiter search for both arrays and objects
+        start_arr = cleaned.find("[")
+        end_arr = cleaned.rfind("]")
+        start_obj = cleaned.find("{")
+        end_obj = cleaned.rfind("}")
+
+        # Check if list starts before object or object absent
+        if start_arr != -1 and (start_obj == -1 or start_arr < start_obj) and end_arr > start_arr:
             try:
-                start = json_str.find("{")
-                end = json_str.rfind("}")
-                if start != -1 and end != -1:
-                    return json.loads(json_str[start:end+1])
+                return json.loads(cleaned[start_arr:end_arr+1])
             except Exception:
                 pass
+
+        # Check if object starts before list
+        if start_obj != -1 and end_obj > start_obj:
+            try:
+                return json.loads(cleaned[start_obj:end_obj+1])
+            except Exception:
+                pass
+
+        # Check list again if object parsing failed
+        if start_arr != -1 and end_arr > start_arr:
+            try:
+                return json.loads(cleaned[start_arr:end_arr+1])
+            except Exception:
+                pass
+
         return None
 
     def process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> Dict[str, Any]:

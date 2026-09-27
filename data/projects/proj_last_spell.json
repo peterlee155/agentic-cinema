@@ -1,62 +1,158 @@
 {
+  "id": "proj_last_spell",
+  "project_id": "proj_last_spell",
+  "title": "UNTITLED FILM",
+  "logline": "In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.",
   "project": {
     "id": "proj_last_spell",
-    "title": "THE LAST SPELL",
-    "logline": "Inside humanity's last dual-barrier sanctuary, an expedition scout ventures beyond the perimeter with a fading 4-hour protection spell, knowing the outside zombies behave like ordinary humans—and the inner barrier is dying.",
-    "genre": "Post-Apocalyptic Supernatural Thriller",
-    "tone": "Gritty, tense, visually cinematic, high-stakes",
-    "visualStyle": "35mm Anamorphic Widescreen with glowing amber runic glyphs, drenched asphalt, and cold tungsten rain",
-    "targetDuration": "112 Minutes",
+    "title": "UNTITLED FILM",
+    "logline": "In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.",
+    "genre": "Supernatural Dark Fantasy",
+    "tone": "Gritty, claustrophobic, visceral, psychologically tense",
+    "visualStyle": "35mm anamorphic widescreen with amber bioluminescent runes and desaturated cold rain",
+    "targetDuration": "115 Minutes",
     "language": "English",
+    "format": "Theatrical Feature",
+    "platform": "Cinema",
+    "episodeCount": 1,
+    "episodeDuration": "115 Minutes",
+    "productionScale": "Hollywood Studio Tentpole",
+    "targetAudience": "Young Adults (18-25) & General (PG-13)",
+    "budget": "$12.5M",
+    "budgetType": "ESTIMATED",
     "stage": "PRODUCTION_READY",
-    "credits_used": 48,
+    "credits_used": 42,
     "credits_total": 250,
-    "plan": "PRO"
+    "plan": "PRO",
+    "coreHook": "The enemy is physically indistinguishable from normal survivors; survival protection operates on an unyielding countdown clock.",
+    "world": "A partitioned survival world where humanity clings to failing supernatural wardstones amidst deceptive mimics.",
+    "protagonist": {
+      "name": "Kaelen Vance",
+      "role": "Expedition Scout Leader",
+      "flaw": "Guilt-ridden over prior squad casualties, refuses to ask for help.",
+      "goal": "Extract acoustic resonance crystals from the transit vault before the sanctuary Keystone shatters."
+    },
+    "antagonist": {
+      "name": "Elias (The Mimic)",
+      "role": "Outer Ward Infiltrator",
+      "motivation": "Guide the infected into the inner cathedral once human protections drop."
+    },
+    "supportingCharacters": [
+      {
+        "name": "Sister Mara",
+        "role": "Elder Rune Weaver holding the fracturing Keystone"
+      },
+      {
+        "name": "Nia",
+        "role": "11-year-old scout apprentice with an analog music box"
+      }
+    ],
+    "centralConflict": "Humanity's countdown to extinction vs. cognitive infected waiting for the barrier to fail.",
+    "stakes": "The extinction of the final 4,000 living humans inside St. Jude's Cathedral Sanctuary.",
+    "themes": [
+      "The cost of survival",
+      "Trust in an era of deceptive surfaces",
+      "Humanity under time pressure"
+    ],
+    "threeActStructure": {
+      "act1_setup": "The Keystone fractures. Sister Mara carves Kaelen's final 4-hour countdown spell. Kaelen steps outside into the Limbo Bazaar.",
+      "act2_confrontation": "Kaelen navigates past deceptively polite mimics into the submerged metro vaults, securing the crystals while the timer reaches critical 10-minute redline.",
+      "act3_resolution": "A desperate sprint back to the cathedral gates with seconds remaining; unmasking Elias and recharging the barrier as the countdown hits zero."
+    },
+    "productionRisks": [
+      "Maintaining psychological tension without relying on cheap jump scares",
+      "Visual clarity of the wrist countdown chronometer across diverse lighting environments",
+      "Balancing the uncanny mimic performance without making actors look robotic"
+    ]
   },
   "characters": [
     {
-      "name": "Kaelen Vance",
-      "age": 34,
-      "role": "Expedition Scout Leader (Protagonist)",
-      "appearance": "Athletic, weather-beaten, scar across left eyebrow, dark brooding gaze.",
-      "hair": "Short cropped raven hair dusted with soot.",
-      "clothing": "Reinforced charcoal canvas duster coat, tactical holster, worn leather combat gloves.",
-      "props": "Carved runic wrist chronometer, suppressed 9mm sidearm, analog Geiger-frequency meter.",
-      "colorPalette": "#111827 (Charcoal), #FF9900 (Amber Glow), #4B5563 (Slate)",
-      "visualEvolution": "Starts confident with bright wrist runes; by Act 3, coat is shredded, runes flicker red, eyes hollow with exhaustion."
+      "name": "Aiden Storm",
+      "role": "Lead Actor (Protagonist)",
+      "archetype": "The Reluctant Dragon Rider",
+      "psychology": {
+        "age": 32,
+        "want": "To break through the barriers and uncover the hidden truth behind 'In a post-apocalyptic world where humanity su...'",
+        "fear": "Failing his crew and repeating catastrophic past errors.",
+        "need": "To step into selfless leadership and trust his instincts.",
+        "obstacle": "Relentless pursuit by Shadow Lord Malakor and hostile environmental hazards.",
+        "fatal_flaw": "Stubborn reluctance to ask for help until pushed to the brink.",
+        "internal_arc": "Evolves from a disillusioned lone operator into an inspirational cinematic leader.",
+        "distinctive_voice": "Grounded, tactical, razor-sharp with dry understated sarcasm."
+      },
+      "visual_identity": {
+        "face_and_hair": "Chiseled angular jawline, intense focused amber eyes, short textured dark hair with silver-tipped temples.",
+        "body_type_and_posture": "Athletic 6'0\" muscular build, guarded tactical stance, watchful eyes.",
+        "wardrobe_signature": "Distressed dark ballistic leather jacket over carbon-weave under-armor, reinforced combat boots.",
+        "accessories": "Custom tactical chronograph with glowing holographic telemetry.",
+        "color_code": "#00E5FF (Neon Cyan Accent)"
+      }
     },
     {
-      "name": "Sister Mara",
-      "age": 58,
-      "role": "Rune Weaver & Sanctuary Elder",
-      "appearance": "Regal yet frail, etched runic silver tattoos across fingertips, piercing silver eyes.",
-      "hair": "Long silver braid wrapped with thin copper wire.",
-      "clothing": "Heavy emerald-green wool vestments lined with runic gold thread.",
-      "props": "Bone etching stylus, mercury ampoules, sanctuary Keystone resonance bell.",
-      "colorPalette": "#064E3B (Emerald), #D97706 (Amber), #F3F4F6 (Silver)",
-      "visualEvolution": "Weakens as the Keystone stone fractures, hands trembling as she carves Kaelen's final spell."
+      "name": "Princess Seraphina",
+      "role": "Lead Actress (Co-Protagonist)",
+      "archetype": "The Sky Guild Cartographer",
+      "psychology": {
+        "age": 29,
+        "want": "To decrypt the core anomaly and ensure the survival of their sanctuary.",
+        "fear": "That the technology they are using will corrupt everything they hold dear.",
+        "need": "To balance clinical intellect with raw human empathy.",
+        "obstacle": "Crippling systemic lockdowns and encrypted counter-measures.",
+        "fatal_flaw": "Overanalyzing high-stakes emotional decisions under fire.",
+        "internal_arc": "Moves from rigid calculated logic to courageous decisive action.",
+        "distinctive_voice": "Brilliant, rapid-fire, eloquent with high emotional intelligence."
+      },
+      "visual_identity": {
+        "face_and_hair": "Expressive piercing emerald-green eyes, sharp high cheekbones, asymmetrical sleek dark bob with copper highlights.",
+        "body_type_and_posture": "Agile 5'8\" build, poised alert posture, energetic presence.",
+        "wardrobe_signature": "Slate-gray tailored technical duster over luminescent utility tunic, magnetic tool holster.",
+        "accessories": "Fiber-optic data gauntlet with pulsing cyan fiber cables.",
+        "color_code": "#FFB020 (Phosphor Amber Accent)"
+      }
     },
     {
-      "name": "Elias (The Mimic)",
-      "age": 38,
-      "role": "Outer Ward Infiltrator (Antagonist)",
-      "appearance": "Impeccably neat, unnaturally calm smile, pale translucent skin with faint blue veins.",
-      "hair": "Neatly combed ash-blonde hair.",
-      "clothing": "Pre-collapse gray tweed blazer over a wool turtleneck, clean polished leather boots.",
-      "props": "Silver pocket watch that doesn't tick, antique tea tin with dried seeds.",
-      "colorPalette": "#374151 (Cold Gray), #93C5FD (Vein Blue), #1F2937 (Shadow)",
-      "visualEvolution": "Appears warm and friendly at the Limbo Bazaar; reveals black dilated pupils and predatory calm as Kaelen's timer ticks down."
+      "name": "Arch-Mage Eldrin",
+      "role": "Supporting Actor (Mentor & Specialist)",
+      "archetype": "The Ancient Runesmith",
+      "psychology": {
+        "age": 59,
+        "want": "To make amends for past complicity and pass the torch to the next generation.",
+        "fear": "That the syndicate will weaponize their discoveries before they are revealed.",
+        "need": "To risk everything in one decisive final stand.",
+        "obstacle": "Physical exhaustion and haunting past compromises.",
+        "fatal_flaw": "Paralyzing guilt from earlier failed uprisings.",
+        "internal_arc": "Reignites his moral passion and makes the ultimate stand for the heroes.",
+        "distinctive_voice": "Deep, resonant, gravelly with weary intellectual gravitas."
+      },
+      "visual_identity": {
+        "face_and_hair": "Weathered lined face with deep-set observant brown eyes, silver-peppered beard, wild swept-back silver hair.",
+        "body_type_and_posture": "Broad-shouldered, slightly stooped frame, deliberate steady movement.",
+        "wardrobe_signature": "Heavy wool thermal engineer coat over stained canvas vest with diagnostic brass multimeters.",
+        "accessories": "Mechanical prosthetic forearm with exposed brass gears and analog dials.",
+        "color_code": "#00FF88 (Emerald Green Accent)"
+      }
     },
     {
-      "name": "Nia",
-      "age": 11,
-      "role": "Scavenger Apprentice & Look-out",
-      "appearance": "Quick, wiry, observant eyes, smudge of grease on right cheek.",
-      "hair": "Disheveled messy dark curls tied with yellow cable wire.",
-      "clothing": "Oversized faded navy flight jacket with rolled cuffs, combat boots two sizes too big.",
-      "props": "Brass binoculars, wind-up music box that calms jittery infected.",
-      "colorPalette": "#1E3A8A (Navy), #FBBF24 (Safety Yellow), #78350F (Earth)",
-      "visualEvolution": "Transitions from fearful child behind sanctuary gates to crucial partner timing Kaelen's extraction."
+      "name": "Shadow Lord Malakor",
+      "role": "Lead Antagonist",
+      "archetype": "The Tyrant of the Eclipse Guild",
+      "psychology": {
+        "age": 45,
+        "want": "Absolute containment, total command, and the ruthless eradication of all dissent.",
+        "fear": "Uncontrolled organic chaos and the loss of systematic dominance.",
+        "need": "To maintain absolute order at any human cost.",
+        "obstacle": "The unyielding resilience of Aiden Storm and Princess Seraphina.",
+        "fatal_flaw": "Arrogant certainty that human spirit can be mathematically subdued.",
+        "internal_arc": "Cold mechanical composure fractures into ferocious desperation as the truth spreads.",
+        "distinctive_voice": "Chillingly calm, clipped, authoritative, devoid of hesitation or warmth."
+      },
+      "visual_identity": {
+        "face_and_hair": "Porcelain-pale skin, predatory cold gray eyes with cybernetic ocular reticle, severe slicked-back obsidian hair.",
+        "body_type_and_posture": "Imposing 6'3\" monolithic frame, rigid military posture, predatory gait.",
+        "wardrobe_signature": "Monolithic matte-black ballistic trench coat with sharp carbon-fiber lapels and chrome shoulder pauldrons.",
+        "accessories": "Obsidian command scepter with pulsing crimson energy emitter.",
+        "color_code": "#FF003C (Crimson on Obsidian)"
+      }
     }
   ],
   "locations": [
@@ -89,278 +185,409 @@
       "objects": "Sub-vault security safe holding acoustic crystal canisters, emergency rail lanterns.",
       "lighting": "Pitch black pierced only by Kaelen's weapon light and fading wrist glyph.",
       "colorPalette": "#030712 (Abyssal Black), #06B6D4 (Cyan Flash), #DC2626 (Critical Red)"
-    },
-    {
-      "name": "The Dead Expanse (Outside Barrier)",
-      "architecture": "Shattered railway bridge and flooded industrial freight yard spanning across the poisoned river.",
-      "geography": "Two miles beyond the Outer Ward buffer perimeter, entirely exposed to roaming infected packs.",
-      "weather": "Freezing horizontal drizzle and low-hanging sulfurous smog.",
-      "materials": "Corroded steel railway girders, submerged ties, broken concrete bridge abutments.",
-      "objects": "Derelict rail tankers, emergency perimeter scaffolding ladders.",
-      "lighting": "Cold blue dawn twilight, piercing headlights of distant syndicate patrol drones.",
-      "colorPalette": "#0F172A (Cold Slate), #DC2626 (Critical Red), #64748B (Fog Gray)"
     }
   ],
-  "worldRules": [
-    {
-      "id": "RULE_01",
-      "category": "Magic Sanctuary",
-      "rule": "The Inner Sanctuary cannot be entered by zombies under any circumstance; any necrotic flesh is incinerated by the barrier.",
-      "consequence": "Zombies are physically prevented from breaching the cathedral gates.",
-      "strictness": "UNBREAKABLE"
-    },
-    {
-      "id": "RULE_02",
-      "category": "Dual Barrier Dynamics",
-      "rule": "The Outer Barrier can be entered by zombies. Inside this buffer zone, humans and zombies exist in uneasy proximity.",
-      "consequence": "Scavengers inside the outer market can never be sure who is truly human.",
-      "strictness": "UNBREAKABLE"
-    },
-    {
-      "id": "RULE_03",
-      "category": "Zombie Physiology",
-      "rule": "Zombies outside can behave and converse like ordinary humans, retaining cognitive speech and rational disguise until provoked.",
-      "consequence": "Visual inspection cannot detect an infected mimic; only blood-frequency tests or expired protection reveals them.",
-      "strictness": "UNBREAKABLE"
-    },
-    {
-      "id": "RULE_04",
-      "category": "Countdown Spell",
-      "rule": "Humans leaving the sanctuary require a carved runic spell on their forearm that counts down in glowing amber embers. When it reaches zero, the human scent mask disappears instantly.",
-      "consequence": "Once the countdown hits zero, all surrounding infected immediately identify the human and swarm.",
-      "strictness": "UNBREAKABLE"
-    },
-    {
-      "id": "RULE_05",
-      "category": "Sanctuary Crisis",
-      "rule": "The Inner Sanctuary's central wardstone is fracturing, requiring rare copper-alloy acoustic crystals from the abandoned downtown research vault before total blackout.",
-      "consequence": "Humanity has less than 48 hours before the sanctuary collapses completely.",
-      "strictness": "UNBREAKABLE"
-    }
-  ],
+  "worldRules": [],
   "timeline": [],
   "scenes": [
     {
       "sceneNumber": 1,
-      "slugline": "EXT. ST. JUDE'S INNER SANCTUARY - DUSK",
-      "intExt": "EXT",
-      "location": "St. Jude's Inner Sanctuary Perimeter",
-      "time": "DUSK",
+      "act": "Act I: Setup",
+      "slugline": "INT. SANCTUM OF THE KEYSTONE - NIGHT",
+      "intExt": "INT",
+      "location": "Sanctum of the Keystone",
+      "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Sister Mara"
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Arch-Mage Eldrin"
       ],
-      "objective": "Kaelen must receive the expedition protection spell despite Sister Mara's warning of its rapid decay.",
-      "conflict": "The Keystone Wardstone is cracking; Sister Mara can only guarantee four hours instead of the standard twelve.",
-      "action": "Rain lashes against the shimmering violet dome. Sister Mara presses a burning bone stylus into Kaelen's left forearm. Runic smoke hisses in the chill air. A glowing amber countdown glyph illuminates beneath his skin: 04:00:00. Through the barrier glass, normal-looking citizens in trench coats stand silently in the mist, staring unblinkingly at the gates.",
-      "dialogue": "MARA\nFour hours, Kaelen. Not a second more. The Keystone is bleeding light. If the glyph fades before you reach the vaults, you won't smell like a living man anymore.\n\nKAELEN\nI don't need twelve hours. Just enough to pull the crystals and make it back.\n\nMARA\nRemember: they don't growl. They don't limp. They sit next to you, and they ask about your family.",
-      "emotionalBeat": "Dread tempered by quiet resolve. The ticking clock begins.",
-      "transition": "SMASH CUT TO:"
+      "objective": "Aiden must endure the carving of the countdown spell to secure the expedition's timeline, while Seraphina fights to join the suicide mission.",
+      "conflict": "Eldrin's fading magic causes excruciating physical pain during the carving, while Aiden refuses to let Seraphina risk her life in the ruins.",
+      "subtext": "Aiden's stoic silence masks his terror of failing the city, while Seraphina's defiance hides her guilt over her royal family's failure to maintain the barrier.",
+      "action": "The sanctum is a cavernous vault of cold, weeping granite, illuminated only by the dying, erratic pulse of the central Keystone. A thick mist of incense and ozone hangs in the damp air, catching the amber bioluminescence of ancient runes carved into the walls. Rainwater drips from the vaulted ceiling, striking the stone floor with a rhythmic, metallic ping.\n\nArch-Mage Eldrin, his hands trembling and stained with runic ash, presses a jagged obsidian stylus into the flesh of Aiden's forearm. Aiden sits rigid in a rusted iron chair, his jaw clenched so tightly his teeth grind audibly. Steam rises from his skin as the amber countdown spell burns itself into his flesh, glowing with a volatile, heat-radiating light.\n\nPrincess Seraphina stands in the shadows of the archway, her fingers clutching a tarnished silver-threaded cloak. Her eyes are wide, reflecting the harsh amber glare of the spell as it counts down: 04:00:00. She steps forward, her boots splashing softly in the shallow puddles.",
+      "dialogue": "ARCH-MAGE ELDRIN\n(whispering, his voice like dry parchment)\nKeep still, Storm. If my hand slips, the rune will eat your flesh before you even reach the outer gates. The magic is... thin. It does not want to hold.\n\nAIDEN STORM\n(through gritted teeth, sweat beads on his forehead)\nJust finish it, Eldrin. The Keystone is hemorrhaging light. We don't have time for a delicate touch.\n\nPRINCESS SERAPHINA\n(stepping into the light, her voice trembling but resolute)\nHe needs more than just a timer, Eldrin. He needs someone who knows the vault's layout. I am going with him.\n\nAIDEN STORM\n(turning his head sharply, his eyes flashing)\nNo. You stay behind the second layer, Seraphina. The ruins are crawling with mimics. If they get a look at a royal face, they'll tear the gates down just to mock us.\n\nPRINCESS SERAPHINA\n(stepping closer, leaning over the iron chair)\nMy father built those vaults. I have the key-phrases memorized. You wouldn't last ten minutes in the flooded lower levels without me, Aiden. You'd drown looking for the crystal chambers.\n\nARCH-MAGE ELDRIN\n(pulling the stylus back with a sharp hiss)\nIt is done. Four hours, Aiden. When that rune hits zero, the protective ward on your skin dissolves. The infection will take you in seconds. You will become one of them—a perfect, smiling shell.",
+      "emotionalBeat": "Aiden looks at the glowing, burning countdown on his arm, realizing his mortality has a literal timer, while Seraphina's determination forces him to accept her companionship.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "180 seconds"
     },
     {
       "sceneNumber": 2,
-      "slugline": "EXT. THE LIMBO BAZAAR - NIGHT",
+      "act": "Act I: Inciting Incident",
+      "slugline": "EXT. THE INNER GATEWAY - NIGHT",
       "intExt": "EXT",
-      "location": "The Limbo Bazaar (Outer Barrier)",
+      "location": "The Inner Gateway",
       "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Elias (The Mimic)",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina"
       ],
-      "objective": "Kaelen navigates the outer market to locate the maintenance map for the underground rail tunnel.",
-      "conflict": "An apparently gentle gentleman (Elias) blocks his passage with unsettling small talk while Kaelen's wrist timer visibly decrements.",
-      "action": "Kaelen pushes through the crowded shipping container corridor. Stalls sell synthetic broth. A young girl, Nia, signals from a rooftop catwalk. Suddenly, Elias steps out from under a striped awning, wearing a dry tweed jacket and holding an umbrella. Kaelen's hand instinctively drops to his holster.",
-      "dialogue": "ELIAS\nTerrible evening for a walk toward the sector line, Vance. The broth at Stall 4 is hot, if you care to rest.\n\nKAELEN\nI have business at the transformer station, Elias. Move aside.\n\nELIAS\n(Smiles warmly)\nBusiness. We all have business. But tell me... does your arm burn as hot as it did last winter? It looks... dim.",
-      "emotionalBeat": "Skin-crawling psychological tension. The antagonist senses vulnerability without breaking disguise.",
-      "transition": "DISSOLVE TO:"
+      "objective": "Aiden must prepare Seraphina for the psychological horror of the mimics before they step outside the safety of the barrier.",
+      "conflict": "Seraphina believes her royal status and training have prepared her, while Aiden knows her empathy will get her killed.",
+      "subtext": "Aiden's harshness is his only way of showing care; he expects to die out here, but he cannot bear to watch her suffer the same fate.",
+      "action": "The massive iron doors of the Inner Gateway groan under the pressure of the howling wind outside. Desaturated cold rain pelts the threshold, splashing against the faint, shimmering blue barrier that marks the boundary of humanity's last safe haven. Beyond the barrier lies the Limbo Bazaar—a ruined, dark expanse of skeletal buildings drowned in shadow.\n\nAiden checks the straps of his leather breastplate, his movements methodical and cold. The amber countdown on his forearm reads 03:42:15, casting a warm, sinister glow over his wet gear. He slides a heavy, runic shortblade into its sheath.\n\nSeraphina pulls her hood over her head. The rain instantly dampens the silver threads of her cloak, turning them a dull, lifeless grey. She grips her own light blade, her knuckles white with tension. She looks out into the dark, her chest rising and falling in rapid, shallow breaths.",
+      "dialogue": "AIDEN STORM\n(grabbing her shoulder roughly, forcing her to look at him)\nListen to me. Really listen. The things out there—they don't look like monsters. They look like the people you grew up with. They will call you by your name. They will beg for help, weeping, bleeding. \n\nPRINCESS SERAPHINA\n(shaking his hand off, though her voice wavers)\nI know what the mimics are, Aiden. I've read the archives.\n\nAIDEN STORM\n(stepping directly into her space, his breath misting in the cold)\nArchives don't scream in your mother's voice. They don't look you in the eye with a face that is perfectly, beautifully human while they slide a blade between your ribs. If you hesitate for even a second because they look 'innocent,' I will leave you behind.\n\nPRINCESS SERAPHINA\n(staring back, her eyes hardening)\nI won't hesitate. My father died to keep that gate closed. I know exactly what is at stake.\n\nAIDEN STORM\n(staring at her for a long beat, then turning to the gatekeeper)\nRaise the gate. And don't open it again until we return. If we don't make it back before the light on this arm goes out... burn the entrance.",
+      "emotionalBeat": "The heavy iron gates grind open, exposing them to the terrifying, desolate vastness of the ruins as the cold rain swallows them.",
+      "transition": "DISSOLVE TO:",
+      "estimatedDuration": "180 seconds"
     },
     {
       "sceneNumber": 3,
-      "slugline": "INT. SUBTERRANEAN METRO CONCOURSE - NIGHT",
-      "intExt": "INT",
-      "location": "The Dead Metro Vaults",
+      "act": "Act II-A: Crossing Threshold",
+      "slugline": "EXT. THE LIMBO BAZAAR - NIGHT",
+      "intExt": "EXT",
+      "location": "The Limbo Bazaar",
       "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina",
+        "The Mimic child"
       ],
-      "objective": "Extract the copper-alloy acoustic crystals from the sealed transit command vault before the timer drops below thirty minutes.",
-      "conflict": "The security door is rusted shut and mechanical noise threatens to draw the mimics hunting in the dark.",
-      "action": "Kaelen's wrist glyph reads: 00:38:14. Amber light pulses faintly against wet black subway tiles. Nia holds her brass wind-up music box, listening to echoes down the empty rail tunnel. Kaelen wedges a crowbar into the hydraulic vault hatch. Metal groans. From three hundred yards down the tracks, polite human whistling begins.",
-      "dialogue": "NIA\n(Whispering)\nThey're whistling the national anthem. Just like last week.\n\nKAELEN\nKeep the music box wound. When the hatch pops, grab the cylinder case and don't look back.",
-      "emotionalBeat": "High-stakes stealth and clock-ticking claustrophobia.",
-      "transition": "CUT TO:"
+      "objective": "Navigate the haunted, deceptive ruins of the Bazaar to reach the flooded metro entrance without getting lured into a trap.",
+      "conflict": "An infected mimic disguised as a crying child blocks their path, testing Seraphina's resolve and Aiden's cold pragmatism.",
+      "subtext": "The mimic uses the visual language of innocence to exploit the human instinct to protect, highlighting the tragedy of the fallen world.",
+      "action": "The Bazaar is a graveyard of collapsed wooden stalls, shattered glass, and rusted iron carriages. The desaturated rain falls in relentless sheets, washing away the soot but leaving a thick, greasy grime over everything. Amber bioluminescent mold grows in the cracks of the cobblestones, pulsing in a sickly rhythm.\n\nAiden moves like a predatory cat, keeping close to the shadows of the ruined storefronts. His arm glows: 03:10:04. He suddenly freezes, raising a hand. \n\nSitting in the middle of a flooded alleyway is a little girl, no older than eight, wearing a clean white dress that seems impossibly untouched by the mud. She is sobbing softly, her face buried in her hands. The sound of her weeping is perfectly clear, cutting through the heavy patter of the rain.",
+      "dialogue": "THE MIMIC CHILD\n(in a sweet, trembling voice, without looking up)\nHelp me... please. I lost my mother when the gates closed. It's so cold.\n\nPRINCESS SERAPHINA\n(instinctively taking half a step forward, her hand reaching out)\nOh gods... she's just a child. How did she survive out here?\n\nAIDEN STORM\n(grabbing Seraphina's wrist, his grip like a vise)\nLook at her shoes, Seraphina. Look at the dress. There is no mud on her. No tears in the fabric.\n\nTHE MIMIC CHILD\n(slowly lowering her hands, revealing a beautiful, tear-stained face with bright blue eyes)\nI'm hungry. Please, lady. Do you have any bread?\n\nPRINCESS SERAPHINA\n(whispering, her voice cracking)\nShe looks so real, Aiden. Her eyes... she's looking right at me.\n\nAIDEN STORM\n(drawing his shortblade, the amber runes on the metal catching the rain)\nShe's not looking at you, Princess. She's measuring the distance to your throat. Watch her jaw.\n\nTHE MIMIC CHILD\n(her smile widening slightly too far, her teeth gleaming white in the dark)\nI can help you find the crystals. I know where they are hidden. Just let me hold your hand.",
+      "emotionalBeat": "Aiden steps forward and strikes without mercy; the child's face splits open in a silent, horrific grin before dissolving into black dust, leaving Seraphina shaken by the brutal reality.",
+      "transition": "SMASH CUT TO:",
+      "estimatedDuration": "200 seconds"
     },
     {
       "sceneNumber": 4,
-      "slugline": "EXT. FLOODED TRANSIT YARD - DAWN",
-      "intExt": "EXT",
-      "location": "The Dead Expanse Outside Barrier",
-      "time": "DAWN",
+      "act": "Act II-A: Rising Action",
+      "slugline": "INT. FLOODED METRO ENTRANCE - NIGHT",
+      "intExt": "INT",
+      "location": "Flooded Metro Entrance",
+      "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Elias (The Mimic)",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina"
       ],
-      "objective": "Escape back to the outer perimeter with the crystal canister while the spell enters its final sixty seconds.",
-      "conflict": "Elias and three 'citizens' surround the railway bridge, their smiles frozen as the rain washes away their pretense.",
-      "action": "Kaelen runs through knee-deep black water, clutching the heavy steel canister. Nia is ahead, scrambling up the perimeter ladder. Kaelen's wrist glyph flashes violently: 00:01:12... 00:00:58. Elias stands on the bridge footing. His voice is perfectly modulated, but his jaw dislocates slightly as he speaks.",
-      "dialogue": "ELIAS\nThirty seconds, Kaelen. Then you smell like home to all of us.\n\nKAELEN\n(Raising weapon)\nThen take your shot while I'm still human.",
-      "emotionalBeat": "Adrenaline-fueled climax. Humanity measured in heartbeats.",
-      "transition": "MATCH CUT TO:"
+      "objective": "Descend into the dark, flooded subway system to find the path to the main vaults while managing the physical toll of the countdown spell.",
+      "conflict": "The rising, freezing water threatens to sweep them away, and the heat from Aiden's countdown spell begins to burn his flesh, causing him to falter.",
+      "subtext": "Seraphina begins to see the physical sacrifice Aiden is making, shifting her view of him from a cold mercenary to a desperate savior.",
+      "action": "They descend a crumbling concrete staircase into the subterranean depths. The ceiling has partially collapsed, allowing cascades of cold rainwater to pour into the tunnel, creating a rushing, knee-deep river of black water. Rusted subway cars hang precariously from the ceiling like dead metal beasts.\n\nThe air is thick with the stench of rot and stagnant water. Aiden stumbles, his left hand gripping his right forearm. The countdown rune is glowing a violent, angry red-orange: 02:15:32. Steam actively hisses as the cold rain hits his skin, and his flesh is beginning to blister around the edges of the magical carving.\n\nSeraphina catches him, wading through the rushing water to support his weight. She pulls his arm up, her eyes wide with alarm at the state of his skin.",
+      "dialogue": "PRINCESS SERAPHINA\n(shouting over the roar of the rushing water)\nIt's burning you! Eldrin said it would be painful, but your skin is bubbling, Aiden!\n\nAIDEN STORM\n(pushing her away gently, leaning against a rusted pillar)\nIt's fine. The magic is just... hungry. It feeds on the host's vitality to keep the barrier-frequency alive. I can handle it.\n\nPRINCESS SERAPHINA\n(touching the edge of the rune, her fingers tingling with residual magic)\nThis isn't just pain. It's consuming you. If we don't get the crystals and get back, there won't be enough of you left to even cross the threshold.\n\nAIDEN STORM\n(looking down at her, his face pale, his eyes bloodshot)\nThen we move faster. The vault entrance is just past the next junction. The water is deeper there. Keep your blade high.\n\nPRINCESS SERAPHINA\n(looking into the dark tunnel ahead, where shadows seem to shift)\nDo you hear that? It sounds like... laughing. Like a crowd of people at a banquet.\n\nAIDEN STORM\n(quietly, drawing his blade)\nThey know we're here. They're waiting for us to get tired.",
+      "emotionalBeat": "Aiden's physical vulnerability is exposed, forcing Seraphina to take the lead as they wade deeper into the pitch-black, haunted waters.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "180 seconds"
     },
     {
       "sceneNumber": 5,
-      "slugline": "INT. ST. JUDE'S CATHEDRAL NAVE - DAWN",
+      "act": "Act II-B: Midpoint Reversal",
+      "slugline": "INT. SUBMERGED METRO VAULTS - NIGHT",
       "intExt": "INT",
-      "location": "St. Jude's Inner Sanctuary",
-      "time": "DAWN",
+      "location": "Submerged Metro Vaults",
+      "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Sister Mara",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Shadow Lord Malakor"
       ],
-      "objective": "Lock the crystal into the Keystone altar to renew the barrier before the outer perimeter falls.",
-      "conflict": "The wrist glyph expires at 00:00:00 as Kaelen slams through the inner airlock, proving he brought no infection inside.",
-      "action": "Kaelen slides across the marble floor as the cathedral airlock slams shut. Outside the reinforced blast glass, dozens of calm, rain-soaked figures stare through the pane. Kaelen drops the acoustic crystal into the altar well. A resonant gold shockwave explodes outward, recharging the shimmering dome. On his wrist, the glyph burns out into a dead gray ash line.",
-      "dialogue": "MARA\n(Tears in eyes)\nIt holds. The city lives.\n\nKAELEN\nFor now. But Elias was standing outside the glass, Mara. And he wasn't looking at the barrier. He was looking at Nia.",
-      "emotionalBeat": "Victorious relief undercut by chilling revelation of the next war.",
-      "transition": "FADE OUT."
+      "objective": "Retrieve the replacement Keystone crystals from the central pedestal while dealing with a deceptively peaceful confrontation.",
+      "conflict": "Malakor appears in the form of a perfectly clean, elegant nobleman, offering them a peaceful life in the ruins if they abandon the dying city.",
+      "subtext": "Malakor represents the ultimate temptation of surrender—giving up the painful struggle of survival for a beautiful, monstrous lie.",
+      "action": "The vault is a massive circular chamber of white marble, now half-submerged in crystal-clear water. In the center, a stone pedestal holds three glowing, pristine blue crystals that pulse with a pure, clean light. The contrast between the dirty, ruined metro and this pristine sanctuary is jarring.\n\nStanding by the pedestal is Shadow Lord Malakor. He wears an immaculate, dry velvet coat. His face is handsome, aristocratic, and entirely devoid of the monstrous features one would expect. He does not hold a weapon; instead, he gently polishes one of the crystals with a silk handkerchief.\n\nAiden and Seraphina emerge from the dark water, their weapons drawn. Aiden's countdown reads 01:05:12. The amber light of his arm clashes violently with the cool blue glow of the vault.",
+      "dialogue": "SHADOW LORD MALAKOR\n(smiling warmly, his voice smooth and melodic)\nPrincess Seraphina. Aiden Storm. I must commend you. It has been decades since anyone survived the walk through the Bazaar. \n\nAIDEN STORM\n(stepping forward, his blade dripping water)\nStep away from the crystals, Malakor. Or I'll paint this marble with whatever runs through your veins.\n\nSHADOW LORD MALAKOR\n(sighing softly, shaking his head)\nAlways so violent, Aiden. Look at yourself. Your arm is burning to ash for a city that starves in the dark. For a crown that hides behind stone walls while the world outside heals.\n\nPRINCESS SERAPHINA\n(stepping beside Aiden, her voice cold)\nHeals? You call this healing? You are monsters. You wear the faces of our dead to mock us.\n\nSHADOW LORD MALAKOR\n(stepping closer, his movements fluid and unnaturally graceful)\nWe wear these faces because we remember them. We keep their beauty alive. Inside the barrier, you rot. Out here, we are eternal. Join us, Seraphina. Leave the dying wizard and his broken stones. Let the countdown reach zero.",
+      "emotionalBeat": "Malakor offers a hand in friendship, his eyes perfectly human and filled with a deceptive, terrifying warmth that almost makes Seraphina hesitate.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "210 seconds"
+    },
+    {
+      "sceneNumber": 6,
+      "act": "Act II-B: Crisis",
+      "slugline": "INT. VAULT CHAMBER - NIGHT",
+      "intExt": "INT",
+      "location": "Vault Chamber",
+      "time": "NIGHT",
+      "characters": [
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Shadow Lord Malakor"
+      ],
+      "objective": "Escape the vault with the crystals as the countdown hits the critical 10-minute redline and Malakor's illusions shatter.",
+      "conflict": "Malakor unleashes a horde of mimics that look like Seraphina's dead family members, forcing her to confront her deepest trauma to survive.",
+      "subtext": "The physical breakdown of Aiden's body mirrors the collapse of the illusion, revealing the raw, ugly truth of the conflict.",
+      "action": "The elegant marble chamber suddenly distorts. The pristine white walls crack, revealing black, rotting flesh underneath. The crystal-clear water turns muddy and thick with blood. Malakor's handsome face twitches, his jaw unhinging slightly to reveal rows of needle-like teeth before snapping back to a perfect smile.\n\nFrom the shadows of the vaulted ceiling, figures begin to descend. They look like royal guards, maids, and finally, Seraphina's own father, the late King, his eyes vacant but his face perfectly rendered. They move with a jerky, spider-like gait.\n\nAiden lunges forward, grabbing the three blue crystals from the pedestal. The action causes the countdown on his arm to flare violently, turning a deep, bleeding red: 00:10:00. He screams in agony as the magic eats into his muscle.",
+      "dialogue": "SHADOW LORD MALAKOR\n(his voice echoing with a dual, monstrous resonance)\nIf you will not join us willingly, then you will feed the soil! Take the crystals, Aiden. You won't live long enough to slide them into the Keystone!\n\nPRINCESS SERAPHINA\n(staring at the mimic of her father, her blade shaking)\nFather... no. It's not him. It's not him!\n\nAIDEN STORM\n(slashing through a mimic guard, his blood spraying onto the stone)\nSeraphina! Look at his hands! They don't have fingernails! It's a trick! Strike him!\n\nPRINCESS SERAPHINA\n(screaming as the King mimic lunges with a rusted sword)\nFor the Kingdom!\n(She drives her blade through the mimic's chest. It dissolves into black tar, screaming in her father's voice.)\n\nAIDEN STORM\n(grabbing her arm, his skin hot enough to burn her cloak)\nWe have to run! The whole chamber is collapsing! Ten minutes, Seraphina! We have ten minutes!",
+      "emotionalBeat": "Seraphina's breakthrough allows them to break through the horde, but Aiden's physical state is rapidly deteriorating as they head back into the dark tunnels.",
+      "transition": "SMASH CUT TO:",
+      "estimatedDuration": "190 seconds"
+    },
+    {
+      "sceneNumber": 7,
+      "act": "Act III: Climax",
+      "slugline": "EXT. RUINED CITY STREETS - NIGHT",
+      "intExt": "EXT",
+      "location": "Ruined City Streets",
+      "time": "NIGHT",
+      "characters": [
+        "Aiden Storm",
+        "Princess Seraphina"
+      ],
+      "objective": "Sprint through the pouring rain and crumbling ruins back to the cathedral gates with seconds remaining on the countdown.",
+      "conflict": "The physical exhaustion of Aiden's burning arm and the relentless pursuit of human-faced monsters blocking their path.",
+      "subtext": "The desperation of their run represents humanity's final, gasping breath against the encroaching darkness.",
+      "action": "The desaturated cold rain has turned into a torrential storm, flooding the ruined streets. The amber bioluminescence of Aiden's arm is now a blinding, unstable beacon, casting long, frantic shadows against the skeletal buildings. The countdown reads: 00:02:14.\n\nBehind them, a crowd of seemingly normal citizens—men, women, children, all dressed in clean, historical clothing—run after them. They do not pant or tire; they glide over the rubble with terrifying speed, their faces frozen in polite, welcoming smiles.\n\nAiden stumbles, falling hard onto the wet cobblestones. The blue crystals spill from his satchel. He tries to push himself up, but his right arm is black and charred, the magic having consumed the muscle. He looks up at the cathedral gates, still fifty yards away.",
+      "dialogue": "AIDEN STORM\n(gasping for air, his voice a wet rattle)\nI can't... my legs. The magic... it's taken the nerve. Take the crystals, Seraphina. Run.\n\nPRINCESS SERAPHINA\n(scooping up the crystals, then grabbing his good arm and pulling him up)\nI am not leaving you here to become one of them! You told me you'd leave me behind, but I never agreed to leave you!\n\nAIDEN STORM\n(staring at the approaching crowd of smiling monsters)\nLook at them... they're gaining. If you carry me, we both die outside the gate.\n\nPRINCESS SERAPHINA\n(dragging him with fierce, royal pride, her boots slipping in the mud)\nThen we die fighting! But we are going to make it to that gate, Aiden! Press your feet down! Move!",
+      "emotionalBeat": "Seraphina's refusal to abandon Aiden gives him a final surge of adrenaline, and together they make a desperate, agonizing charge toward the flickering blue light of the cathedral gates.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "200 seconds"
+    },
+    {
+      "sceneNumber": 8,
+      "act": "Act III: Resolution",
+      "slugline": "INT. CATHEDRAL GATES - NIGHT",
+      "intExt": "INT",
+      "location": "Cathedral Gates",
+      "time": "NIGHT",
+      "characters": [
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Arch-Mage Eldrin"
+      ],
+      "objective": "Identify the false Eldrin blocking the gate, insert the crystals, and recharge the barrier before the countdown hits zero.",
+      "conflict": "A mimic disguised as Eldrin stands inside the gate, trying to delay them so the countdown runs out and the barrier collapses forever.",
+      "subtext": "The ultimate test of discernment—choosing to trust internal bond over external appearance to save what remains of humanity.",
+      "action": "They collapse through the outer iron gate into the cathedral vestibule. The heavy doors slam shut behind them, held only by a temporary iron bar. Outside, the smiling faces of the mimics press against the glass windows, cracking them.\n\nArch-Mage Eldrin stands by the central console of the Keystone, his hand resting on the ancient lever. He looks at them with concern. Aiden's arm is pulsing violently, the countdown reading: 00:00:12. The skin is virtually gone, showing blackened bone.\n\nSeraphina rushes forward with the crystals, but Eldrin steps in front of the console, his hand outstretched.",
+      "dialogue": "ARCH-MAGE ELDRIN\n(warmly, reaching for the crystals)\nGive them to me, child! Quickly! The barrier is about to fail! Let me place them!\n\nAIDEN STORM\n(staring at Eldrin's hands from the floor, his vision blurring)\nSeraphina... wait. Eldrin's left eye... it was blind. It was cloudy.\n\nPRINCESS SERAPHINA\n(freezing, looking at the Eldrin in front of her. His eyes are both bright, clear blue.)\nYou... you aren't Eldrin.\n\nARCH-MAGE ELDRIN\n(his smile widening slightly too far, his voice losing its raspy edge)\nOf course I am, my dear. I cured myself. The magic of the crystals... it healed me.\n\nAIDEN STORM\n(screaming with his remaining strength, lunging with his blade)\nHe's a mimic! Malakor got inside!\n\nPRINCESS SERAPHINA\n(without hesitation, she drives her shortblade upward through the false Eldrin's chin. He shrieks, dissolving into black mist as she slams the three blue crystals into the console.)\n\nAIDEN STORM\n(falling to his knees as his arm hits 00:00:00)\nDo it... Seraphina... now!",
+      "emotionalBeat": "Seraphina slams the lever down. A massive wave of pure blue energy erupts from the Keystone, instantly vaporizing the mimics pressing against the glass and restoring the barrier. The burning red light on Aiden's arm fades into a cool, healing blue, saving his life at the absolute last second.",
+      "transition": "FADE OUT.",
+      "estimatedDuration": "240 seconds"
     }
   ],
   "screenplay": [
     {
       "sceneNumber": 1,
-      "slugline": "EXT. ST. JUDE'S INNER SANCTUARY - DUSK",
-      "intExt": "EXT",
-      "location": "St. Jude's Inner Sanctuary Perimeter",
-      "time": "DUSK",
+      "act": "Act I: Setup",
+      "slugline": "INT. SANCTUM OF THE KEYSTONE - NIGHT",
+      "intExt": "INT",
+      "location": "Sanctum of the Keystone",
+      "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Sister Mara"
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Arch-Mage Eldrin"
       ],
-      "objective": "Kaelen must receive the expedition protection spell despite Sister Mara's warning of its rapid decay.",
-      "conflict": "The Keystone Wardstone is cracking; Sister Mara can only guarantee four hours instead of the standard twelve.",
-      "action": "Rain lashes against the shimmering violet dome. Sister Mara presses a burning bone stylus into Kaelen's left forearm. Runic smoke hisses in the chill air. A glowing amber countdown glyph illuminates beneath his skin: 04:00:00. Through the barrier glass, normal-looking citizens in trench coats stand silently in the mist, staring unblinkingly at the gates.",
-      "dialogue": "MARA\nFour hours, Kaelen. Not a second more. The Keystone is bleeding light. If the glyph fades before you reach the vaults, you won't smell like a living man anymore.\n\nKAELEN\nI don't need twelve hours. Just enough to pull the crystals and make it back.\n\nMARA\nRemember: they don't growl. They don't limp. They sit next to you, and they ask about your family.",
-      "emotionalBeat": "Dread tempered by quiet resolve. The ticking clock begins.",
-      "transition": "SMASH CUT TO:"
+      "objective": "Aiden must endure the carving of the countdown spell to secure the expedition's timeline, while Seraphina fights to join the suicide mission.",
+      "conflict": "Eldrin's fading magic causes excruciating physical pain during the carving, while Aiden refuses to let Seraphina risk her life in the ruins.",
+      "subtext": "Aiden's stoic silence masks his terror of failing the city, while Seraphina's defiance hides her guilt over her royal family's failure to maintain the barrier.",
+      "action": "The sanctum is a cavernous vault of cold, weeping granite, illuminated only by the dying, erratic pulse of the central Keystone. A thick mist of incense and ozone hangs in the damp air, catching the amber bioluminescence of ancient runes carved into the walls. Rainwater drips from the vaulted ceiling, striking the stone floor with a rhythmic, metallic ping.\n\nArch-Mage Eldrin, his hands trembling and stained with runic ash, presses a jagged obsidian stylus into the flesh of Aiden's forearm. Aiden sits rigid in a rusted iron chair, his jaw clenched so tightly his teeth grind audibly. Steam rises from his skin as the amber countdown spell burns itself into his flesh, glowing with a volatile, heat-radiating light.\n\nPrincess Seraphina stands in the shadows of the archway, her fingers clutching a tarnished silver-threaded cloak. Her eyes are wide, reflecting the harsh amber glare of the spell as it counts down: 04:00:00. She steps forward, her boots splashing softly in the shallow puddles.",
+      "dialogue": "ARCH-MAGE ELDRIN\n(whispering, his voice like dry parchment)\nKeep still, Storm. If my hand slips, the rune will eat your flesh before you even reach the outer gates. The magic is... thin. It does not want to hold.\n\nAIDEN STORM\n(through gritted teeth, sweat beads on his forehead)\nJust finish it, Eldrin. The Keystone is hemorrhaging light. We don't have time for a delicate touch.\n\nPRINCESS SERAPHINA\n(stepping into the light, her voice trembling but resolute)\nHe needs more than just a timer, Eldrin. He needs someone who knows the vault's layout. I am going with him.\n\nAIDEN STORM\n(turning his head sharply, his eyes flashing)\nNo. You stay behind the second layer, Seraphina. The ruins are crawling with mimics. If they get a look at a royal face, they'll tear the gates down just to mock us.\n\nPRINCESS SERAPHINA\n(stepping closer, leaning over the iron chair)\nMy father built those vaults. I have the key-phrases memorized. You wouldn't last ten minutes in the flooded lower levels without me, Aiden. You'd drown looking for the crystal chambers.\n\nARCH-MAGE ELDRIN\n(pulling the stylus back with a sharp hiss)\nIt is done. Four hours, Aiden. When that rune hits zero, the protective ward on your skin dissolves. The infection will take you in seconds. You will become one of them—a perfect, smiling shell.",
+      "emotionalBeat": "Aiden looks at the glowing, burning countdown on his arm, realizing his mortality has a literal timer, while Seraphina's determination forces him to accept her companionship.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "180 seconds"
     },
     {
       "sceneNumber": 2,
-      "slugline": "EXT. THE LIMBO BAZAAR - NIGHT",
+      "act": "Act I: Inciting Incident",
+      "slugline": "EXT. THE INNER GATEWAY - NIGHT",
       "intExt": "EXT",
-      "location": "The Limbo Bazaar (Outer Barrier)",
+      "location": "The Inner Gateway",
       "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Elias (The Mimic)",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina"
       ],
-      "objective": "Kaelen navigates the outer market to locate the maintenance map for the underground rail tunnel.",
-      "conflict": "An apparently gentle gentleman (Elias) blocks his passage with unsettling small talk while Kaelen's wrist timer visibly decrements.",
-      "action": "Kaelen pushes through the crowded shipping container corridor. Stalls sell synthetic broth. A young girl, Nia, signals from a rooftop catwalk. Suddenly, Elias steps out from under a striped awning, wearing a dry tweed jacket and holding an umbrella. Kaelen's hand instinctively drops to his holster.",
-      "dialogue": "ELIAS\nTerrible evening for a walk toward the sector line, Vance. The broth at Stall 4 is hot, if you care to rest.\n\nKAELEN\nI have business at the transformer station, Elias. Move aside.\n\nELIAS\n(Smiles warmly)\nBusiness. We all have business. But tell me... does your arm burn as hot as it did last winter? It looks... dim.",
-      "emotionalBeat": "Skin-crawling psychological tension. The antagonist senses vulnerability without breaking disguise.",
-      "transition": "DISSOLVE TO:"
+      "objective": "Aiden must prepare Seraphina for the psychological horror of the mimics before they step outside the safety of the barrier.",
+      "conflict": "Seraphina believes her royal status and training have prepared her, while Aiden knows her empathy will get her killed.",
+      "subtext": "Aiden's harshness is his only way of showing care; he expects to die out here, but he cannot bear to watch her suffer the same fate.",
+      "action": "The massive iron doors of the Inner Gateway groan under the pressure of the howling wind outside. Desaturated cold rain pelts the threshold, splashing against the faint, shimmering blue barrier that marks the boundary of humanity's last safe haven. Beyond the barrier lies the Limbo Bazaar—a ruined, dark expanse of skeletal buildings drowned in shadow.\n\nAiden checks the straps of his leather breastplate, his movements methodical and cold. The amber countdown on his forearm reads 03:42:15, casting a warm, sinister glow over his wet gear. He slides a heavy, runic shortblade into its sheath.\n\nSeraphina pulls her hood over her head. The rain instantly dampens the silver threads of her cloak, turning them a dull, lifeless grey. She grips her own light blade, her knuckles white with tension. She looks out into the dark, her chest rising and falling in rapid, shallow breaths.",
+      "dialogue": "AIDEN STORM\n(grabbing her shoulder roughly, forcing her to look at him)\nListen to me. Really listen. The things out there—they don't look like monsters. They look like the people you grew up with. They will call you by your name. They will beg for help, weeping, bleeding. \n\nPRINCESS SERAPHINA\n(shaking his hand off, though her voice wavers)\nI know what the mimics are, Aiden. I've read the archives.\n\nAIDEN STORM\n(stepping directly into her space, his breath misting in the cold)\nArchives don't scream in your mother's voice. They don't look you in the eye with a face that is perfectly, beautifully human while they slide a blade between your ribs. If you hesitate for even a second because they look 'innocent,' I will leave you behind.\n\nPRINCESS SERAPHINA\n(staring back, her eyes hardening)\nI won't hesitate. My father died to keep that gate closed. I know exactly what is at stake.\n\nAIDEN STORM\n(staring at her for a long beat, then turning to the gatekeeper)\nRaise the gate. And don't open it again until we return. If we don't make it back before the light on this arm goes out... burn the entrance.",
+      "emotionalBeat": "The heavy iron gates grind open, exposing them to the terrifying, desolate vastness of the ruins as the cold rain swallows them.",
+      "transition": "DISSOLVE TO:",
+      "estimatedDuration": "180 seconds"
     },
     {
       "sceneNumber": 3,
-      "slugline": "INT. SUBTERRANEAN METRO CONCOURSE - NIGHT",
-      "intExt": "INT",
-      "location": "The Dead Metro Vaults",
+      "act": "Act II-A: Crossing Threshold",
+      "slugline": "EXT. THE LIMBO BAZAAR - NIGHT",
+      "intExt": "EXT",
+      "location": "The Limbo Bazaar",
       "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina",
+        "The Mimic child"
       ],
-      "objective": "Extract the copper-alloy acoustic crystals from the sealed transit command vault before the timer drops below thirty minutes.",
-      "conflict": "The security door is rusted shut and mechanical noise threatens to draw the mimics hunting in the dark.",
-      "action": "Kaelen's wrist glyph reads: 00:38:14. Amber light pulses faintly against wet black subway tiles. Nia holds her brass wind-up music box, listening to echoes down the empty rail tunnel. Kaelen wedges a crowbar into the hydraulic vault hatch. Metal groans. From three hundred yards down the tracks, polite human whistling begins.",
-      "dialogue": "NIA\n(Whispering)\nThey're whistling the national anthem. Just like last week.\n\nKAELEN\nKeep the music box wound. When the hatch pops, grab the cylinder case and don't look back.",
-      "emotionalBeat": "High-stakes stealth and clock-ticking claustrophobia.",
-      "transition": "CUT TO:"
+      "objective": "Navigate the haunted, deceptive ruins of the Bazaar to reach the flooded metro entrance without getting lured into a trap.",
+      "conflict": "An infected mimic disguised as a crying child blocks their path, testing Seraphina's resolve and Aiden's cold pragmatism.",
+      "subtext": "The mimic uses the visual language of innocence to exploit the human instinct to protect, highlighting the tragedy of the fallen world.",
+      "action": "The Bazaar is a graveyard of collapsed wooden stalls, shattered glass, and rusted iron carriages. The desaturated rain falls in relentless sheets, washing away the soot but leaving a thick, greasy grime over everything. Amber bioluminescent mold grows in the cracks of the cobblestones, pulsing in a sickly rhythm.\n\nAiden moves like a predatory cat, keeping close to the shadows of the ruined storefronts. His arm glows: 03:10:04. He suddenly freezes, raising a hand. \n\nSitting in the middle of a flooded alleyway is a little girl, no older than eight, wearing a clean white dress that seems impossibly untouched by the mud. She is sobbing softly, her face buried in her hands. The sound of her weeping is perfectly clear, cutting through the heavy patter of the rain.",
+      "dialogue": "THE MIMIC CHILD\n(in a sweet, trembling voice, without looking up)\nHelp me... please. I lost my mother when the gates closed. It's so cold.\n\nPRINCESS SERAPHINA\n(instinctively taking half a step forward, her hand reaching out)\nOh gods... she's just a child. How did she survive out here?\n\nAIDEN STORM\n(grabbing Seraphina's wrist, his grip like a vise)\nLook at her shoes, Seraphina. Look at the dress. There is no mud on her. No tears in the fabric.\n\nTHE MIMIC CHILD\n(slowly lowering her hands, revealing a beautiful, tear-stained face with bright blue eyes)\nI'm hungry. Please, lady. Do you have any bread?\n\nPRINCESS SERAPHINA\n(whispering, her voice cracking)\nShe looks so real, Aiden. Her eyes... she's looking right at me.\n\nAIDEN STORM\n(drawing his shortblade, the amber runes on the metal catching the rain)\nShe's not looking at you, Princess. She's measuring the distance to your throat. Watch her jaw.\n\nTHE MIMIC CHILD\n(her smile widening slightly too far, her teeth gleaming white in the dark)\nI can help you find the crystals. I know where they are hidden. Just let me hold your hand.",
+      "emotionalBeat": "Aiden steps forward and strikes without mercy; the child's face splits open in a silent, horrific grin before dissolving into black dust, leaving Seraphina shaken by the brutal reality.",
+      "transition": "SMASH CUT TO:",
+      "estimatedDuration": "200 seconds"
     },
     {
       "sceneNumber": 4,
-      "slugline": "EXT. FLOODED TRANSIT YARD - DAWN",
-      "intExt": "EXT",
-      "location": "The Dead Expanse Outside Barrier",
-      "time": "DAWN",
+      "act": "Act II-A: Rising Action",
+      "slugline": "INT. FLOODED METRO ENTRANCE - NIGHT",
+      "intExt": "INT",
+      "location": "Flooded Metro Entrance",
+      "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Elias (The Mimic)",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina"
       ],
-      "objective": "Escape back to the outer perimeter with the crystal canister while the spell enters its final sixty seconds.",
-      "conflict": "Elias and three 'citizens' surround the railway bridge, their smiles frozen as the rain washes away their pretense.",
-      "action": "Kaelen runs through knee-deep black water, clutching the heavy steel canister. Nia is ahead, scrambling up the perimeter ladder. Kaelen's wrist glyph flashes violently: 00:01:12... 00:00:58. Elias stands on the bridge footing. His voice is perfectly modulated, but his jaw dislocates slightly as he speaks.",
-      "dialogue": "ELIAS\nThirty seconds, Kaelen. Then you smell like home to all of us.\n\nKAELEN\n(Raising weapon)\nThen take your shot while I'm still human.",
-      "emotionalBeat": "Adrenaline-fueled climax. Humanity measured in heartbeats.",
-      "transition": "MATCH CUT TO:"
+      "objective": "Descend into the dark, flooded subway system to find the path to the main vaults while managing the physical toll of the countdown spell.",
+      "conflict": "The rising, freezing water threatens to sweep them away, and the heat from Aiden's countdown spell begins to burn his flesh, causing him to falter.",
+      "subtext": "Seraphina begins to see the physical sacrifice Aiden is making, shifting her view of him from a cold mercenary to a desperate savior.",
+      "action": "They descend a crumbling concrete staircase into the subterranean depths. The ceiling has partially collapsed, allowing cascades of cold rainwater to pour into the tunnel, creating a rushing, knee-deep river of black water. Rusted subway cars hang precariously from the ceiling like dead metal beasts.\n\nThe air is thick with the stench of rot and stagnant water. Aiden stumbles, his left hand gripping his right forearm. The countdown rune is glowing a violent, angry red-orange: 02:15:32. Steam actively hisses as the cold rain hits his skin, and his flesh is beginning to blister around the edges of the magical carving.\n\nSeraphina catches him, wading through the rushing water to support his weight. She pulls his arm up, her eyes wide with alarm at the state of his skin.",
+      "dialogue": "PRINCESS SERAPHINA\n(shouting over the roar of the rushing water)\nIt's burning you! Eldrin said it would be painful, but your skin is bubbling, Aiden!\n\nAIDEN STORM\n(pushing her away gently, leaning against a rusted pillar)\nIt's fine. The magic is just... hungry. It feeds on the host's vitality to keep the barrier-frequency alive. I can handle it.\n\nPRINCESS SERAPHINA\n(touching the edge of the rune, her fingers tingling with residual magic)\nThis isn't just pain. It's consuming you. If we don't get the crystals and get back, there won't be enough of you left to even cross the threshold.\n\nAIDEN STORM\n(looking down at her, his face pale, his eyes bloodshot)\nThen we move faster. The vault entrance is just past the next junction. The water is deeper there. Keep your blade high.\n\nPRINCESS SERAPHINA\n(looking into the dark tunnel ahead, where shadows seem to shift)\nDo you hear that? It sounds like... laughing. Like a crowd of people at a banquet.\n\nAIDEN STORM\n(quietly, drawing his blade)\nThey know we're here. They're waiting for us to get tired.",
+      "emotionalBeat": "Aiden's physical vulnerability is exposed, forcing Seraphina to take the lead as they wade deeper into the pitch-black, haunted waters.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "180 seconds"
     },
     {
       "sceneNumber": 5,
-      "slugline": "INT. ST. JUDE'S CATHEDRAL NAVE - DAWN",
+      "act": "Act II-B: Midpoint Reversal",
+      "slugline": "INT. SUBMERGED METRO VAULTS - NIGHT",
       "intExt": "INT",
-      "location": "St. Jude's Inner Sanctuary",
-      "time": "DAWN",
+      "location": "Submerged Metro Vaults",
+      "time": "NIGHT",
       "characters": [
-        "Kaelen Vance",
-        "Sister Mara",
-        "Nia"
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Shadow Lord Malakor"
       ],
-      "objective": "Lock the crystal into the Keystone altar to renew the barrier before the outer perimeter falls.",
-      "conflict": "The wrist glyph expires at 00:00:00 as Kaelen slams through the inner airlock, proving he brought no infection inside.",
-      "action": "Kaelen slides across the marble floor as the cathedral airlock slams shut. Outside the reinforced blast glass, dozens of calm, rain-soaked figures stare through the pane. Kaelen drops the acoustic crystal into the altar well. A resonant gold shockwave explodes outward, recharging the shimmering dome. On his wrist, the glyph burns out into a dead gray ash line.",
-      "dialogue": "MARA\n(Tears in eyes)\nIt holds. The city lives.\n\nKAELEN\nFor now. But Elias was standing outside the glass, Mara. And he wasn't looking at the barrier. He was looking at Nia.",
-      "emotionalBeat": "Victorious relief undercut by chilling revelation of the next war.",
-      "transition": "FADE OUT."
+      "objective": "Retrieve the replacement Keystone crystals from the central pedestal while dealing with a deceptively peaceful confrontation.",
+      "conflict": "Malakor appears in the form of a perfectly clean, elegant nobleman, offering them a peaceful life in the ruins if they abandon the dying city.",
+      "subtext": "Malakor represents the ultimate temptation of surrender—giving up the painful struggle of survival for a beautiful, monstrous lie.",
+      "action": "The vault is a massive circular chamber of white marble, now half-submerged in crystal-clear water. In the center, a stone pedestal holds three glowing, pristine blue crystals that pulse with a pure, clean light. The contrast between the dirty, ruined metro and this pristine sanctuary is jarring.\n\nStanding by the pedestal is Shadow Lord Malakor. He wears an immaculate, dry velvet coat. His face is handsome, aristocratic, and entirely devoid of the monstrous features one would expect. He does not hold a weapon; instead, he gently polishes one of the crystals with a silk handkerchief.\n\nAiden and Seraphina emerge from the dark water, their weapons drawn. Aiden's countdown reads 01:05:12. The amber light of his arm clashes violently with the cool blue glow of the vault.",
+      "dialogue": "SHADOW LORD MALAKOR\n(smiling warmly, his voice smooth and melodic)\nPrincess Seraphina. Aiden Storm. I must commend you. It has been decades since anyone survived the walk through the Bazaar. \n\nAIDEN STORM\n(stepping forward, his blade dripping water)\nStep away from the crystals, Malakor. Or I'll paint this marble with whatever runs through your veins.\n\nSHADOW LORD MALAKOR\n(sighing softly, shaking his head)\nAlways so violent, Aiden. Look at yourself. Your arm is burning to ash for a city that starves in the dark. For a crown that hides behind stone walls while the world outside heals.\n\nPRINCESS SERAPHINA\n(stepping beside Aiden, her voice cold)\nHeals? You call this healing? You are monsters. You wear the faces of our dead to mock us.\n\nSHADOW LORD MALAKOR\n(stepping closer, his movements fluid and unnaturally graceful)\nWe wear these faces because we remember them. We keep their beauty alive. Inside the barrier, you rot. Out here, we are eternal. Join us, Seraphina. Leave the dying wizard and his broken stones. Let the countdown reach zero.",
+      "emotionalBeat": "Malakor offers a hand in friendship, his eyes perfectly human and filled with a deceptive, terrifying warmth that almost makes Seraphina hesitate.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "210 seconds"
+    },
+    {
+      "sceneNumber": 6,
+      "act": "Act II-B: Crisis",
+      "slugline": "INT. VAULT CHAMBER - NIGHT",
+      "intExt": "INT",
+      "location": "Vault Chamber",
+      "time": "NIGHT",
+      "characters": [
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Shadow Lord Malakor"
+      ],
+      "objective": "Escape the vault with the crystals as the countdown hits the critical 10-minute redline and Malakor's illusions shatter.",
+      "conflict": "Malakor unleashes a horde of mimics that look like Seraphina's dead family members, forcing her to confront her deepest trauma to survive.",
+      "subtext": "The physical breakdown of Aiden's body mirrors the collapse of the illusion, revealing the raw, ugly truth of the conflict.",
+      "action": "The elegant marble chamber suddenly distorts. The pristine white walls crack, revealing black, rotting flesh underneath. The crystal-clear water turns muddy and thick with blood. Malakor's handsome face twitches, his jaw unhinging slightly to reveal rows of needle-like teeth before snapping back to a perfect smile.\n\nFrom the shadows of the vaulted ceiling, figures begin to descend. They look like royal guards, maids, and finally, Seraphina's own father, the late King, his eyes vacant but his face perfectly rendered. They move with a jerky, spider-like gait.\n\nAiden lunges forward, grabbing the three blue crystals from the pedestal. The action causes the countdown on his arm to flare violently, turning a deep, bleeding red: 00:10:00. He screams in agony as the magic eats into his muscle.",
+      "dialogue": "SHADOW LORD MALAKOR\n(his voice echoing with a dual, monstrous resonance)\nIf you will not join us willingly, then you will feed the soil! Take the crystals, Aiden. You won't live long enough to slide them into the Keystone!\n\nPRINCESS SERAPHINA\n(staring at the mimic of her father, her blade shaking)\nFather... no. It's not him. It's not him!\n\nAIDEN STORM\n(slashing through a mimic guard, his blood spraying onto the stone)\nSeraphina! Look at his hands! They don't have fingernails! It's a trick! Strike him!\n\nPRINCESS SERAPHINA\n(screaming as the King mimic lunges with a rusted sword)\nFor the Kingdom!\n(She drives her blade through the mimic's chest. It dissolves into black tar, screaming in her father's voice.)\n\nAIDEN STORM\n(grabbing her arm, his skin hot enough to burn her cloak)\nWe have to run! The whole chamber is collapsing! Ten minutes, Seraphina! We have ten minutes!",
+      "emotionalBeat": "Seraphina's breakthrough allows them to break through the horde, but Aiden's physical state is rapidly deteriorating as they head back into the dark tunnels.",
+      "transition": "SMASH CUT TO:",
+      "estimatedDuration": "190 seconds"
+    },
+    {
+      "sceneNumber": 7,
+      "act": "Act III: Climax",
+      "slugline": "EXT. RUINED CITY STREETS - NIGHT",
+      "intExt": "EXT",
+      "location": "Ruined City Streets",
+      "time": "NIGHT",
+      "characters": [
+        "Aiden Storm",
+        "Princess Seraphina"
+      ],
+      "objective": "Sprint through the pouring rain and crumbling ruins back to the cathedral gates with seconds remaining on the countdown.",
+      "conflict": "The physical exhaustion of Aiden's burning arm and the relentless pursuit of human-faced monsters blocking their path.",
+      "subtext": "The desperation of their run represents humanity's final, gasping breath against the encroaching darkness.",
+      "action": "The desaturated cold rain has turned into a torrential storm, flooding the ruined streets. The amber bioluminescence of Aiden's arm is now a blinding, unstable beacon, casting long, frantic shadows against the skeletal buildings. The countdown reads: 00:02:14.\n\nBehind them, a crowd of seemingly normal citizens—men, women, children, all dressed in clean, historical clothing—run after them. They do not pant or tire; they glide over the rubble with terrifying speed, their faces frozen in polite, welcoming smiles.\n\nAiden stumbles, falling hard onto the wet cobblestones. The blue crystals spill from his satchel. He tries to push himself up, but his right arm is black and charred, the magic having consumed the muscle. He looks up at the cathedral gates, still fifty yards away.",
+      "dialogue": "AIDEN STORM\n(gasping for air, his voice a wet rattle)\nI can't... my legs. The magic... it's taken the nerve. Take the crystals, Seraphina. Run.\n\nPRINCESS SERAPHINA\n(scooping up the crystals, then grabbing his good arm and pulling him up)\nI am not leaving you here to become one of them! You told me you'd leave me behind, but I never agreed to leave you!\n\nAIDEN STORM\n(staring at the approaching crowd of smiling monsters)\nLook at them... they're gaining. If you carry me, we both die outside the gate.\n\nPRINCESS SERAPHINA\n(dragging him with fierce, royal pride, her boots slipping in the mud)\nThen we die fighting! But we are going to make it to that gate, Aiden! Press your feet down! Move!",
+      "emotionalBeat": "Seraphina's refusal to abandon Aiden gives him a final surge of adrenaline, and together they make a desperate, agonizing charge toward the flickering blue light of the cathedral gates.",
+      "transition": "CUT TO:",
+      "estimatedDuration": "200 seconds"
+    },
+    {
+      "sceneNumber": 8,
+      "act": "Act III: Resolution",
+      "slugline": "INT. CATHEDRAL GATES - NIGHT",
+      "intExt": "INT",
+      "location": "Cathedral Gates",
+      "time": "NIGHT",
+      "characters": [
+        "Aiden Storm",
+        "Princess Seraphina",
+        "Arch-Mage Eldrin"
+      ],
+      "objective": "Identify the false Eldrin blocking the gate, insert the crystals, and recharge the barrier before the countdown hits zero.",
+      "conflict": "A mimic disguised as Eldrin stands inside the gate, trying to delay them so the countdown runs out and the barrier collapses forever.",
+      "subtext": "The ultimate test of discernment—choosing to trust internal bond over external appearance to save what remains of humanity.",
+      "action": "They collapse through the outer iron gate into the cathedral vestibule. The heavy doors slam shut behind them, held only by a temporary iron bar. Outside, the smiling faces of the mimics press against the glass windows, cracking them.\n\nArch-Mage Eldrin stands by the central console of the Keystone, his hand resting on the ancient lever. He looks at them with concern. Aiden's arm is pulsing violently, the countdown reading: 00:00:12. The skin is virtually gone, showing blackened bone.\n\nSeraphina rushes forward with the crystals, but Eldrin steps in front of the console, his hand outstretched.",
+      "dialogue": "ARCH-MAGE ELDRIN\n(warmly, reaching for the crystals)\nGive them to me, child! Quickly! The barrier is about to fail! Let me place them!\n\nAIDEN STORM\n(staring at Eldrin's hands from the floor, his vision blurring)\nSeraphina... wait. Eldrin's left eye... it was blind. It was cloudy.\n\nPRINCESS SERAPHINA\n(freezing, looking at the Eldrin in front of her. His eyes are both bright, clear blue.)\nYou... you aren't Eldrin.\n\nARCH-MAGE ELDRIN\n(his smile widening slightly too far, his voice losing its raspy edge)\nOf course I am, my dear. I cured myself. The magic of the crystals... it healed me.\n\nAIDEN STORM\n(screaming with his remaining strength, lunging with his blade)\nHe's a mimic! Malakor got inside!\n\nPRINCESS SERAPHINA\n(without hesitation, she drives her shortblade upward through the false Eldrin's chin. He shrieks, dissolving into black mist as she slams the three blue crystals into the console.)\n\nAIDEN STORM\n(falling to his knees as his arm hits 00:00:00)\nDo it... Seraphina... now!",
+      "emotionalBeat": "Seraphina slams the lever down. A massive wave of pure blue energy erupts from the Keystone, instantly vaporizing the mimics pressing against the glass and restoring the barrier. The burning red light on Aiden's arm fades into a cool, healing blue, saving his life at the absolute last second.",
+      "transition": "FADE OUT.",
+      "estimatedDuration": "240 seconds"
     }
   ],
   "storyboard": [
     {
       "scene": 1,
       "frame": 1,
-      "shot": "Wide Exterior Sanctuary",
-      "description": "Gothic cathedral glowing behind a translucent violet forcefield under pouring rain.",
-      "characterPosition": "Sister Mara in green robes at center steps, Kaelen approaching.",
-      "camera": "Low angle 24mm anamorphic looking up at the spire.",
-      "lighting": "Bioluminescent violet shield glow with flickering candle torches.",
-      "emotion": "Solemn awe and creeping dread.",
-      "action": "Kaelen stops before the elder; thunder rumbles in distance.",
+      "shot": "Wide Low-Angle Sanctuary Dome",
+      "camera_shot_type": "Low-angle 24mm anamorphic wide establishing shot",
+      "lighting_and_color_palette": "Bioluminescent violet atmospheric ionization contrasting with deep amber torchlight and charcoal night sky",
+      "subject_action": "Kaelen in weathered scavenger gear stands motionless before Sister Mara on the cathedral threshold",
+      "environment_details": "Neo-Gothic granite cathedral spires encased in a shimmering translucent violet protective forcefield dome with torrential acid rain drumming against the energy barrier",
+      "artistic_style_and_textures": "35mm film capture, shallow depth of field, authentic fine emulsion grain, coarse woven canvas duster coat, porous basalt masonry with wet specular sheen, volumetric mist",
       "duration": "4 seconds",
-      "imagePrompt": "Google Imagen 3 specification: Cinematic 8k movie still, 16:9 widescreen, 24mm Master Anamorphic, gothic cathedral encased in a shimmering translucent violet protective forcefield dome, heavy dark rainstorm, stone steps, two cloaked figures standing in torchlight, hyperrealistic, volumetric lighting, photorealistic 35mm film grain",
-      "videoPrompt": "Google Veo specification: Cinematic 24fps slow push-in crane shot descending through torrential rain toward stone cathedral steps, raindrops refracting against pulsing violet forcefield dome, atmospheric mist curling, authentic handheld inertia"
+      "imagePrompt": "Low-angle 24mm anamorphic wide establishing shot of an ancient neo-Gothic stone cathedral protected beneath an iridescent translucent violet energy dome during a heavy nocturnal rainstorm. Water sheets off the forcefield curves into deep gutter troughs. A solitary cloaked man in a frayed dark canvas duster stands on rain-slicked basalt steps facing an elder nun in ceremonial linen robes. High-contrast chiaroscuro lighting, volumetric purple atmosphere, tungsten torch bounce on wet stone, optical horizontal lens flare, authentic 35mm film texture.",
+      "videoPrompt": "Google Veo 24fps camera move: Slow forward tracking dolly pushing past weeping gargoyles toward the illuminated cathedral sanctuary steps under pouring rain."
     },
     {
       "scene": 1,
       "frame": 2,
       "shot": "Extreme Close-Up Wrist Runic Inscription",
-      "description": "Burning bone stylus searing a glowing amber countdown chronometer into Kaelen's forearm skin.",
-      "characterPosition": "Kaelen's scarred muscular arm held rigid by Sister Mara's runic hands.",
-      "camera": "85mm macro lens focused on sizzling embers.",
-      "lighting": "Fiery amber light radiating from the freshly carved letters: 04:00:00.",
-      "emotion": "Endured agony, irreversible commitment.",
-      "action": "Smoke curls up as the numbers begin counting down: 03:59:59.",
+      "camera_shot_type": "Macro 85mm extreme close-up with ultra-shallow depth of field",
+      "lighting_and_color_palette": "Fiery molten orange and amber radiance illuminating pale forearm skin against pitch black darkness",
+      "subject_action": "Carved bone stylus searing burning glowing digits (04:00:00) into human forearm skin as smoke wafts upward",
+      "environment_details": "Subsurface scattering of light through epidermal tissue, tiny curling tendrils of white smoke, charred epidermal borders",
+      "artistic_style_and_textures": "Macro cine optics, 85mm T1.5 lens, optical distortion at frame edges, extreme dermal texture detail, incandescent ember glow, microscopic sweat beads",
       "duration": "3.5 seconds",
-      "imagePrompt": "Google Imagen 3 specification: Macro 85mm extreme close-up, glowing magical amber runic countdown clock searing into human skin, glowing digits 04:00:00 with fiery embers and rising vapor, skin pore detail, subsurface scattering, tactile realism, dark cathedral background",
-      "videoPrompt": "Google Veo specification: Macro dynamic rack focus from bone stylus tip to sizzling skin as the amber numeral 04:00:00 illuminates and transitions to 03:59:59, rising runic vapor, 24fps ultra-crisp motion"
+      "imagePrompt": "Macro 85mm extreme close-up cine still focused tightly on a human forearm being inscribed with a burning runic chronometer. A sharp bone stylus presses into skin, emitting sizzling orange embers and thin wisps of curling smoke as glowing incandescent digits reading 04:00:00 illuminate the frame. Extreme shallow focal plane with soft circular bokeh falloff, micro skin textures and subsurface light scattering, high-contrast chiaroscuro shadows.",
+      "videoPrompt": "Google Veo 24fps macro focus pull: Rack focus from the smoking bone stylus tip to the incandescent countdown digits as 04:00:00 ticks down to 03:59:59."
     },
     {
       "scene": 2,
       "frame": 1,
       "shot": "Medium Two-Shot The Polite Mimic",
-      "description": "Elias standing under a rusted umbrella, smiling warmly at Kaelen in a crowded shantytown.",
-      "characterPosition": "Elias on the right in gray tweed; Kaelen on the left in wet charcoal coat.",
-      "camera": "Eye-level 35mm shallow focus.",
-      "lighting": "Grimy yellow sodium streetlights reflecting in black puddles.",
-      "emotion": "Uncanny valley, psychological chills.",
-      "action": "Elias smiles without blinking as Kaelen's wrist glows faintly beneath his sleeve.",
+      "camera_shot_type": "Eye-level 35mm medium two-shot with shallow background focus",
+      "lighting_and_color_palette": "Grimy sickly yellow sodium vapor streetlamps reflecting in greasy asphalt puddles",
+      "subject_action": "Elias in a gray tweed blazer smiles warmly under a rusted umbrella, meeting Kaelen's rigid defensive stare",
+      "environment_details": "Dystopian shantytown market constructed of stacked rusted shipping containers, hung with tangled electrical cables and dripping plastic tarps",
+      "artistic_style_and_textures": "35mm anamorphic widescreen, coarse herringbone wool tweed, wet matte leather duster, corrugated rusted steel walls, rain droplets suspended on umbrella frame",
       "duration": "5 seconds",
-      "imagePrompt": "Google Imagen 3 specification: Cinematic film still, 35mm anamorphic, two men confronting each other in a dystopian crowded shantytown market made of shipping containers, yellow streetlamps, wet asphalt, rain, one man in gray tweed blazer smiling unnaturally, one in weathered leather coat, tension, cinematic framing, high contrast",
-      "videoPrompt": "Google Veo specification: Slow eerie tracking shot orbiting the two men under the rain, background crowd moving in uncanny unison, water dripping off umbrella edge in slow motion, 24fps atmospheric lighting"
+      "imagePrompt": "Eye-level 35mm anamorphic medium two-shot inside an overcrowded dystopian shantytown made of rusted shipping containers under dripping tarps. An unnervingly polite man in a tailored gray tweed blazer holding an umbrella smiles with fixed unblinking eyes at a rugged scavenger in a damp leather coat. Sodium vapor yellow streetlights casting sickly rim highlights, wet asphalt with greasy reflections, cinematic framing, subtle cyan and mustard grade, natural film grain.",
+      "videoPrompt": "Google Veo 24fps motion: Steadycam slow creep between the two men as crowd silhouettes drift through the background in slow motion."
+    },
+    {
+      "scene": 3,
+      "frame": 1,
+      "shot": "Low-Angle Vault Infiltration",
+      "camera_shot_type": "Low-angle 18mm ultra-wide shot hovering inches above stagnant water",
+      "lighting_and_color_palette": "Piercing cool white tactical weapon light cutting through murky pitch-black subterranean gloom",
+      "subject_action": "Kaelen straining against a heavy steel crowbar while young Nia perches on an overhead conduit clutching an antique brass music box",
+      "environment_details": "Submerged subway concourse with cracked white ceramic tiles, floating debris, and a massive circular bank vault hatch",
+      "artistic_style_and_textures": "18mm ultra-wide cine optics, water-level reflection with surface ripples, peeling green vault paint, chipped rusted iron, condensation droplets on exposed copper pipes",
+      "duration": "4 seconds",
+      "imagePrompt": "Low-angle 18mm ultra-wide cinematic shot skimming the surface of black stagnant water in an abandoned submerged subway terminal. A man in tactical chest rig uses a steel crowbar to pry open a massive circular bank vault door while high-pressure steam hisses outward. A young frightened girl sits perched on an overhead conduit holding a small brass music box. Single piercing flashlight beam cutting through airborne subterranean mist, specular caustic reflections on water, gritty 35mm film render.",
+      "videoPrompt": "Google Veo 24fps move: Water-level push-in as the iron vault seal breaks with a burst of vapor and the water churns violently."
+    },
+    {
+      "scene": 4,
+      "frame": 1,
+      "shot": "Handheld Tracking Sprint Across Bridge",
+      "camera_shot_type": "Dynamic handheld 28mm tracking shot with slight Dutch angle",
+      "lighting_and_color_palette": "Cold steel-blue pre-dawn twilight punctuated by flashing emergency crimson wrist chronometer strobe (00:00:15)",
+      "subject_action": "Kaelen running in full sprint across shattered railway iron, leaping over rusted girders while silent mimics watch calmly",
+      "environment_details": "Suspension bridge over a foggy yawning abyss, severed suspension cables whipping in crosswinds, tangled rebar",
+      "artistic_style_and_textures": "28mm wide angle motion blur, cold steel cables, coarse concrete fractures, airborne river spray, high-frequency red strobe lighting dynamics",
+      "duration": "3 seconds",
+      "imagePrompt": "Dynamic 28mm wide-angle tracking action frame with subtle Dutch angle, capturing a rugged man in full survival sprint across a shattered iron railway bridge suspended over a foggy abyss at dawn. Severed cables swinging in violent winds. Flashing crimson numbers on his wrist casting rapid red strobes across his sweat-streaked face. In the background fog, a circle of calm sinister figures in overcoats observe silently. Gritty motion blur on limbs, crisp focus on intense eyes, cold cyan dawn palette with vibrant red warning flare, authentic film textures.",
+      "videoPrompt": "Google Veo 24fps motion: High-speed tracking shot running backward in front of Kaelen as he leaps toward the camera over a shattered bridge gap."
     }
   ],
   "shots": [
@@ -402,37 +629,69 @@
       "lighting": "Murky yellow sodium vapor reflections in puddles",
       "pacing": "Restless, paranoid, claustrophobic",
       "visualEmphasis": "The terrifying normalcy of the infected mimics"
+    },
+    {
+      "sceneNumber": 3,
+      "shotNumber": 1,
+      "shotType": "Low-Angle Dutch Tilt",
+      "cameraPosition": "Floor level submerged track",
+      "cameraMovement": "Creeping push-in past submerged subway ties",
+      "lens": "18mm Ultra-Wide",
+      "composition": "Vault hatch towering ominously overhead; Nia crouched in shadow",
+      "blocking": "Kaelen leverages crowbar with back muscles straining against camera",
+      "lighting": "Faint amber glow from Kaelen's wrist battling deep pitch-black gloom",
+      "pacing": "Suffocating, quiet, razor-sharp tension",
+      "visualEmphasis": "The looming vulnerability of the acoustic resonance vault"
+    },
+    {
+      "sceneNumber": 4,
+      "shotNumber": 1,
+      "shotType": "Handheld Over-The-Shoulder Sprint",
+      "cameraPosition": "Shoulder mount behind Kaelen",
+      "cameraMovement": "Urgent kinetic handheld chase through floodwater",
+      "lens": "28mm Anamorphic",
+      "composition": "Shaking horizon line; countdown clock bouncing into focus every few strides",
+      "blocking": "Elias standing dead still while water churns around him",
+      "lighting": "Cold dawn light cutting through smoke; flashing red warning hue on wrist",
+      "pacing": "Frantic, breath-stealing adrenaline",
+      "visualEmphasis": "The final 30 seconds of human identity slipping away"
     }
   ],
   "cinematography": [
     {
-      "scene": "Cathedral & Sanctuary",
-      "lensChoice": "24mm & 40mm Master Anamorphic",
+      "scene": "Cathedral & Sanctuary (Scenes 1 & 5)",
+      "lensChoice": "24mm & 40mm Master Anamorphic T1.9",
       "cameraHeight": "Chest Level & Low Angle Hero",
+      "cameraMovement": "Slow deliberate crane and Steadicam gliding",
+      "composition": "Grand Gothic symmetry framed between pulsing copper conduits",
       "depthOfField": "Deep focus on architectural stone, shallow on character portraits",
-      "colorTreatment": "Rich gold, beeswax amber, deep indigo shadows",
-      "mood": "Sacred, endangered sanctuary"
+      "colorTreatment": "Rich beeswax gold, warm candle amber, and deep indigo shadow rolloff",
+      "mood": "Sacred, reverent, highly endangered sanctuary"
     },
     {
-      "scene": "Limbo Bazaar",
-      "lensChoice": "35mm & 50mm Anamorphic",
+      "scene": "Limbo Bazaar (Scene 2)",
+      "lensChoice": "35mm & 50mm Anamorphic T2.0",
       "cameraHeight": "Eye Level Steadicam",
+      "cameraMovement": "Continuous lateral track walking in lockstep with characters",
+      "composition": "Paranoid foreground occlusion; crowded shipping container corridors",
       "depthOfField": "Shallow focus to compress paranoia in crowded corridors",
       "colorTreatment": "Sodium vapor yellow, wet asphalt slate, dirty emerald green tarps",
-      "mood": "Corrosive distrust, deceptive safety"
+      "mood": "Corrosive distrust, deceptive safety, uncanny normalcy"
     },
     {
-      "scene": "Metro Vaults & Ruins",
-      "lensChoice": "18mm Ultra-Wide & 85mm Macro",
-      "cameraHeight": "Ground Level looking up",
+      "scene": "Metro Vaults & Dead Ruins (Scenes 3 & 4)",
+      "lensChoice": "18mm Ultra-Wide & 85mm Macro T1.4",
+      "cameraHeight": "Floor Level Looking Up / Handheld Shoulder Mount",
+      "cameraMovement": "Creeping stealth push-in shifting to kinetic sprinting handheld",
+      "composition": "High-contrast geometric diagonals formed by subway rails and dripping pipes",
       "depthOfField": "Razor-thin depth of field highlighting the wrist countdown",
       "colorTreatment": "Monochromatic cold steel, pitch shadow, scorching emergency red",
-      "mood": "Suffocating dread, relentless urgency"
+      "mood": "Suffocating dread, ticking clock urgency, visceral terror"
     }
   ],
   "audio": [
     {
-      "scene": "Scene 1 - Sanctuary Spell",
+      "scene": "Scene 1 - Sanctuary Spell Inscription",
       "dialogue": "Crisp, dry, close-mic vocal presence with subtle stone cathedral reverb.",
       "ambience": "Heavy torrential rain pounding against the protective forcefield like ocean surf.",
       "foley": "Sizzling skin, leather creak of holster, bone stylus grinding on stone.",
@@ -448,14 +707,36 @@
       "ambience": "Distant vendor cries, sizzling griddles, dripping rainwater into corrugated tin barrels.",
       "foley": "Wet combat boot sloshes, fabric friction of duster coat, umbrella fabric snapping in wind.",
       "soundEffects": "Faint high-pitched metallic ping emitted by Kaelen's wrist chronometer every 60 seconds.",
-      "music": "No orchestral music. Unsettling detuned analog string swells rising imperceptibly.",
-      "silence": "Sound dips whenever Elias looks directly into Kaelen's eyes.",
+      "music": "NO MUSIC. Ambient market buzz only, heightening the raw psychological unease.",
+      "silence": "Sound dips into near-vacuum whenever Elias locks eyes directly with Kaelen.",
       "emotionalCue": "Auditory representation of predatory focus.",
       "transition": "L-Cut: Rain sounds continue into the subterranean tunnel."
+    },
+    {
+      "scene": "Scene 3 - Metro Vault Extraction",
+      "dialogue": "Whispered, tense, breathy sibilants bouncing off subterranean tile.",
+      "ambience": "Deep reverberant cavern drip, distant electrical hum from rotting transformers.",
+      "foley": "Crowbar grinding against rusted hydraulic steel hatch; splashing footfalls.",
+      "soundEffects": "High-pitched polite whistling echoing from 300 yards down the subway tracks.",
+      "music": "Low sub-harmonic pulse that slowly syncs with Nia's tin music box melody.",
+      "silence": "Music box suddenly stops ticking; 5 seconds of absolute silence before the hatch breaks.",
+      "emotionalCue": "Vulnerability of childhood innocence confronted with cold mimic calculation.",
+      "transition": "J-Cut: Heavy water rush heard before cutting to exterior transit yard."
+    },
+    {
+      "scene": "Scene 4 - Bridge Escape",
+      "dialogue": "Shouted through raging rain and panting breath.",
+      "ambience": "Gale-force crosswinds, creaking railway bridge cables, splashing floodwater.",
+      "foley": "Heavy combat boots hitting iron decking, spent brass shell casings hitting water.",
+      "soundEffects": "Furious rapid beeping from wrist timer entering single-digit seconds.",
+      "music": "Aggressive, relentless industrial percussion and distorted analog bass synthesizer.",
+      "silence": "No silence: maximum auditory chaos and sensory overload.",
+      "emotionalCue": "The unyielding terror of time running out.",
+      "transition": "Match Cut: Alarm pitch matches the hydraulic hiss of the cathedral airlock."
     }
   ],
   "editPlan": {
-    "pacingStrategy": "Gradual acceleration: slow, ceremonial pacing in Act 1 builds to breathless real-time editing in Act 3 as the countdown drops below five minutes.",
+    "pacingStrategy": "Gradual acceleration: deliberate, ceremonial pacing in Act 1 builds to breathless real-time editing in Act 3 as the countdown drops below five minutes.",
     "sceneOrder": [
       1,
       2,
@@ -463,20 +744,31 @@
       4,
       5
     ],
-    "estimatedDurations": {
-      "scene_1": "14 minutes",
-      "scene_2": "18 minutes",
-      "scene_3": "22 minutes",
-      "scene_4": "25 minutes",
-      "scene_5": "16 minutes"
+    "sceneDurations": {
+      "scene_1": "14 minutes (Ritual Setup & Rule Revelation)",
+      "scene_2": "18 minutes (Paranoid Limbo Market Crawl)",
+      "scene_3": "22 minutes (Underground Vault Heist & Whistle Tension)",
+      "scene_4": "25 minutes (High-Octane Bridge Sprint Climax)",
+      "scene_5": "16 minutes (Cathedral Renewal & Cliffhanger Unmasking)"
     },
-    "keyTransitions": [
-      "Scene 1 to 2: Hard cut on the sizzling stylus smoke dissolving into the sodium fog of the Bazaar.",
-      "Scene 2 to 3: J-Cut where the underground subway dripping is heard before cutting to black.",
-      "Scene 3 to 4: Accelerating cut rate from 6-second takes down to 1.2-second rhythmic cuts.",
-      "Scene 4 to 5: Match cut between the digital countdown '00:00:01' and the slam of the airlock hatch."
+    "cutTiming": "Act 1 averages 6.5s per shot to absorb sacred atmosphere; Act 2 tightens to 3.8s to build paranoia; Act 3 cuts on kinetics at 1.2s intervals.",
+    "transitions": [
+      "Scene 1 to 2: Hard cut from rising smoke into muddy sodium rain",
+      "Scene 2 to 3: Dissolve through murky water puddle into flooded subway concourse",
+      "Scene 3 to 4: Accelerating cut rate from 6-second takes down to 1.2-second rhythmic cuts",
+      "Scene 4 to 5: Smash cut from running footsteps to heavy steel vault door slamming shut"
     ],
-    "finalShot": "A slow optical push into Elias's calm face through the cathedral glass as the rain runs down the pane like static."
+    "parallelEditing": "In Act 3, cross-cut between Kaelen sprinting across the floodwater with the dying timer and Sister Mara desperately burning incense at the fracturing altar.",
+    "matchCuts": [
+      "Match cut between the circular glowing countdown timer '00:00:01' and the circular Keystone altar well.",
+      "Match cut between Elias's static smile in the rain and the statue of St. Jude above the gate."
+    ],
+    "jCutsLCuts": [
+      "J-Cut into Scene 3: The eerie whistling down the tracks precedes the visual transition by 4 seconds.",
+      "L-Cut out of Scene 1: Sister Mara's voiceover warning 'they ask about your family' carries over Kaelen walking into the market."
+    ],
+    "finalShot": "A slow, creeping optical push into Elias's calm face through the cathedral glass as the rain runs down the pane like static, smiling unblinkingly at Nia.",
+    "trimmedMaterialNotes": "Cut initial 5-minute opening monologue about the history of the apocalypse; replaced with immediate physical action of the bone stylus searing into flesh."
   },
   "socialContent": {
     "video_teasers_veo": [
@@ -526,31 +818,69 @@
     "tiktok_reels_shorts": [
       {
         "platform": "TikTok / Instagram Reels",
-        "title": "The Countdown Spell Rule Explained",
         "format": "9:16 Vertical Video (38s)",
+        "type": "Mystery Hook / World Rule Explanation",
+        "title": "The Countdown Spell Rule Explained",
         "hook": "What if zombies didn't look like zombies... and your survival had a timer seared into your skin?",
-        "script": "Voiceover over glowing wrist visual: 'Rule number one: they don't limp. They don't scream. They wear tweed blazers and ask how your morning was. Rule number two: you have four hours before your smell changes. When that clock hits zero... you are dinner.'",
-        "cta": "Would you survive outside the barrier? Drop your answer below.",
+        "script": "Close-up on glowing amber forearm glyph counting down rapidly. Voiceover: 'Rule number one: they don't limp. They don't scream. They wear tweed blazers and ask how your morning was. Rule number two: you have four hours before your smell changes. When that clock hits zero... you are dinner.'",
+        "cta": "Would you survive outside the barrier? Drop your survival strategy below.",
         "hashtags": [
           "#TheLastSpell",
           "#AgenticCinema",
           "#SciFiHorror",
           "#ZombieApocalypse",
-          "#Filmmaking"
+          "#MovieTrailer"
         ]
       },
       {
         "platform": "YouTube Shorts",
-        "title": "The Mimic Encounter - Behind the Scenes",
         "format": "9:16 Vertical Video (45s)",
-        "hook": "How our Director Agent orchestrated the creepiest conversation in the movie.",
-        "script": "Split-screen comparison: Top shows the screenplay's 'Show, Don't Tell' notes; Bottom shows the 35mm camera blocking and eerie frozen smile of Elias.",
-        "cta": "Full production bible available at Agentic Cinema Studio.",
+        "type": "Behind-the-Scenes Director Breakdown",
+        "title": "How We Made the Mimic Look Terrifying Without CGI",
+        "hook": "Why smiling characters are scarier than rotting monsters.",
+        "script": "Split-screen comparison: Top shows the director's 35mm anamorphic blocking notes; Bottom shows actor Elias holding an unnerving, unblinking smile under the rain as water drips off his nose.",
+        "cta": "Explore the full production package built by our AI team at Agentic Cinema Studio.",
         "hashtags": [
           "#FilmmakersOfTikTok",
           "#DirectingTips",
           "#AIInFilm",
-          "#IndieFilm"
+          "#IndieCinema",
+          "#Cinematography"
+        ]
+      },
+      {
+        "platform": "TikTok / Instagram Reels",
+        "format": "9:16 Vertical Video (25s)",
+        "type": "POV Survival Video",
+        "title": "POV: Your Countdown Spell Has 10 Seconds Left",
+        "hook": "POV: You hear polite whistling down the dark subway tunnel and check your arm.",
+        "script": "First-person camera sprinting through shallow black water. Wrist chronometer flashes red: 00:00:09... 00:00:08. Shadows step out from behind concrete pillars. You slam against the cathedral blast doors.",
+        "cta": "Can you hold your breath until the airlock cycles?",
+        "hashtags": [
+          "#POVHorror",
+          "#SurvivalThriller",
+          "#TheLastSpell",
+          "#ShortFilm"
+        ]
+      }
+    ],
+    "meme_concepts": [
+      {
+        "concept": "Me checking my phone battery at 1% vs. Kaelen checking his forearm with 60 seconds left on his protection spell.",
+        "caption": "Same panic, different stakes. ⏳😭"
+      },
+      {
+        "concept": "Elias asking how my day was with a perfectly calm face while waiting for my spell to expire.",
+        "caption": "Customer service workers dealing with Monday morning emails."
+      }
+    ],
+    "audience_polls": [
+      {
+        "question": "If you had a 4-hour countdown spell to leave the sanctuary, would you:",
+        "options": [
+          "Scavenge food & medical supplies",
+          "Search for the missing Keystone crystals",
+          "Refuse to leave the Inner Cathedral"
         ]
       }
     ]
@@ -559,41 +889,555 @@
     {
       "title": "The 4-Minute Countdown Shuffle",
       "duration": "15 seconds",
-      "character": "Nia with Kaelen",
+      "character": "Nia & The Scavengers",
       "musicStyle": "Dark Phonk / Industrial Trap with ticking clock metronome",
       "bpm": 135,
-      "mood": "Edgy, rhythmic, viral, high-energy",
-      "concept": "Dancers sync sharp mechanical isolations to the ticking countdown clock before breaking into fluid evasive street footwork.",
+      "mood": "Edgy, rhythmic, energetic, intense",
+      "concept": "Dancers sync sharp mechanical wrist isolations to a ticking countdown clock before breaking into fluid evasive street footwork.",
       "beatStructure": {
-        "0_to_3s": "THE HOOK: Close-up check of wrist wrist-timer syncing to heavy bass drop and 3 sharp head tilts.",
-        "3_to_7s": "MAIN MOVEMENT: Step-slide combo miming slipping past frozen mimics in the crowd.",
-        "7_to_11s": "SIGNATURE MOVEMENT: The 'Glyph Flick' - arms trace an amber circle in the air followed by rapid double stomp.",
-        "11_to_15s": "FINAL POSE: Sudden freeze looking over shoulder with finger on lips as the clock rings zero."
+        "0_to_3s": "THE HOOK: Close-up check of wrist timer syncing with heavy 808 bass drop and 3 sharp neck-and-shoulder snap isolations.",
+        "3_to_7s": "MAIN MOVEMENT: Gliding step-slide combo miming ducking through crowded shantytown corridors past frozen bystanders.",
+        "7_to_11s": "SIGNATURE MOVEMENT: The 'Glyph Flick' - arms trace a circular glowing rune in the air followed by a synchronized double boot stomp.",
+        "11_to_15s": "FINAL POSE: Sudden dead freeze looking sharply over left shoulder with index finger on lips as the clock sound rings zero."
       },
-      "choreography": "Mix of tutting, liquid dance, and modern street footwork designed for viral replication.",
-      "cameraFraming": "Low-angle vertical tracking shot starting waist-up and pulling back to full body on beat 7.",
-      "caption": "Can you hit the Glyph Flick before the timer hits 00:00? ⏳🔥 #TheLastSpellDance",
+      "choreography": "Hybrid tutting, liquid arms, and modern street footwork designed for achievable community recreation.",
+      "camera": "Dynamic handheld tracking moving backward with dancer",
+      "framing": "Low-angle 9:16 vertical framing starting waist-up and pulling back to full body on beat 7.",
+      "caption": "Can you hit the Glyph Flick before your timer hits zero? ⏳🔥 Duet this with your crew.",
+      "cta": "Tag your squad and show us your 00:00 freeze pose.",
       "hashtags": [
         "#TheLastSpellDance",
         "#CountdownShuffle",
         "#DanceTrend",
-        "#AgenticCinema"
+        "#AgenticCinema",
+        "#MovementChoreography"
+      ]
+    },
+    {
+      "title": "The Mimic Smile Wave",
+      "duration": "15 seconds",
+      "character": "Elias (The Infiltrator)",
+      "musicStyle": "Eerie Lo-Fi Classical Drill with violin tremolo",
+      "bpm": 120,
+      "mood": "Uncanny valley, hypnotic, unsettling",
+      "concept": "A deceptive smooth waltz that suddenly breaks into robotic finger-tutting and a frozen unnatural smile.",
+      "beatStructure": {
+        "0_to_3s": "THE HOOK: Polite bow in formal clothing followed by an instantaneous wide, unblinking smile right into lens.",
+        "3_to_7s": "MAIN MOVEMENT: Smooth arm waves and umbrella spin imitating an ordinary gentleman taking a stroll.",
+        "7_to_11s": "SIGNATURE MOVEMENT: 'The Jaw Snap' - sharp hand mime under chin snapping shut on the snare rimshot.",
+        "11_to_15s": "FINAL POSE: Both hands clasped behind back, tilt head 45 degrees, tilt umbrella forward to shadow eyes."
+      },
+      "choreography": "Popping, waving, and mime illusion techniques with high theatricality.",
+      "camera": "Slow steady push-in towards dancer's eyes",
+      "framing": "Eye-level 9:16 portrait orientation.",
+      "caption": "When they don't know you're not one of them... ☂️👀",
+      "cta": "Duet if you can hold the smile for 15 seconds without blinking.",
+      "hashtags": [
+        "#MimicWave",
+        "#UncannyDance",
+        "#TheLastSpell",
+        "#ChoreographyTrend"
       ]
     }
   ],
-  "continuityLog": [
+  "continuityLog": [],
+  "cast": [],
+  "storyForMe": {
+    "whatIsThisAbout": "In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.",
+    "importantPeople": [
+      {
+        "name": "Kaelen Vance",
+        "role": "The Brave Leader",
+        "friendlyDescription": "Athletic, weather-beaten, scar across left eyebrow, dark brooding gaze.",
+        "goal": "To protect their friends and save the day",
+        "fear": "Letting down the people who count on them",
+        "signatureObject": "Carved runic wrist chronometer, suppressed 9mm sidearm, analog Geiger-frequency meter."
+      },
+      {
+        "name": "Sister Mara",
+        "role": "The Loyal Friend",
+        "friendlyDescription": "Regal yet frail, etched runic silver tattoos across fingertips, piercing silver eyes.",
+        "goal": "To protect their friends and save the day",
+        "fear": "Letting down the people who count on them",
+        "signatureObject": "Bone etching stylus, mercury ampoules, sanctuary Keystone resonance bell."
+      },
+      {
+        "name": "Elias (The Mimic)",
+        "role": "The Mysterious Guide",
+        "friendlyDescription": "Impeccably neat, unnaturally calm smile, pale translucent skin with faint blue veins.",
+        "goal": "To protect their friends and save the day",
+        "fear": "Letting down the people who count on them",
+        "signatureObject": "Silver pocket watch that doesn't tick, antique tea tin with dried seeds."
+      },
+      {
+        "name": "Nia",
+        "role": "The Team Specialist",
+        "friendlyDescription": "Quick, wiry, observant eyes, smudge of grease on right cheek.",
+        "goal": "To protect their friends and save the day",
+        "fear": "Letting down the people who count on them",
+        "signatureObject": "Brass binoculars, wind-up music box that calms jittery infected."
+      }
+    ],
+    "whatHappens": {
+      "first": "First: At The Sanctum of the Keystone, The air inside the sanctum is thick with the scent of ozone and burnt copper. Rain hammers against the stained-glass dome high above, leaking cold, desaturated drops that hiss agai...",
+      "next": "Next: The adventure heats up at Metro Vaults - Antechamber as The vault is a massive underground chamber filled with dead machinery and hanging electrical cables. At the center stands the backup generator, its glass housing containing three g...",
+      "last": "Last: In the exciting finale at The Sanctum of the Keystone, Kaelen bursts through the sanctum doors, collapsing onto the brass floor. The countdown on his arm reads 00:00:03. Sister Mara screams, rushing toward him. The Keystone is dark, it!"
+    },
+    "whatToRemember": [
+      "Rule 1: Trust your team — nobody saves the day all by themselves.",
+      "Rule 2: Listen closely to ancient clues, they always have a hidden message.",
+      "Rule 3: Courage isn't having no fear; it's doing the right thing anyway."
+    ],
+    "unresolvedMysteries": [
+      "Who built the original threshold of UNTITLED FILM?",
+      "What will the team discover on their next grand adventure?"
+    ]
+  },
+  "song": {
+    "song_title": "Echoes of the Wards (Theme from 'UNTITLED FILM')",
+    "scene_placement": "Act II Midpoint Reversal / The Sacrifice of the Transmission Threshold",
+    "tempo_and_key": "74 BPM • D Minor (Modulating to D Major in Climax)",
+    "mood_and_instrumentation": "Haunting acoustic cello opening paired with warm vintage tape hiss, gradually surging with an analog modular synthesizer sub-bass pulse, cinematic live strings, and a soaring emotional vocal melody.",
+    "lyrics": {
+      "verse_1": "In the copper silence where the memories sleep,\nA buried frequency the shadows couldn't keep.\nDust on the needle, thunder in the wire,\nA quiet whisper turning into fire.",
+      "chorus": "Can you hear the wards calling through the stone?\nWe were never meant to walk this dark alone.\nBreak the dampener, let the anthem rise,\nTruth is shining in a thousand open skies.",
+      "verse_2": "Thirty years of exile written on our hands,\nGold gears spinning in the forgotten sands.\nTake the spark and carry it to the night,\nEven in the vacuum, we remember light.",
+      "bridge": "Let the static fall away, let the filters drown,\nEvery barrier falling, every gilded crown.\nOne voice, one truth, one endless wave,\nThis is the soul they could never cage.",
+      "outro": "Listen closely now...\nThe world is waking up."
+    },
+    "production_notes": "Engineered with binaural acoustic spatialization to immerse theater and headphone audiences in the core harmonic resonance."
+  },
+  "budgetPlan": [
     {
-      "timestamp": "2026-09-01T13:32:19.018829",
-      "type": "CANON_LOCKED",
-      "description": "Core world rules established: Dual barrier sanctuary, 4-hour countdown spell, and cognitive mimic infected.",
-      "status": "VERIFIED"
+      "scene_number": 1,
+      "scene_name": "Perimeter Gateway & Cathedral Sanctum",
+      "expensive_version": {
+        "method": "Build a multi-level 10,000 sq ft concrete physical cathedral set with hydraulic automated steel blast doors and practical water drainage piping.",
+        "estimated_cost": "$2,800,000"
+      },
+      "budget_version": {
+        "method": "Shoot in an authentic decommissioned industrial stone structure with atmospheric rain machines, portable violet LED tubes, and practical prop consoles.",
+        "estimated_cost": "$250,000 (Savings: 91%)"
+      },
+      "story_impact": "Preserves claustrophobic tension and tactile stone textures while cutting massive stage construction overhead."
     },
     {
-      "timestamp": "2026-09-01T13:32:19.018829",
-      "type": "CHARACTER_AUDIT",
-      "description": "Protagonist Kaelen Vance and Antagonist Elias profiles validated across all 5 screenplay scenes.",
-      "status": "VERIFIED"
+      "scene_number": 2,
+      "scene_name": "Limbo Bazaar Quarantine Shanty",
+      "expensive_version": {
+        "method": "Massive backlot set with 40 stacked shipping containers, real neon signage, and 200 background extras in full SFX makeup.",
+        "estimated_cost": "$3,500,000"
+      },
+      "budget_version": {
+        "method": "Shoot in a narrow portside container storage corridor with tight anamorphic framing, 20 featured background actors, and practical wet asphalt reflections.",
+        "estimated_cost": "$320,000 (Savings: 90%)"
+      },
+      "story_impact": "Tight 35mm lens compression intensifies the feeling of paranoia and claustrophobia far better than an open backlot."
+    },
+    {
+      "scene_number": 3,
+      "scene_name": "Subterranean Vault Extraction",
+      "expensive_version": {
+        "method": "Zero-gravity wire stunt rigs in a 360-degree LED volume soundstage with massive full-CGI crumbling bedrock rendering.",
+        "estimated_cost": "$4,200,000"
+      },
+      "budget_version": {
+        "method": "High-contrast dark soundstage with an authentic 15-meter steel industrial catwalk, blue rim-lighting, black velvet curtains, and localized practical sparks.",
+        "estimated_cost": "$450,000 (Savings: 89%)"
+      },
+      "story_impact": "Focuses audience attention on the emotional actor performances and close-quarters stunt choreography rather than expensive background rendering."
     }
   ],
-  "updated_at": "2026-09-01T13:32:19.021214"
+  "keyframes": [
+    {
+      "scene_number": 1,
+      "title": "Scene 1 Keyframe: Kaelen Vance at the Sanctuary Bulwark",
+      "camera_angle": "Low-angle medium close-up, Dutch tilt (15 degrees)",
+      "lighting": "High-contrast chiaroscuro with warm amber torch bounce on the jawline and cold violet forcefield rim light",
+      "color_palette": "Deep obsidian charcoal, phosphor amber (#FFB020), bioluminescent violet (#9D00FF)",
+      "composition": "Kaelen Vance hunched over an illuminated stone console with vibrating copper conduits and rising rain steam",
+      "ai_image_prompt": "Cinematic 35mm film still, low angle shot of Kaelen Vance adjusting an illuminated ancient runic console, amber dials glowing, violet forcefield arcs, dark atmospheric stone bulwark, 8k resolution, authentic anamorphic grain --ar 16:9"
+    },
+    {
+      "scene_number": 2,
+      "title": "Scene 2 Keyframe: Limbo Bazaar Confrontation",
+      "camera_angle": "Eye-level lateral tracking shot on 35mm lens",
+      "lighting": "Grimy sickly yellow sodium vapor streetlamps reflecting in greasy asphalt puddles",
+      "color_palette": "Sodium yellow, wet asphalt slate, dirty emerald green",
+      "composition": "Two silhouetted figures clashing in a narrow alley between stacked shipping containers",
+      "ai_image_prompt": "Cinematic 35mm film still, medium shot of scavenger facing a calculated mimic dressed in tweed under a dripping corrugated roof, neon reflections in rainwater, authentic film textures, 8k --ar 16:9"
+    }
+  ],
+  "scriptAnalysis": [
+    {
+      "scene_number": 1,
+      "setting_and_time": "EXT. ST. JUDE'S INNER SANCTUARY - DUSK",
+      "scene_summary": "Sister Mara inscribe a searing 4-hour countdown chronometer into Kaelen's forearm as torrential acid rain pounds against the shimmering cathedral forcefield.",
+      "characters_present": [
+        {
+          "name": "Kaelen Vance",
+          "emotion_tone": "Grim stoicism masking raw agony, heavy disciplined breathing"
+        },
+        {
+          "name": "Sister Mara",
+          "emotion_tone": "Solemn, liturgical detachment with underlying sorrow"
+        }
+      ],
+      "props_and_vfx": [
+        "Carved bone stylus emitting molten orange sparks",
+        "Translucent violet bioluminescent forcefield dome VFX",
+        "Sizzling amber runic wrist chronometer countdown digits (04:00:00) VFX",
+        "Weathered canvas scavenger duster coat"
+      ]
+    },
+    {
+      "scene_number": 2,
+      "setting_and_time": "EXT. THE LIMBO BAZAAR - NIGHT",
+      "scene_summary": "Kaelen moves through the crowded neutral quarantine zone of corrugated tin shanties and encounters Elias, an infected mimic acting with eerie, calculated politeness.",
+      "characters_present": [
+        {
+          "name": "Kaelen Vance",
+          "emotion_tone": "Hyper-vigilant, tense, keeping arm concealed"
+        },
+        {
+          "name": "Elias (The Mimic)",
+          "emotion_tone": "Uncanny, unwavering polite smile, smooth unblinking cadence"
+        }
+      ],
+      "props_and_vfx": [
+        "Rusted black steel umbrella",
+        "Flickering yellow sodium vapor lanterns on suspended cables",
+        "Drying apothecary herbs hanging from corrugated tin awnings",
+        "Faint amber chronometer pulse illuminating wet duster sleeve VFX"
+      ]
+    },
+    {
+      "scene_number": 3,
+      "setting_and_time": "INT. DEAD METRO CONCOURSE - NIGHT",
+      "scene_summary": "Submerged in waist-deep stagnant sewer runoff, Kaelen and young Nia breach an antique bank vault seal while mimics stalk them from the darkness above.",
+      "characters_present": [
+        {
+          "name": "Kaelen Vance",
+          "emotion_tone": "Frantic physical exertion, urgent whispered commands"
+        },
+        {
+          "name": "Nia",
+          "emotion_tone": "Terrified yet obedient, clutched tightly to an heirloom"
+        }
+      ],
+      "props_and_vfx": [
+        "Heavy iron pry-bar with chipped yellow paint",
+        "Antique wind-up brass music box",
+        "Submerged black water surface with reflective oil slicks",
+        "High-pressure hydraulic steam burst from vault seal VFX"
+      ]
+    },
+    {
+      "scene_number": 4,
+      "setting_and_time": "EXT. FLOODED TRANSIT YARD & RAIL BRIDGE - DAWN",
+      "scene_summary": "With under 60 seconds on his burning chronometer, Kaelen sprints across a shattered suspension rail bridge while Elias leads a silent circle of mimics cutting off his escape.",
+      "characters_present": [
+        {
+          "name": "Kaelen Vance",
+          "emotion_tone": "Gasping exhaustion, ferocious survival defiance"
+        },
+        {
+          "name": "Elias (The Mimic)",
+          "emotion_tone": "Authoritative, coldly disappointed, tranquil predation"
+        }
+      ],
+      "props_and_vfx": [
+        "Shattered steel train bridge with twisted rebar",
+        "Wrist chronometer flashing rapid crimson digits entering single digits (00:00:15) VFX",
+        "Dense dawn river fog with backlight sun rays",
+        "Practical wire-stunt leap harness for bridge platform jump"
+      ]
+    },
+    {
+      "scene_number": 5,
+      "setting_and_time": "INT. ST. JUDE'S CATHEDRAL NAVE - DAWN",
+      "scene_summary": "Kaelen collapses through the outer airlock threshold into the sanctuary dome as his timer expires to zero, securing the medicine vial for Nia.",
+      "characters_present": [
+        {
+          "name": "Kaelen Vance",
+          "emotion_tone": "Total physical collapse, quiet triumphant relief"
+        },
+        {
+          "name": "Sister Mara",
+          "emotion_tone": "Reverent awe, urgent medical triage"
+        },
+        {
+          "name": "Nia",
+          "emotion_tone": "Tears of relief, wound inspection"
+        }
+      ],
+      "props_and_vfx": [
+        "Hermetically sealed brass medicine cylinder",
+        "Burnt blackened scar on wrist where chronometer extinguished VFX",
+        "Cathedral stained glass casting warm multicolored beams across stone floor",
+        "Sanctuary hydraulic airlock doors sealing shut against pounding mimics outside VFX"
+      ]
+    }
+  ],
+  "tableRead": {
+    "project_id": "proj_last_spell",
+    "voice_casting": [
+      {
+        "character": "Kaelen Vance",
+        "voice_profile": "Puck (Gravelly, battle-hardened baritone)",
+        "base_pitch": "-3st",
+        "base_rate": "92%",
+        "archetype": "Exhausted Scavenger Lead"
+      },
+      {
+        "character": "Sister Mara",
+        "voice_profile": "Aoede (Solemn, resonant ceremonial alto)",
+        "base_pitch": "+0st",
+        "base_rate": "88%",
+        "archetype": "Spiritual Guardian"
+      },
+      {
+        "character": "Elias (The Mimic)",
+        "voice_profile": "Fenrir (Smooth, chillingly articulate tenor with zero vibrato)",
+        "base_pitch": "+1st",
+        "base_rate": "100%",
+        "archetype": "Uncanny Hunter"
+      },
+      {
+        "character": "Nia",
+        "voice_profile": "Kore (Soft, trembling youth soprano)",
+        "base_pitch": "+4st",
+        "base_rate": "105%",
+        "archetype": "Innocent Survivor"
+      }
+    ],
+    "table_read_lines": [
+      {
+        "scene_number": 1,
+        "speaker": "Sister Mara",
+        "emotional_tone": "Authoritative & Somber",
+        "raw_text": "Hold still, Kaelen. The ink takes hold only while the marrow is warm. Four hours. Not a second more.",
+        "ssml": "<voice name=\"Aoede\"><prosody pitch=\"-1st\" rate=\"88%\">Hold still, Kaelen.<break time=\"400ms\"/> The ink takes hold only while the marrow is warm.<break time=\"600ms\"/> <emphasis level=\"strong\">Four hours.</emphasis><break time=\"500ms\"/> Not a second more.</prosody></voice>",
+        "pause_after_ms": 650,
+        "director_cue": "Measured, liturgical cadence. Heavy solemnity without melodrama."
+      },
+      {
+        "scene_number": 1,
+        "speaker": "Kaelen Vance",
+        "emotional_tone": "Strained Stoicism / Enduring Agony",
+        "raw_text": "I heard you the first time, Sister. Just press the bone down.",
+        "ssml": "<voice name=\"Puck\"><prosody pitch=\"-4st\" rate=\"95%\"><emphasis level=\"moderate\">I heard you</emphasis> the first time, Sister.<break time=\"350ms\"/> Just press the bone down.</prosody></voice>",
+        "pause_after_ms": 700,
+        "director_cue": "Grit through clenched teeth, air hissing through nostrils on the final syllable."
+      },
+      {
+        "scene_number": 2,
+        "speaker": "Elias (The Mimic)",
+        "emotional_tone": "Uncanny, Terrifying Politeness",
+        "raw_text": "A dreadful night for scavenging, neighbor. You look terribly chilled. Why don't you step under the canvas?",
+        "ssml": "<voice name=\"Fenrir\"><prosody pitch=\"+1st\" rate=\"98%\">A dreadful night for scavenging,<break time=\"200ms\"/> neighbor.<break time=\"450ms\"/> You look <prosody pitch=\"+2st\">terribly</prosody> chilled.<break time=\"400ms\"/> Why don't you step under the canvas?</prosody></voice>",
+        "pause_after_ms": 500,
+        "director_cue": "Completely devoid of vocal tremor or breath artifacts. Unnaturally steady, smiling delivery."
+      },
+      {
+        "scene_number": 2,
+        "speaker": "Kaelen Vance",
+        "emotional_tone": "Whispering Suspicion / Defensive",
+        "raw_text": "I like the rain. Step aside, Elias.",
+        "ssml": "<voice name=\"Puck\"><prosody pitch=\"-3st\" rate=\"90%\"><prosody volume=\"soft\">I like the rain.</prosody><break time=\"400ms\"/> <emphasis level=\"strong\">Step aside,</emphasis> Elias.</prosody></voice>",
+        "pause_after_ms": 600,
+        "director_cue": "Drop in volume to draw the listener in, followed by a hard, sudden consonant snap on 'Elias'."
+      },
+      {
+        "scene_number": 3,
+        "speaker": "Nia",
+        "emotional_tone": "Frantic Whispering",
+        "raw_text": "Kaelen... the water is stopping. The pipes went quiet.",
+        "ssml": "<voice name=\"Kore\"><prosody pitch=\"+4st\" rate=\"110%\"><prosody volume=\"soft\">Kaelen...<break time=\"250ms\"/> the water is stopping.<break time=\"300ms\"/> The pipes went quiet.</prosody></prosody></voice>",
+        "pause_after_ms": 400,
+        "director_cue": "High breathiness, rapid shallow inhalation before speaking."
+      },
+      {
+        "scene_number": 3,
+        "speaker": "Kaelen Vance",
+        "emotional_tone": "Urgent Command / Suppressed Panic",
+        "raw_text": "Climb into the ceiling vent. Now. Don't look back.",
+        "ssml": "<voice name=\"Puck\"><prosody pitch=\"-2st\" rate=\"115%\"><emphasis level=\"strong\">Climb into the ceiling vent.</emphasis><break time=\"250ms\"/> <prosody rate=\"130%\">Now.</prosody><break time=\"300ms\"/> <prosody volume=\"soft\">Don't look back.</prosody></prosody></voice>",
+        "pause_after_ms": 500,
+        "director_cue": "Rapid staccato order, dropping down to an intense harsh whisper on 'Don't look back'."
+      }
+    ],
+    "full_multi_speaker_ssml": "<speak><voice name=\"Aoede\"><prosody pitch=\"-1st\" rate=\"88%\">Hold still, Kaelen.<break time=\"400ms\"/> The ink takes hold only while the marrow is warm.<break time=\"600ms\"/> <emphasis level=\"strong\">Four hours.</emphasis><break time=\"500ms\"/> Not a second more.</prosody></voice><break time=\"650ms\"/><voice name=\"Puck\"><prosody pitch=\"-4st\" rate=\"95%\"><emphasis level=\"moderate\">I heard you</emphasis> the first time, Sister.<break time=\"350ms\"/> Just press the bone down.</prosody></voice><break time=\"700ms\"/><voice name=\"Fenrir\"><prosody pitch=\"+1st\" rate=\"98%\">A dreadful night for scavenging,<break time=\"200ms\"/> neighbor.<break time=\"450ms\"/> You look <prosody pitch=\"+2st\">terribly</prosody> chilled.<break time=\"400ms\"/> Why don't you step under the canvas?</prosody></voice><break time=\"500ms\"/><voice name=\"Puck\"><prosody pitch=\"-3st\" rate=\"90%\"><prosody volume=\"soft\">I like the rain.</prosody><break time=\"400ms\"/> <emphasis level=\"strong\">Step aside,</emphasis> Elias.</prosody></voice><break time=\"600ms\"/><voice name=\"Kore\"><prosody pitch=\"+4st\" rate=\"110%\"><prosody volume=\"soft\">Kaelen...<break time=\"250ms\"/> the water is stopping.<break time=\"300ms\"/> The pipes went quiet.</prosody></prosody></voice><break time=\"400ms\"/><voice name=\"Puck\"><prosody pitch=\"-2st\" rate=\"115%\"><emphasis level=\"strong\">Climb into the ceiling vent.</emphasis><break time=\"250ms\"/> <prosody rate=\"130%\">Now.</prosody><break time=\"300ms\"/> <prosody volume=\"soft\">Don't look back.</prosody></prosody></voice></speak>"
+  },
+  "productionOps": {
+    "success": true,
+    "safety_check": "PASSED (Read-Only Analytical Operation)",
+    "user_query": "Analyze budget allocation, shoot schedules, and scene costs",
+    "intent_category": "SHOOT_SCHEDULES",
+    "mcp_function_called": {
+      "server": "clickhouse-cinema-mcp",
+      "protocol": "2024-11-05",
+      "tool": "get_shoot_schedule",
+      "arguments": {
+        "project_id": "proj_last_spell"
+      }
+    },
+    "sql_equivalent": "SELECT scene_number, shoot_day, location, cast_required, estimated_hours, status FROM cinema.shoot_schedules WHERE project_id = 'proj_last_spell' ORDER BY shoot_day ASC",
+    "data": {
+      "source": "clickhouse_cloud",
+      "project_id": "proj_last_spell",
+      "schedules": [
+        {
+          "scene_number": 1,
+          "shoot_day": 1,
+          "location": "Soundstage A (Sanctuary Dome Set)",
+          "cast": "Kaelen, Sister Mara",
+          "hours": 10.5,
+          "status": "COMPLETED",
+          "vfx_supervisor": "Alex Kim"
+        },
+        {
+          "scene_number": 1,
+          "shoot_day": 1,
+          "location": "Soundstage A (Sanctuary Dome Set)",
+          "cast": "Kaelen, Sister Mara",
+          "hours": 10.5,
+          "status": "COMPLETED",
+          "vfx_supervisor": "Alex Kim"
+        },
+        {
+          "scene_number": 2,
+          "shoot_day": 2,
+          "location": "Backlot Sector 4 (Limbo Bazaar)",
+          "cast": "Kaelen, Elias, 30 Background Extras",
+          "hours": 12.0,
+          "status": "SCHEDULED",
+          "vfx_supervisor": "Alex Kim"
+        },
+        {
+          "scene_number": 2,
+          "shoot_day": 2,
+          "location": "Backlot Sector 4 (Limbo Bazaar)",
+          "cast": "Kaelen, Elias, 30 Background Extras",
+          "hours": 12.0,
+          "status": "SCHEDULED",
+          "vfx_supervisor": "Alex Kim"
+        },
+        {
+          "scene_number": 3,
+          "shoot_day": 3,
+          "location": "Subterranean Pump Station 9",
+          "cast": "Kaelen, Nia",
+          "hours": 9.0,
+          "status": "SCHEDULED",
+          "vfx_supervisor": "Elena Rostova"
+        },
+        {
+          "scene_number": 3,
+          "shoot_day": 3,
+          "location": "Subterranean Pump Station 9",
+          "cast": "Kaelen, Nia",
+          "hours": 9.0,
+          "status": "SCHEDULED",
+          "vfx_supervisor": "Elena Rostova"
+        },
+        {
+          "scene_number": 4,
+          "shoot_day": 4,
+          "location": "Decommissioned Iron Rail Bridge",
+          "cast": "Kaelen, Elias, Stunt Doubles",
+          "hours": 14.0,
+          "status": "PRE-PRODUCTION",
+          "vfx_supervisor": "Alex Kim"
+        },
+        {
+          "scene_number": 4,
+          "shoot_day": 4,
+          "location": "Decommissioned Iron Rail Bridge",
+          "cast": "Kaelen, Elias, Stunt Doubles",
+          "hours": 14.0,
+          "status": "PRE-PRODUCTION",
+          "vfx_supervisor": "Alex Kim"
+        },
+        {
+          "scene_number": 5,
+          "shoot_day": 5,
+          "location": "Soundstage A (Cathedral Nave)",
+          "cast": "Kaelen, Sister Mara, Nia",
+          "hours": 8.0,
+          "status": "SCHEDULED",
+          "vfx_supervisor": "Elena Rostova"
+        },
+        {
+          "scene_number": 5,
+          "shoot_day": 5,
+          "location": "Soundstage A (Cathedral Nave)",
+          "cast": "Kaelen, Sister Mara, Nia",
+          "hours": 8.0,
+          "status": "SCHEDULED",
+          "vfx_supervisor": "Elena Rostova"
+        }
+      ],
+      "total_shoot_days": 5
+    },
+    "visual_metrics": {
+      "headline_metric": "5 Shoot Days | 107.0 Total Production Hours Scheduled",
+      "risk_factor": "Day 4 Overtime Hazard (14.0 hrs scheduled on Iron Rail Bridge)",
+      "ascii_table": "DAY   | SCENE   | LOCATION                         | EST. HOURS | STATUS\n---------------------------------------------------------------------------\nDay 1  | Sc 1    | Soundstage A (Sanctuary Dome S   | 10.5       | COMPLETED\nDay 1  | Sc 1    | Soundstage A (Sanctuary Dome S   | 10.5       | COMPLETED\nDay 2  | Sc 2    | Backlot Sector 4 (Limbo Bazaar   | 12.0       | SCHEDULED\nDay 2  | Sc 2    | Backlot Sector 4 (Limbo Bazaar   | 12.0       | SCHEDULED\nDay 3  | Sc 3    | Subterranean Pump Station 9      | 9.0        | SCHEDULED\nDay 3  | Sc 3    | Subterranean Pump Station 9      | 9.0        | SCHEDULED\nDay 4  | Sc 4    | Decommissioned Iron Rail Bridg   | 14.0       | PRE-PRODUCTION\nDay 4  | Sc 4    | Decommissioned Iron Rail Bridg   | 14.0       | PRE-PRODUCTION\nDay 5  | Sc 5    | Soundstage A (Cathedral Nave)    | 8.0        | SCHEDULED\nDay 5  | Sc 5    | Soundstage A (Cathedral Nave)    | 8.0        | SCHEDULED"
+    },
+    "actionable_next_steps": [
+      "1. [Overtime Mitigation] Split Day 4 (14.0 hours scheduled on Iron Rail Bridge) across two 7.5-hour half-day shoots to prevent union golden-time multiplier penalties.",
+      "2. [Weather Contingency] Invert Day 3 (Subterranean Pump Station) and Day 4 in the call sheet if rain probability exceeds 60%, safeguarding delicate macro camera rigs.",
+      "3. [VFX Supervision Continuity] Assign Elena Rostova to consecutive soundstage days to streamline plate camera matching."
+    ],
+    "grafana_observability": {
+      "dashboard_url": "https://grafana.agentic-cinema.internal/d/cinema-ops-01?orgId=1&var-project=proj_last_spell&refresh=5s",
+      "recommended_panels": [
+        "Departmental Burn Rate Gauge",
+        "Daily Shoot Hour Cumulative Heatmap",
+        "Scene VFX vs Practical Cost Pareto Frontier"
+      ]
+    }
+  },
+  "actorPerformance": {
+    "actor_name": "Leo Thorne",
+    "archetype": "The Rogue Audio Archivist / Male Lead",
+    "vocal_cadence": "Deep baritone; 4-8 word tactical bursts with heavy dramatic pauses.",
+    "scene_title": "INT. ARCHIVAL CHAMBER 9 - NIGHT",
+    "scene_objective": "Leo Thorne must extract the living frequency before system lockdown for idea: In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.",
+    "subtext_breakdown": [
+      "Leo speaks softly to hide his high physical tension.",
+      "Every sentence is a deliberate decision, never mindless banter.",
+      "Physical stillness projects moral authority under duress."
+    ],
+    "dialogue_lines": [
+      "LEO: We didn't crawl through three levels of toxic ductwork just to play it safe.",
+      "LEO: Listen to the resonance beneath the static.",
+      "LEO: They lied to maintain absolute cognitive control.",
+      "LEO: We take this core reel straight to the transmission tower. Move!"
+    ],
+    "screen_time_seconds": 155,
+    "acting_note": "Let your eyes track the analog meters before delivering each line."
+  },
+  "actressPerformance": {
+    "actress_name": "Lyra Sterling",
+    "archetype": "The Systems Cryptographer / Female Lead",
+    "vocal_cadence": "Sharp, articulate, fast-paced analytical cadence modulating into empathetic subtext.",
+    "scene_title": "INT. ARCHIVAL CHAMBER 9 - NIGHT",
+    "scene_objective": "Lyra Sterling must bypass firewall and preserve human heritage for idea: In a post-apocalyptic world where humanity survives inside two magical protection layers, an expedition leader must venture into the infected ruins with a dying countdown spell while knowing the zombies look entirely human.",
+    "subtext_breakdown": [
+      "Lyra converts fear into rapid, precise technical problem-solving.",
+      "Her voice softens when addressing human memory and emotion.",
+      "Laser-sharp eye contact establishes unyielding conviction."
+    ],
+    "dialogue_lines": [
+      "LYRA: If you push this harmonic frequency past 44 kilohertz, the dampeners will melt our interface.",
+      "LYRA: That's not synthetic encryption. That's a living acoustic waveform.",
+      "LYRA: They told the world organic history had to be rewritten for our protection.",
+      "LYRA: We have less than fifty seconds before the blast doors seal us in this vault forever!"
+    ],
+    "screen_time_seconds": 160,
+    "acting_note": "Check gauntlet telemetry before locking eyes with Leo."
+  },
+  "updated_at": "2026-09-08T08:02:26.789542"
 }

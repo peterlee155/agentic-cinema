@@ -1,0 +1,25 @@
+{
+  "plugin": "devpost-hackathon",
+  "version": 2,
+  "hackathon": {
+    "slug": "agentic-cinema",
+    "name": "Agentic Cinema: The Blockbuster Hackathon",
+    "url": "https://agentic-cinema.devpost.com",
+    "selected": true,
+    "source": "known"
+  },
+  "participant": { "name": "", "display_name": "" },
+  "project": { "name": "Agentic Cinema", "summary": "", "ai_usage": "", "codex_usage": "" },
+  "current_stage": "review-hackathon-rules",
+  "completed_stages": ["start-hackathon"],
+  "rules_acknowledged": false,
+  "learning": {
+    "status": "not-started",
+    "current_step": "",
+    "completed_steps": [],
+    "plan_file": "",
+    "checklist_file": ""
+  },
+  "submission": { "draft_file": "devpost-submission.md", "status": "not-started" },
+  "next_command": "review-hackathon-rules"
+}

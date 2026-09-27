@@ -95,32 +95,39 @@ Agentic Cinema includes **"THE LAST SPELL"** as a rich, pre-populated default de
 
 ---
 
-## 🛠️ 8. Quickstart & Spin-Up Guide
+## 🛠️ 8. Quickstart & Tested Spin-Up Guide
 
 ### Prerequisites
 * Python 3.10+
-* (Optional) Google Gemini API Key
-* (Optional) Local or Cloud ClickHouse instance
+* Node.js 18+ & npm
+* (Optional) Google Gemini API Key or Google Cloud Vertex AI credentials
+* (Optional) Local ClickHouse (port 8123) or ClickHouse Cloud (port 8443)
 
-### 1. Clone & Install Dependencies
+### 1. Backend Setup & Launch (Port 9000)
 ```bash
-git clone https://github.com/your-repo/agentic-cinema.git
-cd "agentic-cinema"
+# In repository root:
 pip install -r requirements.txt
-```
 
-### 2. Configure Environment (Optional for Live Gemini API)
-```bash
+# (Optional) Configure environment
 cp .env.example .env
-# Edit .env and set GEMINI_API_KEY="your_api_key_here"
-```
-*(Note: Agentic Cinema runs out-of-the-box in zero-config offline mode with pre-seeded telemetry if no key is provided).*
+# Set GEMINI_API_KEY or GOOGLE_APPLICATION_CREDENTIALS in .env
 
-### 3. Launch the Studio
-```bash
-python run.py
+# Launch FastAPI Backend on port 9000:
+python run.py 9000
 ```
-Open **`http://localhost:8000`** in your browser.
+Backend API will be live on **`http://localhost:9000`** with OpenAPI docs at `http://localhost:9000/docs`.
+
+### 2. Frontend Studio Launch (Port 3000)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open **`http://localhost:3000`** in your browser. Next.js proxies all `/api/*` requests directly to `http://127.0.0.1:9000`.
+
+### 3. Verification & Health Check
+* Open **`http://localhost:3000`** to access the 1-Click Kid-Friendly & Pro Studio.
+* Check **`http://localhost:9000/api/health`** to verify system telemetry, Google Cloud Gemini/Vertex AI, multi-agent swarm status, and ClickHouse MCP connectivity.
 
 ---
 

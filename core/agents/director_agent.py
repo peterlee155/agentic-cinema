@@ -38,95 +38,84 @@ Translate narrative conflict into kinetic visual staging with maximum detail."""
     def _process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> List[Dict[str, Any]]:
         scenes = context.get("scenes", []) or context.get("screenplay", [])
         
-        schema = """[
-  {
-    "sceneNumber": 1,
-    "shotNumber": 1,
-    "shotType": "Extreme Wide Shot",
-    "cameraPosition": "High Angle Crane 30ft",
-    "cameraMovement": "Slow descent through atmospheric rain toward cathedral gates",
-    "lens": "24mm Anamorphic Widescreen",
-    "composition": "Cathedral spire dominates right third; glowing barrier arcs across upper quadrant",
-    "blocking": "Sister Mara stands centered before the heavy wooden doors; Kaelen kneels before her",
-    "lighting": "Chiaroscuro with glowing violet rim light from the shield",
-    "pacing": "Deliberate, ritualistic, solemn",
-    "visualEmphasis": "The frailty of human skin against the massive supernatural shield"
-  }
-]"""
+        schema = """{
+  "shots": [
+    {
+      "sceneNumber": 1,
+      "shotNumber": 1,
+      "shotType": "Extreme Wide Shot",
+      "cameraPosition": "High Angle Crane 30ft",
+      "cameraMovement": "Slow deliberate tracking push into the scene",
+      "lens": "24mm Anamorphic Widescreen",
+      "composition": "Establishing wide perspective with protagonist anchored on the rule of thirds",
+      "blocking": "Lead character pauses at the entrance, surveying the room",
+      "lighting": "Motivated atmospheric chiaroscuro with soft warm key and deep cool shadows",
+      "pacing": "Deliberate, cinematic, immersive",
+      "visualEmphasis": "The dramatic contrast between the character and their environment"
+    }
+  ]
+}"""
 
         gemini_prompt = f"Create director shot lists for these scenes:\n{str(scenes)[:2000]}"
         raw = self.call_gemini(gemini_prompt, schema)
         parsed = self.parse_gemini_json(raw)
-        if isinstance(parsed, list) and len(parsed) > 0 and "cameraPosition" in parsed[0]:
+        if isinstance(parsed, dict):
+            for k in ["shots", "shotList", "shot_list", "data"]:
+                if k in parsed and isinstance(parsed[k], list) and len(parsed[k]) > 0:
+                    return parsed[k]
+        elif isinstance(parsed, list) and len(parsed) > 0 and "cameraPosition" in parsed[0]:
             return parsed
-        elif isinstance(parsed, dict) and "shots" in parsed:
-            return parsed["shots"]
 
-        # Default Director Shot List
+        # Dynamic Director Shot List derived from project scenes
+        scenes = context.get("scenes", []) or context.get("screenplay", [])
+        title = context.get("title") or "UNTITLED FILM"
+        if scenes and isinstance(scenes, list):
+            dynamic_shots = []
+            for idx, sc in enumerate(scenes[:5]):
+                s_num = sc.get("scene_number", idx + 1)
+                slug = sc.get("slug") or f"Scene {s_num}"
+                chars = sc.get("characters", [])
+                c_name = chars[0] if (chars and isinstance(chars[0], str)) else (chars[0].get("name", "Lead Character") if (chars and isinstance(chars[0], dict)) else "Lead Character")
+                dynamic_shots.append({
+                    "sceneNumber": s_num,
+                    "shotNumber": 1,
+                    "shotType": "Establishing Wide Shot",
+                    "cameraPosition": "Eye-level 35mm Anamorphic",
+                    "cameraMovement": "Slow deliberate tracking push into the space",
+                    "lens": "35mm Anamorphic Prime",
+                    "composition": f"{slug} with {c_name} anchored in the lower-third power point",
+                    "blocking": f"{c_name} surveying the perimeter of {slug}",
+                    "lighting": "Atmospheric chiaroscuro with motivated directional practicals",
+                    "pacing": "Deliberate, cinematic, immersive",
+                    "visualEmphasis": f"Establishing the scale and tension of {slug}"
+                })
+                dynamic_shots.append({
+                    "sceneNumber": s_num,
+                    "shotNumber": 2,
+                    "shotType": "Medium Close-Up",
+                    "cameraPosition": "Steadicam chest height",
+                    "cameraMovement": "Subtle lateral handheld drift",
+                    "lens": "50mm High-Speed Prime",
+                    "composition": f"Tight framing on {c_name}'s expressive eyes and posture",
+                    "blocking": f"{c_name} reacting to immediate dramatic developments in the space",
+                    "lighting": "Warm key with cold cinematic rim fill",
+                    "pacing": "Intimate, high-stakes dramatic focus",
+                    "visualEmphasis": "Subtle actor micro-expressions and emotional weight"
+                })
+            return dynamic_shots
+
         return [
             {
                 "sceneNumber": 1,
                 "shotNumber": 1,
                 "shotType": "Extreme Wide Shot",
                 "cameraPosition": "High Angle Crane",
-                "cameraMovement": "Slow descent through rain toward cathedral gates",
+                "cameraMovement": f"Slow descent toward the opening vista of {title}",
                 "lens": "24mm Anamorphic",
-                "composition": "Cathedral spire dominates right third; glowing barrier arcs across upper quadrant",
-                "blocking": "Sister Mara stands centered before the heavy wooden doors; Kaelen kneels before her",
-                "lighting": "Chiaroscuro with glowing violet rim light from the shield",
-                "pacing": "Deliberate, ritualistic, reverent",
-                "visualEmphasis": "The frailty of human skin against the massive supernatural shield"
-            },
-            {
-                "sceneNumber": 1,
-                "shotNumber": 2,
-                "shotType": "Extreme Close-Up",
-                "cameraPosition": "Eye-level Macro",
-                "cameraMovement": "Locked off",
-                "lens": "85mm Prime Macro",
-                "composition": "Kaelen's forearm filling entire screen",
-                "blocking": "Stylus carves into flesh; runic embers flare",
-                "lighting": "Self-illuminating amber glyph burning at 04:00:00",
-                "pacing": "Intense, tactile, visceral",
-                "visualEmphasis": "The tangible, biological cost of survival magic"
-            },
-            {
-                "sceneNumber": 2,
-                "shotNumber": 1,
-                "shotType": "Medium Tracking Shot",
-                "cameraPosition": "Steadicam waist height",
-                "cameraMovement": "Continuous lateral track walking with Kaelen",
-                "lens": "35mm Prime",
-                "composition": "Kaelen framed tight in foreground; background bustling with questionable survivors",
-                "blocking": "Elias steps into frame from right side, matching Kaelen's walking pace seamlessly",
-                "lighting": "Murky yellow sodium vapor reflections in puddles",
-                "pacing": "Restless, paranoid, claustrophobic",
-                "visualEmphasis": "The terrifying normalcy of the infected mimics"
-            },
-            {
-                "sceneNumber": 3,
-                "shotNumber": 1,
-                "shotType": "Low-Angle Dutch Tilt",
-                "cameraPosition": "Floor level submerged track",
-                "cameraMovement": "Creeping push-in past submerged subway ties",
-                "lens": "18mm Ultra-Wide",
-                "composition": "Vault hatch towering ominously overhead; Nia crouched in shadow",
-                "blocking": "Kaelen leverages crowbar with back muscles straining against camera",
-                "lighting": "Faint amber glow from Kaelen's wrist battling deep pitch-black gloom",
-                "pacing": "Suffocating, quiet, razor-sharp tension",
-                "visualEmphasis": "The looming vulnerability of the acoustic resonance vault"
-            },
-            {
-                "sceneNumber": 4,
-                "shotNumber": 1,
-                "shotType": "Handheld Over-The-Shoulder Sprint",
-                "cameraPosition": "Shoulder mount behind Kaelen",
-                "cameraMovement": "Urgent kinetic handheld chase through floodwater",
-                "lens": "28mm Anamorphic",
-                "composition": "Shaking horizon line; countdown clock bouncing into focus every few strides",
-                "blocking": "Elias standing dead still while water churns around him",
-                "lighting": "Cold dawn light cutting through smoke; flashing red warning hue on wrist",
-                "pacing": "Frantic, breath-stealing adrenaline",
-                "visualEmphasis": "The final 30 seconds of human identity slipping away"
+                "composition": f"Expansive horizon of {title} with lone figure in foreground",
+                "blocking": "Lead character pauses, looking out toward the challenge ahead",
+                "lighting": "High-contrast cinematic backlight",
+                "pacing": "Deliberate, epic, atmospheric",
+                "visualEmphasis": f"Scale of the world in {title}"
             }
         ]

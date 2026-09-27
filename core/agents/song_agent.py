@@ -23,22 +23,46 @@ class SongMusicAgent(BaseAgent):
 
     def _process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> Dict[str, Any]:
         brief = context.get("brief", {})
-        title = brief.get("title", "THE SIGNAL")
+        title = brief.get("title") or context.get("title") or prompt or "UNTITLED FILM"
+        genre = brief.get("genre", "Cinematic Drama")
+        logline = brief.get("logline", "")
+
+        schema = """{
+  "song_title": "string",
+  "scene_placement": "string",
+  "tempo_and_key": "string",
+  "mood_and_instrumentation": "string",
+  "lyrics": {
+    "verse_1": "string",
+    "chorus": "string",
+    "verse_2": "string",
+    "bridge": "string",
+    "outro": "string"
+  },
+  "production_notes": "string"
+}"""
+
+        gemini_prompt = f"Compose an original feature film theme song and soundtrack lyrics for '{title}'.\nGenre: {genre}\nLogline: {logline}"
+        raw = self.call_gemini(gemini_prompt, schema)
+        parsed = self.parse_gemini_json(raw)
+        if isinstance(parsed, dict) and "song_title" in parsed:
+            return parsed
         
         return {
-            "song_title": f"Echoes in the 44th (Theme from '{title}')",
-            "scene_placement": "Act II Midpoint Reversal / The Sacrifice of the Transmission Tower",
-            "tempo_and_key": "72 BPM • D Minor (Transitioning to D Major in Climax)",
-            "mood_and_instrumentation": "Haunting acoustic cello opening paired with warm vintage tape hiss, gradually surging with an analog modular synthesizer sub-bass pulse, cinematic live strings, and a soaring emotional female vocal melody.",
+            "song_title": f"Beyond the Horizon (Theme from '{title}')",
+            "scene_placement": f"Act II Midpoint Reversal / Emotional Turning Point in {title}",
+            "tempo_and_key": "74 BPM • D Minor (Modulating to D Major in Climax)",
+            "mood_and_instrumentation": f"Haunting acoustic opening paired with cinematic live strings, atmospheric sub-bass pulse, and an evocative lead melody tailored for {genre.lower()}.",
             "lyrics": {
-                "verse_1": "In the copper silence where the memories sleep,\nA buried frequency the shadows couldn't keep.\nDust on the needle, thunder in the wire,\nA quiet whisper turning into fire.",
-                "chorus": "Can you hear the signal calling through the stone?\nWe were never meant to walk this dark alone.\nBreak the dampener, let the anthem rise,\nTruth is shining in a thousand open skies.",
-                "verse_2": "Thirty years of exile written on his hands,\nGold gears spinning in the forgotten sands.\nTake the spark and carry it to the night,\nEven in the vacuum, we remember light.",
-                "bridge": "Let the static fall away, let the filters drown,\nEvery tower falling, every gilded crown.\nOne voice, one truth, one endless wave,\nThis is the soul they could never cage.",
-                "outro": "Listen closely now...\nThe world is waking up."
+                "verse_1": f"In the quiet shadows where the memories sleep,\nA distant promise that our hearts will keep.\nDust on the horizon, thunder in the wire,\nA quiet whisper turning into fire.",
+                "chorus": f"Can you hear tomorrow calling through the stone?\nWe were never meant to walk this dark alone.\nBreak the silence, let the anthem rise,\nTruth is shining in a thousand open skies.",
+                "verse_2": "Countless miles written on our hands,\nGuiding beacons through uncharted lands.\nTake the spark and carry it to the night,\nEven in the shadows, we remember light.",
+                "bridge": "Let the fear fall away, let the borders drown,\nEvery obstacle falling, every gilded crown.\nOne voice, one truth, one endless wave,\nThis is the courage they could never cage.",
+                "outro": f"Listen closely now...\nThe world of {title} is waking up."
             },
-            "production_notes": "Engineered with binaural acoustic spatialization to immerse theater and headphone audiences in the core 44 kHz harmonic resonance."
+            "production_notes": "Engineered with binaural acoustic spatialization to immerse theater and headphone audiences in the core thematic resonance."
         }
 
-# Alias
+# Aliases
 SongwriterAgent = SongMusicAgent
+SoundtrackAgent = SongMusicAgent

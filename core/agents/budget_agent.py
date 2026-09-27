@@ -24,47 +24,75 @@ class BudgetSimplificationAgent(BaseAgent):
         return self._process("", prompt, context)
 
     def _process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> List[Dict[str, Any]]:
+        scenes = context.get("scenes", []) or context.get("screenplay", [])
+        brief = context.get("brief", {})
+        title = brief.get("title") or context.get("title") or "UNTITLED FEATURE"
+
+        schema = """{
+  "scene_budget_tiers": [
+    {
+      "scene_number": 1,
+      "scene_name": "string",
+      "expensive_version": {
+        "method": "string",
+        "estimated_cost": "$2,800,000"
+      },
+      "budget_version": {
+        "method": "string",
+        "estimated_cost": "$250,000 (Savings: 91%)"
+      },
+      "story_impact": "string"
+    }
+  ]
+}"""
+
+        gemini_prompt = f"Optimize production budget for '{title}'. Provide high-budget vs smart budget options for these scenes:\n{str(scenes)[:1500]}"
+        raw = self.call_gemini(gemini_prompt, schema)
+        parsed = self.parse_gemini_json(raw)
+        if isinstance(parsed, dict):
+            for k in ["scene_budget_tiers", "budget_tiers", "tiers", "data"]:
+                if k in parsed and isinstance(parsed[k], list) and len(parsed[k]) > 0:
+                    return parsed[k]
+        elif isinstance(parsed, list) and len(parsed) > 0 and "expensive_version" in parsed[0]:
+            return parsed
+
+        tiers = []
+        if scenes and isinstance(scenes, list):
+            for idx, sc in enumerate(scenes[:5]):
+                s_num = sc.get("scene_number", idx + 1)
+                s_name = sc.get("slug") or f"Scene {s_num} Sequence"
+                tiers.append({
+                    "scene_number": s_num,
+                    "scene_name": s_name,
+                    "expensive_version": {
+                        "method": f"Full-scale physical build for {s_name} with heavy VFX extensions and elaborate stage rigs.",
+                        "estimated_cost": f"${2_000_000 + idx * 500_000:,}"
+                    },
+                    "budget_version": {
+                        "method": f"Location scout authentic industrial/architectural space with motivated lighting and practical SFX.",
+                        "estimated_cost": f"${220_000 + idx * 40_000:,} (Savings: 89%)"
+                    },
+                    "story_impact": f"Retains dramatic tension and intimate character focus in {title} while maximizing production efficiency."
+                })
+            return tiers
+
         return [
             {
                 "scene_number": 1,
-                "scene_name": "Archival Chamber 9 Subterranean Vault",
+                "scene_name": f"{title} Principal Sequence",
                 "expensive_version": {
-                    "method": "Build a multi-level 10,000 sq ft concrete physical vault set with hydraulic automated steel blast doors and practical water drainage piping.",
-                    "estimated_cost": "$2,800,000"
+                    "method": "Massive bespoke soundstage construction with full LED volume wall.",
+                    "estimated_cost": "$2,500,000"
                 },
                 "budget_version": {
-                    "method": "Shoot in an authentic decommissioned industrial boiler room or brewery cellar with practical haze, portable amber LED tube lighting, and a single custom prop console.",
-                    "estimated_cost": "$250,000 (Savings: 91%)"
+                    "method": "Controlled practical location with high-contrast anamorphic lighting.",
+                    "estimated_cost": "$280,000 (Savings: 88%)"
                 },
-                "story_impact": "Preserves claustrophobic tension and tactile mechanical textures while cutting stage construction overhead."
-            },
-            {
-                "scene_number": 2,
-                "scene_name": "Silas's Transmission Tower & Workshop",
-                "expensive_version": {
-                    "method": "Helicopter mountain location shoot with real high-altitude geodesic dome construction and crane rigging for windswept aerials.",
-                    "estimated_cost": "$3,500,000"
-                },
-                "budget_version": {
-                    "method": "Utilize an existing university planetary observatory or Victorian greenhouse with stained glass lighting and practical wind machines.",
-                    "estimated_cost": "$320,000 (Savings: 90%)"
-                },
-                "story_impact": "Retains the majestic architectural gravitas and warm golden hour dusk lighting."
-            },
-            {
-                "scene_number": 3,
-                "scene_name": "Orbital Apex Platform Space Climax",
-                "expensive_version": {
-                    "method": "Zero-gravity wire stunt rigs in a 360-degree LED volume soundstage with massive full-CGI Earth photorealistic rendering.",
-                    "estimated_cost": "$6,200,000"
-                },
-                "budget_version": {
-                    "method": "High-contrast dark soundstage with an authentic 15-meter steel industrial catwalk, blue rim-lighting, black velvet curtains, and localized composite matte paintings.",
-                    "estimated_cost": "$650,000 (Savings: 89%)"
-                },
-                "story_impact": "Focuses audience attention on the emotional actor performances and close-quarters stunt choreography rather than expensive background rendering."
+                "story_impact": "Keeps the spotlight on performance while eliminating heavy construction costs."
             }
         ]
 
-# Alias
+# Aliases
 MoneySaverAgent = BudgetSimplificationAgent
+BudgetAgent = BudgetSimplificationAgent
+LineProducerAgent = BudgetSimplificationAgent

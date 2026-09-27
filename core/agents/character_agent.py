@@ -41,16 +41,16 @@ class CharacterAgent(BaseAgent):
 
         # Dynamic Name Pools per Genre Theme
         if any(k in combined_text for k in ["space", "galaxy", "alien", "star", "robot", "cyber", "frequency", "android"]):
-            male_leads = ["Kaelen Vance", "Leo Thorne", "Commander Noah Cross", "Jax Mercer", "Ren Sorenson"]
-            female_leads = ["Lyra Sterling", "Maya Vance", "Dr. Aria Chen", "Kira Valen", "Elena Vega"]
-            mentors = ["Dr. Silas Ruiz", "Commander Orson Reed", "Chief Engineer Walter Ross", "Dr. Kaelen Ruiz", "Archivist Eldon Drake"]
+            male_leads = ["Marcus Cross", "Leo Thorne", "Commander Noah Cross", "Jax Mercer", "Ren Sorenson"]
+            female_leads = ["Lyra Sterling", "Maya Lin", "Dr. Aria Chen", "Kira Valen", "Elena Vega"]
+            mentors = ["Dr. Silas Ruiz", "Commander Orson Reed", "Chief Engineer Walter Ross", "Dr. Ronin Ruiz", "Archivist Eldon Drake"]
             antagonists = ["Director Vexis Dane", "Commander Malakor", "Vanguard Victor Kane", "Overlord Zachary Zane", "Syndicate Executive Thorne"]
             archetype_male = "The Rogue Pilot / Acoustic Archivist"
             archetype_female = "The Cyber-Signals Engineer"
             archetype_mentor = "The Disillusioned Cybernetics Pioneer"
             archetype_antagonist = "The Syndicate Security Overseer"
         elif any(k in combined_text for k in ["dragon", "magic", "fantasy", "sky", "kingdom", "sword", "witch", "wizard"]):
-            male_leads = ["Aiden Storm", "Valen Frost", "Kaelen Ashborne", "Rowan Blackwood", "Theron Thorne"]
+            male_leads = ["Aiden Storm", "Valen Frost", "Corin Ashborne", "Rowan Blackwood", "Theron Thorne"]
             female_leads = ["Princess Seraphina", "Lyanna Sunfire", "Isolde Mooncrest", "Freya Windwalker", "Aeris Ravenwood"]
             mentors = ["Arch-Mage Eldrin", "Master Corvus", "Grand Alchemist Orym", "Elder Vael", "High Lorekeeper Thaddeus"]
             antagonists = ["Shadow Lord Malakor", "Inquisitor Morgrim", "Drakon the Usurper", "Baron Vane", "Grand Marshal Azrael"]
@@ -59,10 +59,10 @@ class CharacterAgent(BaseAgent):
             archetype_mentor = "The Ancient Runesmith"
             archetype_antagonist = "The Tyrant of the Eclipse Guild"
         elif any(k in combined_text for k in ["dino", "jungle", "beast", "prehistoric", "island", "monster", "survival"]):
-            male_leads = ["Dr. Alan Cole", "Brock Hunter", "Jack Sterling", "Lucas Wilder", "Logan Vance"]
-            female_leads = ["Dr. Maya Lin", "Sarah Thorne", "Zoey Drake", "Elena Rostova", "Kari Vance"]
-            mentors = ["Professor Samuel Brooks", "Chief Scout Mateo Ruiz", "Dr. Arthur Campbell", "Captain Joshua Vance"]
-            antagonists = ["Commander Vargas", "Harlan Drake", "Director Sterling Croft", "Mercenary Chief Vance"]
+            male_leads = ["Dr. Alan Cole", "Brock Hunter", "Jack Sterling", "Lucas Wilder", "Logan Hayes"]
+            female_leads = ["Dr. Maya Lin", "Sarah Thorne", "Zoey Drake", "Elena Rostova", "Kari Hayes"]
+            mentors = ["Professor Samuel Brooks", "Chief Scout Mateo Ruiz", "Dr. Arthur Campbell", "Captain Joshua Hayes"]
+            antagonists = ["Commander Vargas", "Harlan Drake", "Director Sterling Croft", "Mercenary Chief Stone"]
             archetype_male = "The Expedition Survivalist"
             archetype_female = "The Bio-Geneticist"
             archetype_mentor = "The Veteran Field Guide"
@@ -86,7 +86,7 @@ class CharacterAgent(BaseAgent):
             archetype_mentor = "The Legendary Championship Crew Chief"
             archetype_antagonist = "The Ruthless Corporate Racing Tycoon"
         else:
-            male_leads = ["Marcus Drake", "Kaelen Vance", "Ethan Cross", "Liam Sterling", "Damian Stone"]
+            male_leads = ["Marcus Drake", "Ethan Vance", "Ethan Cross", "Liam Sterling", "Damian Stone"]
             female_leads = ["Lyra Vance", "Elena Thorne", "Maya Chen", "Aria Sterling", "Zara Blackwood"]
             mentors = ["Dr. Silas Ruiz", "Commander Jonathan Ward", "Professor Charles Thorne", "Master Eldon Drake"]
             antagonists = ["Commander Vexis Dane", "Victor Vance", "Director Victor Kane", "Overlord Zachary Thorne"]

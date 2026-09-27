@@ -82,6 +82,39 @@ class ClickHouseMCPServer:
                 }
             },
             {
+                "name": "get_budget_allocation",
+                "description": "Retrieve allocated budget, spent amounts, remaining funds, and burn rates across production departments.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "project_id": {"type": "string", "description": "Project identifier"}
+                    },
+                    "required": ["project_id"]
+                }
+            },
+            {
+                "name": "get_shoot_schedule",
+                "description": "Retrieve production shoot calendar, day-by-day scene scheduling, cast requirements, and location logistics.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "project_id": {"type": "string", "description": "Project identifier"}
+                    },
+                    "required": ["project_id"]
+                }
+            },
+            {
+                "name": "get_scene_costs",
+                "description": "Retrieve itemized scene production costs (location, cast, VFX, stunts) and cost optimization opportunities.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "project_id": {"type": "string", "description": "Project identifier"}
+                    },
+                    "required": ["project_id"]
+                }
+            },
+            {
                 "name": "list_clickhouse_tables",
                 "description": "List all active tables, columnar storage engines, and schema definitions in the ClickHouse cinema database.",
                 "inputSchema": {
@@ -93,6 +126,8 @@ class ClickHouseMCPServer:
 
     def call_tool(self, tool_name: str, arguments: Dict[str, Any]) -> Dict[str, Any]:
         """Handles standard MCP tool invocation."""
+        if hasattr(self.db, "ensure_connected") and not self.db.is_connected:
+            self.db.ensure_connected()
         project_id = arguments.get("project_id", "proj_last_spell")
 
         if tool_name == "list_clickhouse_tables":
@@ -118,6 +153,24 @@ class ClickHouseMCPServer:
                         "engine": "MergeTree()",
                         "order_by": "(project_id, scene_number)",
                         "description": "Shot count, VFX complexity score (1-10), budget tier"
+                    },
+                    {
+                        "name": "budget_allocation",
+                        "engine": "MergeTree()",
+                        "order_by": "(project_id, department)",
+                        "description": "Departmental budget allocation, expenditures, and remaining runway"
+                    },
+                    {
+                        "name": "shoot_schedules",
+                        "engine": "MergeTree()",
+                        "order_by": "(project_id, shoot_day, scene_number)",
+                        "description": "Timeline scheduling, shoot days, locations, cast, and hours"
+                    },
+                    {
+                        "name": "scene_costs",
+                        "engine": "MergeTree()",
+                        "order_by": "(project_id, scene_number)",
+                        "description": "Scene budget breakdown across location, cast, VFX, and stunts"
                     },
                     {
                         "name": "box_office_simulation",
@@ -153,10 +206,35 @@ class ClickHouseMCPServer:
                 "source": metrics.get("source")
             }
 
+        elif tool_name == "get_budget_allocation":
+            return self.db.get_budget_overview(project_id)
+
+        elif tool_name == "get_shoot_schedule":
+            return self.db.get_schedule_overview(project_id)
+
+        elif tool_name == "get_scene_costs":
+            return self.db.get_scene_costs_overview(project_id)
+
         elif tool_name == "run_clickhouse_query":
             query = arguments.get("query", "").strip()
             if not query:
                 return {"error": "Query parameter cannot be empty"}
+
+            # SAFETY CHECK: Intercept and guard mutating queries against spending logs or production records
+            q_clean = query.upper().strip()
+            mutating_keywords = ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "TRUNCATE"]
+            is_mutating = any(q_clean.startswith(kw) or f" {kw} " in q_clean for kw in mutating_keywords)
+            allow_mutation = arguments.get("confirmed_by_producer", False)
+
+            if is_mutating and not allow_mutation:
+                logger.warning(f"Safety check BLOCKED mutating SQL query: {query}")
+                return {
+                    "safety_check": "MUTATION_BLOCKED",
+                    "status": "APPROVAL_REQUIRED",
+                    "warning": "Safety Check Intercept: This operation attempts to modify production records or spending logs. Studio Producer confirmation is required before execution.",
+                    "query_attempted": query,
+                    "action_required": "Provide 'confirmed_by_producer': true in tool arguments to proceed."
+                }
 
             # If real connection is active, query native ClickHouse server
             if self.db.is_connected and self.db.client:
@@ -166,7 +244,8 @@ class ClickHouseMCPServer:
                         "source": "clickhouse_cloud_or_cluster",
                         "result_rows": res.result_rows,
                         "column_names": res.column_names,
-                        "query_executed": query
+                        "query_executed": query,
+                        "safety_check": "PASSED"
                     }
                 except Exception as err:
                     return {"error": str(err), "query_executed": query}
@@ -218,6 +297,45 @@ class ClickHouseMCPServer:
                 "result_rows": rows,
                 "row_count": len(rows),
                 "query_executed": query
+            }
+
+        elif "BUDGET_ALLOCATION" in q_upper:
+            b_data = self.db.get_budget_overview(project_id)
+            cols = ["department", "allocated_amount", "spent_amount", "remaining_amount", "currency", "notes"]
+            rows = [[i["department"], i["allocated"], i["spent"], i["remaining"], i["currency"], i["notes"]] for i in b_data.get("items", [])]
+            return {
+                "source": "clickhouse_resilient_buffer",
+                "column_names": cols,
+                "result_rows": rows,
+                "row_count": len(rows),
+                "query_executed": query,
+                "summary": f"Total Budget: ${b_data.get('total_allocated', 0):,.2f} | Spent: ${b_data.get('total_spent', 0):,.2f} | Runway: ${b_data.get('total_remaining', 0):,.2f} ({b_data.get('burn_rate_percent', 0)}% burn)"
+            }
+
+        elif "SHOOT_SCHEDULES" in q_upper:
+            s_data = self.db.get_schedule_overview(project_id)
+            cols = ["scene_number", "shoot_day", "location", "cast_required", "estimated_hours", "status", "vfx_supervisor"]
+            rows = [[s["scene_number"], s["shoot_day"], s["location"], s["cast"], s["hours"], s["status"], s["vfx_supervisor"]] for s in s_data.get("schedules", [])]
+            return {
+                "source": "clickhouse_resilient_buffer",
+                "column_names": cols,
+                "result_rows": rows,
+                "row_count": len(rows),
+                "query_executed": query,
+                "summary": f"Total Shoot Days: {s_data.get('total_shoot_days', 0)} days scheduled"
+            }
+
+        elif "SCENE_COSTS" in q_upper:
+            c_data = self.db.get_scene_costs_overview(project_id)
+            cols = ["scene_number", "slugline", "base_location_cost", "cast_cost", "vfx_cost", "stunt_cost", "total_scene_cost", "optimization_savings_potential"]
+            rows = [[c["scene_number"], c["slugline"], c["base_location"], c["cast_cost"], c["vfx_cost"], c["stunt_cost"], c["total_cost"], c["savings_potential"]] for c in c_data.get("scenes", [])]
+            return {
+                "source": "clickhouse_resilient_buffer",
+                "column_names": cols,
+                "result_rows": rows,
+                "row_count": len(rows),
+                "query_executed": query,
+                "summary": f"Total Scenes Cost: ${c_data.get('total_production_cost', 0):,.2f} | Potential Savings: ${c_data.get('total_savings_potential', 0):,.2f}"
             }
 
         # Generic default query response

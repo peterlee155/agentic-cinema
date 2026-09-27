@@ -62,84 +62,54 @@ Ensure absolute visual continuity across the entire universe."""
         if parsed and "characters" in parsed and "locations" in parsed:
             return parsed
 
-        # Default Production Visual Bible
+        # Default Production Visual Bible dynamically derived from project brief
+        title = brief.get("title", "UNTITLED FILM")
+        p_name = brief.get("protagonist", {}).get("name") if isinstance(brief.get("protagonist"), dict) else f"Hero of {title}"
         return {
             "characters": [
                 {
-                    "name": "Kaelen Vance",
-                    "age": 34,
-                    "role": "Expedition Scout Leader (Protagonist)",
-                    "appearance": "Athletic, weather-beaten, scar across left eyebrow, dark brooding gaze.",
-                    "hair": "Short cropped raven hair dusted with soot.",
-                    "clothing": "Reinforced charcoal canvas duster coat, tactical holster, worn leather combat gloves.",
-                    "props": "Carved runic wrist chronometer, suppressed 9mm sidearm, analog Geiger-frequency meter.",
-                    "colorPalette": "#111827 (Charcoal), #FF9900 (Amber Glow), #4B5563 (Slate)",
-                    "visualEvolution": "Starts confident with bright wrist runes; by Act 3, coat is shredded, runes flicker red, eyes hollow with exhaustion."
+                    "name": p_name,
+                    "age": 32,
+                    "role": "Lead Protagonist",
+                    "appearance": f"Distinctive, commanding presence reflecting the world of {title}.",
+                    "hair": "Neatly styled dark hair.",
+                    "clothing": "High-contrast cinematic attire tailored to the environment.",
+                    "props": "Key signature item central to the narrative mission.",
+                    "colorPalette": "#1E293B (Slate Navy), #F59E0B (Warm Amber)",
+                    "visualEvolution": "Displays visual transformation reflecting their emotional arc across the story."
                 },
                 {
-                    "name": "Sister Mara",
-                    "age": 58,
-                    "role": "Rune Weaver & Sanctuary Elder",
-                    "appearance": "Regal yet frail, etched runic silver tattoos across fingertips, piercing silver eyes.",
-                    "hair": "Long silver braid wrapped with thin copper wire.",
-                    "clothing": "Heavy emerald-green wool vestments lined with runic gold thread.",
-                    "props": "Bone etching stylus, mercury ampoules, sanctuary Keystone resonance bell.",
-                    "colorPalette": "#064E3B (Emerald), #D97706 (Amber), #F3F4F6 (Silver)",
-                    "visualEvolution": "Weakens as the Keystone stone fractures, hands trembling as she carves Kaelen's final spell."
-                },
-                {
-                    "name": "Elias (The Mimic)",
-                    "age": 38,
-                    "role": "Outer Ward Infiltrator (Antagonist)",
-                    "appearance": "Impeccably neat, unnaturally calm smile, pale translucent skin with faint blue veins.",
-                    "hair": "Neatly combed ash-blonde hair.",
-                    "clothing": "Pre-collapse gray tweed blazer over a wool turtleneck, clean polished leather boots.",
-                    "props": "Silver pocket watch that doesn't tick, antique tea tin with dried seeds.",
-                    "colorPalette": "#374151 (Cold Gray), #93C5FD (Vein Blue), #1F2937 (Shadow)",
-                    "visualEvolution": "Appears warm and friendly at the Limbo Bazaar; reveals black dilated pupils and predatory calm as Kaelen's timer ticks down."
-                },
-                {
-                    "name": "Nia",
-                    "age": 11,
-                    "role": "Scavenger Apprentice & Look-out",
-                    "appearance": "Quick, wiry, observant eyes, smudge of grease on right cheek.",
-                    "hair": "Disheveled messy dark curls tied with yellow cable wire.",
-                    "clothing": "Oversized faded navy flight jacket with rolled cuffs, combat boots two sizes too big.",
-                    "props": "Brass binoculars, wind-up music box that calms jittery infected.",
-                    "colorPalette": "#1E3A8A (Navy), #FBBF24 (Safety Yellow), #78350F (Earth)",
-                    "visualEvolution": "Transitions from fearful child behind sanctuary gates to crucial partner timing Kaelen's extraction."
+                    "name": "The Guide",
+                    "age": 45,
+                    "role": "Trusted Ally & Guide",
+                    "appearance": "Experienced, observant posture, sharp empathetic gaze.",
+                    "hair": "Silver-streaked hair.",
+                    "clothing": "Practical utility clothing suited for movement and endurance.",
+                    "props": "Navigation toolkit and communicator.",
+                    "colorPalette": "#047857 (Deep Emerald), #64748B (Steel Gray)",
+                    "visualEvolution": "Stands firm as a pillar of guidance through every trial."
                 }
             ],
             "locations": [
                 {
-                    "name": "St. Jude's Inner Sanctuary",
-                    "architecture": "Gothic Revival stone cathedral retrofitted with heavy steel pressure doors and pulsing copper rune conduits.",
-                    "geography": "Perched on the highest granite hill overlooking the flooded downtown grid.",
-                    "weather": "Cold mountain draft, perpetual fog pressing against glowing gold barrier dome.",
-                    "materials": "Centuries-old granite, polished brass conduits, beeswax candles, iron barricades.",
-                    "objects": "The Keystone Wardstone (fracturing on altar), etching benches, sleeping cots.",
-                    "lighting": "Warm candle amber and deep violet barrier luminescence.",
-                    "colorPalette": "#1E1B4B (Deep Violet), #D97706 (Amber), #1F2937 (Granite Gray)"
+                    "name": f"The Threshold of {title}",
+                    "architecture": "Expansive architectural threshold with distinctive structural features tailored to this story world.",
+                    "geography": "Strategic vantage point marking the transition into uncharted territory.",
+                    "weather": "Dynamic atmospheric conditions with motivated dramatic contrast.",
+                    "materials": "Tactile industrial and environmental materials shaped by the setting.",
+                    "objects": "Essential equipment, signaling arrays, and transit vehicles.",
+                    "lighting": "Atmospheric cinematic lighting with motivated practical rim accents.",
+                    "colorPalette": "#0F172A (Deep Slate), #38BDF8 (Ambient Sky), #F59E0B (Amber Practical)"
                 },
                 {
-                    "name": "The Limbo Bazaar (Outer Barrier)",
-                    "architecture": "Multi-tier shantytown built inside rusted intermodal shipping containers under the secondary translucent shield.",
-                    "geography": "The old railway freight station between the sanctuary gates and the wasteland.",
-                    "weather": "Constant industrial smog, sulfurous drizzle dripping from corrugated sheet roofs.",
-                    "materials": "Corrugated iron, rusted shipping containers, blue polyethylene tarps, barrel braziers.",
-                    "objects": "Makeshift market stalls selling dried lichen, battery cells, unverified relics.",
-                    "lighting": "Flickering sodium vapor lamps, glowing braziers, murky yellow rain.",
-                    "colorPalette": "#78350F (Rust), #F59E0B (Sodium Gold), #064E3B (Tarp Green)"
-                },
-                {
-                    "name": "The Dead Metro Vaults",
-                    "architecture": "Subterranean concrete transit concourse choked by black calcified mold and derelict subway trains.",
-                    "geography": "Four levels beneath downtown financial district, entirely outside protection.",
-                    "weather": "Sub-zero underground chill, stagnant black water pools, leaking steam pipes.",
-                    "materials": "Shattered ceramic white tiles, exposed rebar, rusted subway cars.",
-                    "objects": "Sub-vault security safe holding acoustic crystal canisters, emergency rail lanterns.",
-                    "lighting": "Pitch black pierced only by Kaelen's weapon light and fading wrist glyph.",
-                    "colorPalette": "#030712 (Abyssal Black), #06B6D4 (Cyan Flash), #DC2626 (Critical Red)"
+                    "name": "The Operational Core",
+                    "architecture": "Functional operational hub designed for coordination and command.",
+                    "geography": "Central sheltered facility providing sanctuary and intelligence.",
+                    "weather": "Protected interior climate with focused utilitarian atmosphere.",
+                    "materials": "Reinforced alloys, interactive terminals, and weathered functional surfaces.",
+                    "objects": "Navigational consoles, communication displays, and field gear.",
+                    "lighting": "Focused directional overhead lighting paired with warm console glows.",
+                    "colorPalette": "#1E1B4B (Midnight Indigo), #FCD34D (Warm Tungsten), #334155 (Steel Slate)"
                 }
             ]
         }

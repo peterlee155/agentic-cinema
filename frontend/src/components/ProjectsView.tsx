@@ -3,9 +3,11 @@
 import React from "react";
 import { Edit2, Trash2, CheckCircle, Film } from "lucide-react";
 
+import { ProjectMetadata } from "../types/project";
+
 interface ProjectsViewProps {
-  projects?: any[];
-  onSelectProject?: (proj: any) => void;
+  projects?: ProjectMetadata[];
+  onSelectProject?: (proj: ProjectMetadata) => void;
   onOpenProject?: (id: string) => void;
   onSwitchProject?: (id: string) => void;
   onDeleteProject?: (id: string, title: string) => void;
@@ -64,7 +66,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
           </div>
         )}
 
-        {projects.map((pr: any) => {
+        {projects.map((pr: ProjectMetadata) => {
           const isActive = pr.id === currentProjectId;
           return (
             <div

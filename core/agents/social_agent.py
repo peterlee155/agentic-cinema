@@ -33,7 +33,7 @@ STRICT RULE: Never alter movie canon or established lore. Every concept must be 
 
     def _process(self, project_id: str, prompt: str, context: Dict[str, Any]) -> Dict[str, Any]:
         brief = context.get("brief", {})
-        title = brief.get("title", "THE LAST SPELL")
+        title = brief.get("title") or context.get("title") or "UNTITLED FILM"
         world_rules = context.get("worldRules", [])
 
         schema = """{
@@ -82,91 +82,81 @@ STRICT RULE: Never alter movie canon or established lore. Every concept must be 
         if parsed and ("tiktok_reels_shorts" in parsed or "video_teasers_veo" in parsed):
             return parsed
 
-        # Default Social Campaign
+        title = brief.get("title") or context.get("title") or "UNTITLED FEATURE"
+        logline = brief.get("logline") or context.get("logline") or f"A cinematic adventure in {title}."
+        clean_tag = "".join(w.capitalize() for w in title.split() if w.isalnum())
+
+        # Dynamic Social Campaign
         return {
             "video_teasers_veo": [
                 {
-                    "title": "The 4-Hour Countdown",
+                    "title": f"{title} - Official Announcement Teaser",
                     "format": "9:16 Vertical Video (15s)",
-                    "hook": "Extreme macro zoom into human forearm as glowing amber glyph ignites into skin: 04:00:00.",
-                    "veo_prompt": "Google Veo prompt: 9:16 vertical cinematography, macro extreme close-up pushing in on human arm, amber runic numerals sizzling into skin with rising vapor, 24fps high-speed camera move pulling back to reveal hooded scout standing before rainstorm and giant shimmering violet forcefield dome, hyperrealistic cinematic motion, physical particle simulation",
-                    "audio_sync": "40Hz sub-bass drop syncing to the ticking metronome of the clock",
-                    "hashtags": ["#TheLastSpell", "#SciFiThriller", "#MovieTeaser", "#VeoVideo"]
+                    "hook": f"Cinematic title reveal and hook: {logline[:80]}...",
+                    "veo_prompt": f"Google Veo prompt: 9:16 vertical cinematography, dramatic high-tension cinematic lighting introducing the world of {title}, 24fps hyperrealistic physical simulation",
+                    "audio_sync": "Sub-bass riser syncing with the dramatic title reveal beat",
+                    "hashtags": [f"#{clean_tag}", "#AgenticCinema", "#MovieTeaser", "#VeoVideo"]
                 },
                 {
-                    "title": "The Smiling Mimic",
+                    "title": f"The World of {title}",
                     "format": "9:16 Vertical Video (15s)",
-                    "hook": "A smiling gentleman in a tweed jacket stands motionless in the rain under an umbrella.",
-                    "veo_prompt": "Google Veo prompt: 9:16 vertical framing, slow eerie dolly forward toward an unnervingly still man in vintage tweed holding an umbrella in torrential rain, neon yellow sodium light reflecting off wet asphalt, lightning strike reveals pitch-black dilated pupils, cinematic horror film motion, 24fps",
-                    "audio_sync": "Creepy polite whistle echoing over distorted ambient rain",
-                    "hashtags": ["#PsychologicalHorror", "#Mimic", "#ShortFilm", "#MovieTok"]
+                    "hook": f"What happens when the rules of {title} are pushed to the extreme?",
+                    "veo_prompt": f"Google Veo prompt: 9:16 vertical framing, slow atmospheric tracking shot capturing the high-contrast aesthetic and environment of {title}, 24fps",
+                    "audio_sync": "Eerie atmospheric soundscape with ambient drone",
+                    "hashtags": [f"#{clean_tag}", "#FilmTok", "#Cinematography", "#MovieTok"]
                 }
             ],
             "posters_imagen_3": [
                 {
                     "poster_type": "Official Theatrical Teaser Key Art",
-                    "title_text": "THE LAST SPELL",
-                    "tagline": "The barrier is failing. The countdown begins.",
-                    "imagen_prompt": "Google Imagen 3 prompt: High-impact 2:3 vertical theatrical movie poster, wide angle low perspective of a solitary weathered scout in a charcoal duster standing on wet granite steps looking up at a colossal glowing violet magical forcefield dome protecting a gothic cathedral, heavy rainstorm, ominous silhouettes of normal-looking crowds staring from the dark mist, dramatic IMAX typography space, rich cinematic lighting, 8K masterpiece",
-                    "color_palette": "#1E1B4B (Deep Violet), #D97706 (Amber Rune), #0F172A (Midnight Slate)"
+                    "title_text": title.upper(),
+                    "tagline": f"In {title}, every second defines the future.",
+                    "imagen_prompt": f"Google Imagen 3 prompt: High-impact 2:3 vertical theatrical movie poster for '{title}', moody chiaroscuro lighting, IMAX composition, cinematic atmospheric depth, 8K masterpiece",
+                    "color_palette": "#0F172A (Midnight), #E2E8F0 (Silver), #F59E0B (Accent Amber)"
                 },
                 {
-                    "poster_type": "Character Teaser Poster: The Infiltrator",
-                    "title_text": "ELIAS: THE MIMIC",
-                    "tagline": "They don't growl. They ask about your family.",
-                    "imagen_prompt": "Google Imagen 3 prompt: 2:3 vertical character teaser poster, extreme close-up portrait of a sharp-dressed gentleman with slicked hair holding an umbrella in the rain, polite warm smile contrasting with dead soulless eyes, split-lighting chiaroscuro with warm sodium yellow on one side and cold void black on the other, atmospheric film grain, 8K photorealism",
-                    "color_palette": "#78350F (Rust), #F59E0B (Sodium), #000000 (Void)"
+                    "poster_type": "Character Teaser Key Art",
+                    "title_text": f"{title.upper()} - THE JOURNEY",
+                    "tagline": "The path forward begins with a single choice.",
+                    "imagen_prompt": f"Google Imagen 3 prompt: 2:3 vertical character teaser poster, intense dramatic portrait aligned with the themes of '{title}', textured lighting, 8K photorealism",
+                    "color_palette": "#1E293B (Slate), #0284C7 (Cyan), #000000 (Black)"
                 }
             ],
             "tiktok_reels_shorts": [
                 {
                     "platform": "TikTok / Instagram Reels",
-                    "format": "9:16 Vertical Video (38s)",
+                    "format": "9:16 Vertical Video (35s)",
                     "type": "Mystery Hook / World Rule Explanation",
-                    "title": "The Countdown Spell Rule Explained",
-                    "hook": "What if zombies didn't look like zombies... and your survival had a timer seared into your skin?",
-                    "script": "Close-up on glowing amber forearm glyph counting down rapidly. Voiceover: 'Rule number one: they don't limp. They don't scream. They wear tweed blazers and ask how your morning was. Rule number two: you have four hours before your smell changes. When that clock hits zero... you are dinner.'",
-                    "cta": "Would you survive outside the barrier? Drop your survival strategy below.",
-                    "hashtags": ["#TheLastSpell", "#AgenticCinema", "#SciFiHorror", "#ZombieApocalypse", "#MovieTrailer"]
+                    "title": f"The Story Behind {title}",
+                    "hook": f"Here is the high-stakes premise of {title} in 30 seconds.",
+                    "script": f"Dynamic visual cuts highlighting the narrative tension of {title}. Voiceover explaining: '{logline}'",
+                    "cta": f"Would you survive the world of {title}? Comment below.",
+                    "hashtags": [f"#{clean_tag}", "#AgenticCinema", "#FilmLovers", "#MovieTrailer"]
                 },
                 {
                     "platform": "YouTube Shorts",
                     "format": "9:16 Vertical Video (45s)",
-                    "type": "Behind-the-Scenes Director Breakdown",
-                    "title": "How We Made the Mimic Look Terrifying Without CGI",
-                    "hook": "Why smiling characters are scarier than rotting monsters.",
-                    "script": "Split-screen comparison: Top shows the director's 35mm anamorphic blocking notes; Bottom shows actor Elias holding an unnerving, unblinking smile under the rain as water drips off his nose.",
-                    "cta": "Explore the full production package built by our AI team at Agentic Cinema Studio.",
-                    "hashtags": ["#FilmmakersOfTikTok", "#DirectingTips", "#AIInFilm", "#IndieCinema", "#Cinematography"]
-                },
-                {
-                    "platform": "TikTok / Instagram Reels",
-                    "format": "9:16 Vertical Video (25s)",
-                    "type": "POV Survival Video",
-                    "title": "POV: Your Countdown Spell Has 10 Seconds Left",
-                    "hook": "POV: You hear polite whistling down the dark subway tunnel and check your arm.",
-                    "script": "First-person camera sprinting through shallow black water. Wrist chronometer flashes red: 00:00:09... 00:00:08. Shadows step out from behind concrete pillars. You slam against the cathedral blast doors.",
-                    "cta": "Can you hold your breath until the airlock cycles?",
-                    "hashtags": ["#POVHorror", "#SurvivalThriller", "#TheLastSpell", "#ShortFilm"]
+                    "type": "Behind-the-Scenes Filmmaking Breakdown",
+                    "title": f"How We Directed {title} with AI",
+                    "hook": f"How 21 specialized autonomous AI agents built {title}.",
+                    "script": f"Behind-the-scenes walkthrough detailing the multi-agent production workflow behind '{title}'.",
+                    "cta": "Explore the full production bible on Agentic Cinema Studio.",
+                    "hashtags": ["#AIInFilm", "#DirectingTips", "#IndieCinema", f"#{clean_tag}"]
                 }
             ],
             "meme_concepts": [
                 {
-                    "concept": "Me checking my phone battery at 1% vs. Kaelen checking his forearm with 60 seconds left on his protection spell.",
-                    "caption": "Same panic, different stakes. ⏳😭"
-                },
-                {
-                    "concept": "Elias asking how my day was with a perfectly calm face while waiting for my spell to expire.",
-                    "caption": "Customer service workers dealing with Monday morning emails."
+                    "concept": f"Anticipating the plot twist in {title}.",
+                    "caption": f"When you realize what is actually happening in {title}."
                 }
             ],
             "audience_polls": [
                 {
-                    "question": "If you had a 4-hour countdown spell to leave the sanctuary, would you:",
+                    "question": f"If you entered the world of {title}, what would be your first move?",
                     "options": [
-                        "Scavenge food & medical supplies",
-                        "Search for the missing Keystone crystals",
-                        "Refuse to leave the Inner Cathedral"
+                        "Trust the team and follow the mission",
+                        "Investigate the hidden mysteries alone",
+                        "Form an alliance with unexpected allies"
                     ]
                 }
             ]

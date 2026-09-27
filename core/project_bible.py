@@ -71,10 +71,172 @@ class ProjectBible:
         self.danceConcepts: List[Dict[str, Any]] = []
         self.continuityLog: List[Dict[str, Any]] = []
         self.cast: List[Dict[str, Any]] = []
+        self.storyForMe: Dict[str, Any] = {}
+        # Extended Swarm Assets
+        self.song: Dict[str, Any] = {}
+        self.budgetPlan: List[Dict[str, Any]] = []
+        self.keyframes: List[Dict[str, Any]] = []
+        self.scriptAnalysis: List[Dict[str, Any]] = []
+        self.tableRead: Dict[str, Any] = {}
+        self.productionOps: Dict[str, Any] = {}
+        self.actorPerformance: Dict[str, Any] = {}
+        self.actressPerformance: Dict[str, Any] = {}
+
+    def get_story_for_me_default(self) -> Dict[str, Any]:
+        """Generates or retrieves a structured, kid-friendly Story For Me representation."""
+        if getattr(self, "storyForMe", None) and isinstance(self.storyForMe, dict) and self.storyForMe.get("whatIsThisAbout"):
+            return self.storyForMe
+
+        title = self.project.get("title", "Our Movie")
+        logline = self.project.get("logline", "")
+
+        what_is_about = logline if logline else f"An exciting adventure called {title} where unexpected heroes team up to solve a big challenge!"
+
+        characters_list = []
+        if self.characters:
+            for idx, c in enumerate(self.characters[:5]):
+                name = c.get("name", f"Hero {idx+1}")
+                desc = c.get("description") or c.get("appearance") or "A brave character on this journey."
+                role = "The Brave Leader" if idx == 0 else ("The Loyal Friend" if idx == 1 else ("The Mysterious Guide" if idx == 2 else "The Team Specialist"))
+                goal = c.get("objective") or c.get("goal") or "To protect their friends and save the day"
+                fear = c.get("fear") or c.get("conflict") or "Letting down the people who count on them"
+                sig_obj = c.get("props") or c.get("signatureObject") or "A special lucky charm"
+                if isinstance(sig_obj, list):
+                    sig_obj = sig_obj[0] if sig_obj else "A special keepsake"
+
+                characters_list.append({
+                    "name": name,
+                    "role": role,
+                    "friendlyDescription": desc,
+                    "goal": goal,
+                    "fear": fear,
+                    "signatureObject": str(sig_obj)
+                })
+        else:
+            characters_list = [
+                {
+                    "name": f"Hero of {title}",
+                    "role": "The Brave Leader",
+                    "friendlyDescription": f"The determined protagonist embarking on the central quest of {title}.",
+                    "goal": f"To guide the team through the challenges of {title} and succeed.",
+                    "fear": "Letting down their allies when the stakes are highest.",
+                    "signatureObject": "A special token carried on the journey"
+                },
+                {
+                    "name": "The Trusted Guide",
+                    "role": "The Specialist Ally",
+                    "friendlyDescription": f"A wise and loyal companion supporting the mission in {title}.",
+                    "goal": "To provide essential guidance and keep the team united.",
+                    "fear": "Losing sight of their true purpose.",
+                    "signatureObject": "A distinctive tracking tool"
+                }
+            ]
+
+        first_text = "The story begins when our heroes notice something strange in their world and receive a brave mission."
+        next_text = "They venture into uncharted territory, facing surprising obstacles and learning to trust one another."
+        last_text = "In a breathtaking final challenge, they combine their unique talents to triumph and make their world safe."
+
+        if self.scenes and len(self.scenes) >= 3:
+            s1 = self.scenes[0]
+            s_mid = self.scenes[len(self.scenes) // 2]
+            s_end = self.scenes[-1]
+            if s1.get("action") or s1.get("objective"):
+                first_text = f"First: At {s1.get('location', 'the start')}, {s1.get('action', s1.get('objective', 'our journey begins'))[:180]}..."
+            if s_mid.get("action") or s_mid.get("objective"):
+                next_text = f"Next: The adventure heats up at {s_mid.get('location', 'the crossroads')} as {s_mid.get('action', s_mid.get('objective', 'the team faces unexpected challenges'))[:180]}..."
+            if s_end.get("action") or s_end.get("objective"):
+                last_text = f"Last: In the exciting finale at {s_end.get('location', 'the final threshold')}, {s_end.get('action', s_end.get('objective', 'everything comes together for an unforgettable resolution'))[:180]}!"
+
+        rules = []
+        if self.worldRules:
+            for r in self.worldRules[:3]:
+                if isinstance(r, dict):
+                    rules.append(r.get("rule") or r.get("name") or str(r))
+                else:
+                    rules.append(str(r))
+        if not rules:
+            rules = [
+                "Rule 1: Trust your team — nobody saves the day all by themselves.",
+                "Rule 2: Listen closely to ancient clues, they always have a hidden message.",
+                "Rule 3: Courage isn't having no fear; it's doing the right thing anyway."
+            ]
+
+        mysteries = [
+            f"What unexpected discoveries will our heroes make in {title}?",
+            f"How will the thrilling finale of {title} transform their world?"
+        ]
+
+        return {
+            "whatIsThisAbout": what_is_about,
+            "importantPeople": characters_list,
+            "whatHappens": {
+                "first": first_text,
+                "next": next_text,
+                "last": last_text
+            },
+            "whatToRemember": rules,
+            "unresolvedMysteries": mysteries
+        }
+
+    def ensure_soundscapes(self) -> List[Dict[str, Any]]:
+        """Ensures every scene in the project has an acoustic soundscape blueprint."""
+        if self.audio and len(self.audio) > 0:
+            return self.audio
+
+        title = self.project.get("title") or "Cinematic Feature"
+        genre = self.project.get("genre") or "Drama / Thriller"
+        tone = self.project.get("tone") or "Atmospheric, High-Stakes"
+        
+        scenes_to_map = self.scenes if self.scenes else [
+            {
+                "sceneNumber": 1,
+                "slugline": "EXT. OPENING HORIZON - NIGHT",
+                "location": "MAIN ENVIRONMENT",
+                "action": f"The narrative of {title} commences under atmospheric lighting.",
+                "soundCue": "Low sub-bass drone and atmospheric wind textures.",
+                "emotionalBeat": "Suspense and intrigue"
+            }
+        ]
+        
+        generated_audio = []
+        for sc in scenes_to_map:
+            sc_num = sc.get("sceneNumber", 1)
+            slug = sc.get("slugline") or f"Scene {sc_num}"
+            loc = sc.get("location") or slug.replace("EXT.", "").replace("INT.", "").split("-")[0].strip()
+            is_int = "INT." in slug.upper()
+            action = sc.get("action", "")
+            
+            ambience = sc.get("soundCue") or f"{'Confined interior acoustic space with subtle room tone resonance' if is_int else 'Expansive outdoor atmospheric wind, environmental humidity and natural reverberation'} in {loc}."
+            foley = f"Tactile surface friction, deliberate character footsteps across {loc.lower()}, mechanical and cloth movement."
+            sfx = f"Dynamic low-frequency 38Hz sub-bass tension pulse reflecting {tone.lower()}."
+            music = f"Original score motif reflecting {genre}, sparse acoustic strings swelling into dramatic crescendo."
+            silence = f"STRATEGIC SILENCE: 2.5-second total audio blackout preceding the dramatic scene turning point."
+            dialogue = f"Direct close-mic dialogue capture with natural {'reverberant room reflections' if is_int else 'wind diffusion and natural decay'}."
+            transition = f"{'J-Cut' if sc_num % 2 == 1 else 'L-Cut'}: Sound of {loc} bleeds 1.5 seconds across the scene boundary."
+            
+            generated_audio.append({
+                "scene": f"Scene {sc_num} - {loc}",
+                "dialogue": dialogue,
+                "ambience": ambience,
+                "foley": foley,
+                "soundEffects": sfx,
+                "music": music,
+                "silence": silence,
+                "emotionalCue": f"Magnifies the dramatic stakes of {title}.",
+                "transition": transition
+            })
+            
+        self.audio = generated_audio
+        return self.audio
 
     def to_dict(self) -> Dict[str, Any]:
         """Returns the canonical project dictionary."""
+        self.ensure_soundscapes()
         return {
+            "id": self.project_id,
+            "project_id": self.project_id,
+            "title": self.project.get("title", "UNTITLED FILM"),
+            "logline": self.project.get("logline", ""),
             "project": self.project,
             "characters": self.characters,
             "locations": self.locations,
@@ -91,6 +253,15 @@ class ProjectBible:
             "danceConcepts": self.danceConcepts,
             "continuityLog": self.continuityLog,
             "cast": self.cast,
+            "storyForMe": self.storyForMe or self.get_story_for_me_default(),
+            "song": getattr(self, "song", {}),
+            "budgetPlan": getattr(self, "budgetPlan", []),
+            "keyframes": getattr(self, "keyframes", []),
+            "scriptAnalysis": getattr(self, "scriptAnalysis", []),
+            "tableRead": getattr(self, "tableRead", {}),
+            "productionOps": getattr(self, "productionOps", {}),
+            "actorPerformance": getattr(self, "actorPerformance", {}),
+            "actressPerformance": getattr(self, "actressPerformance", {}),
             "updated_at": self.updated_at
         }
 
@@ -113,6 +284,15 @@ class ProjectBible:
         bible.danceConcepts = data.get("danceConcepts", [])
         bible.continuityLog = data.get("continuityLog", [])
         bible.cast = data.get("cast", [])
+        bible.storyForMe = data.get("storyForMe") or data.get("story_for_me") or {}
+        bible.song = data.get("song", {})
+        bible.budgetPlan = data.get("budgetPlan", [])
+        bible.keyframes = data.get("keyframes", [])
+        bible.scriptAnalysis = data.get("scriptAnalysis", [])
+        bible.tableRead = data.get("tableRead", {})
+        bible.productionOps = data.get("productionOps", {})
+        bible.actorPerformance = data.get("actorPerformance", {})
+        bible.actressPerformance = data.get("actressPerformance", {})
         bible.updated_at = data.get("updated_at", datetime.utcnow().isoformat())
         return bible
 
